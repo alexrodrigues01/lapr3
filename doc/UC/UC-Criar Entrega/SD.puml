@@ -1,0 +1,203 @@
+@startuml
+autonumber
+
+actor "Gestor" as GEST
+participant ":CriarEntregaUI" as UI
+participant ":CriarEntregaController" as CTRL
+participant "listaEncomendas: List<Encomenda>"
+participant ":Encomenda"
+participant "AplicacaoPOT" as APLICACAOPOT
+participant "app:AplicacaoPOT" as APP
+participant "sessao:SessaoUtilizador" as SESSAO
+participant "farmaciaBD:FarmaciaBD" as FARMBD
+participant "moradaBD:MoradaBD" as MORBD
+participant "encomendaBD:EncomendaBD" as ENCBD
+participant "droneBD: DroneBD" as DRONEBD
+participant "listaDrones: List<Drone>"
+participant "listaDronesCapazes: List<Drone>"
+participant ":Constantes" as CONST
+participant "scooterBD: ScooterBD" as SCOOTBD
+participant "listaScooters: List<Scooter>"
+participant "listaScootersCapazes: List<Scooter>"
+participant "caminhoDroneTask:CaminhoDroneTask" as DRONECAM
+participant "consumoDroneTask:EstimarConsumoDroneTask" as DRONECONS
+participant "caminhoAndConsumoDrone: Pair<List<Morada>, double[]>" as CAMANDCONSDRONE
+participant "caminhoController:CaminhoController" as SCOOTCAM
+participant "consumoScooterTask:EstimarConsumoTask" as SCOOTCONS
+participant "caminhoAndConsumoScooter: Pair<List<Morada>, double[]>" as CAMANDCONS
+participant "estafetaBD: EstafetaBD" as ESTAFETABD
+participant "entregaBD: EntregaBD" as ENTREGABD
+participant "BaseDados" as BD
+
+activate GEST
+GEST-> UI: Seleciona criar uma entrega
+activate UI
+UI-> CTRL:listaEncomendas= getEncomendas()
+activate CTRL
+CTRL->APLICACAOPOT: app=getInstance()
+activate APLICACAOPOT
+deactivate APLICACAOPOT
+CTRL -> APP: sessao=getSessaoAtual()
+activate APP
+deactivate APP
+CTRL -> SESSAO: email= getEmailUtilizador()
+activate SESSAO
+deactivate SESSAO
+CTRL->FARMBD: idFarm= getIDFarmByEmail(email)
+activate FARMBD
+FARMBD->BD: connection= getConnection()
+activate BD
+deactivate BD
+FARMBD->BD: closeConnection()
+activate BD
+deactivate BD
+deactivate FARMBD
+CTRL->MORBD:moradaFarmacia= getMoradaByID(farmID)
+activate MORBD
+MORBD->BD: connection= getConnection()
+activate BD
+deactivate BD
+MORBD->BD: closeConnection()
+activate BD
+deactivate BD
+deactivate MORBD
+CTRL ->ENCBD: getEncomendasByFarmID(idFarm)
+activate ENCBD
+ENCBD->BD: connection= getConnection()
+activate BD
+deactivate BD
+ENCBD->BD: closeConnection()
+activate BD
+deactivate BD
+deactivate ENCBD
+
+UI--> GEST : apresenta a lista de encomendas \n e solicita que selecione as que \n pretende adicionar e se pretende\n o caminho mais eficiente ou mais\n curto
+deactivate CTRL
+deactivate UI
+GEST -> UI: seleciona as encomendas
+activate UI
+
+UI -> CTRL: validaDados(encomendas,estimativa)
+activate CTRL
+CTRL -> ENCBD: listaEncomendas=getEncomendasByID(encomendas)
+activate ENCBD
+ENCBD->BD: connection= getConnection()
+activate BD
+deactivate BD
+ENCBD->BD: closeConnection()
+activate BD
+deactivate BD
+deactivate ENCBD
+
+CTRL-> ENCBD: listaMoradas=encomendaBD.getMoradasClientesByEncomendas(listaEncomendas);
+activate ENCBD
+ENCBD->BD: connection= getConnection()
+activate BD
+deactivate BD
+ENCBD->BD: closeConnection()
+activate BD
+deactivate BD
+deactivate ENCBD
+CTRL-> CTRL: cargaTotal=calcularCargaTotal()
+
+CTRL -> DRONEBD: listaDrones= getDronesByFarmID(idFarm)
+activate DRONEBD
+deactivate DRONEBD
+CTRL-> CTRL: listaDronesCapazes=getDronesCapazes()
+CTRL-> CONST: cargaEstafeta= cargaEstafeta
+activate CONST
+deactivate CONST
+opt [ cargaTotal < cargaEstafeta ]
+
+CTRL -> SCOOTBD: listaScooters= getScootersByFarmID(idFarm)
+activate SCOOTBD
+SCOOTBD->BD: connection= getConnection()
+activate BD
+deactivate BD
+SCOOTBD->BD: closeConnection()
+activate BD
+deactivate BD
+deactivate SCOOTBD
+end opt
+
+opt [ !listaDronesCapazes.isEmpty() ]
+CTRL-> CTRL: caminhoAndConsumoDrone= getCaminhoAndConsumoDrone()
+activate CTRL
+loop [ para todos os drones capazes ]
+note over CTRL
+Quando o consumo do drone é menor o
+caminhoAndConsumoDrone e o drone são substituídos
+end note
+CTRL-> DRONECAM: caminhoAndConsumoDrone=  getCaminhoAndConsumo(estimativa,moradaFarmacia,listaMoradas,cargaTotal,drone,true,moradaBD)
+activate DRONECAM
+deactivate DRONECAM
+end loop
+deactivate CTRL
+end opt
+
+
+opt [ !listaScooters.isEmpty() ]
+CTRL-> CTRL: caminhoAndConsumoScooter= getCaminhoAndConsumoScooter()
+activate CTRL
+loop [ para todas as scooters ]
+note over CTRL
+Quando o consumo da scooter é menor o
+caminhoAndConsumoScooter e a scooter são substituídos
+end note
+CTRL-> SCOOTCAM: caminhoAndConsumoScooter=  getCaminhoAndConsumo(estimativa,moradaFarmacia,listaMoradas,cargaTotal,scooter,false,moradaBD)
+
+activate SCOOTCAM
+deactivate SCOOTCAM
+end loop
+deactivate CTRL
+end opt
+
+CTRL-> CTRL : veiculo= getVeiculoMaisEficiente()
+
+CTRL-> ESTAFETABD : estafeta= getEstafetaAvailable(idFarm)
+activate ESTAFETABD
+ESTAFETABD->BD: connection= getConnection()
+activate BD
+deactivate BD
+ESTAFETABD->BD: closeConnection()
+activate BD
+deactivate BD
+deactivate ESTAFETABD
+
+CTRL -> ENTREGABD : entrega=createEntrega(cargaTotal,distanciaTotal,consumoEstimado,veiculo,estafeta)
+activate ENTREGABD
+ENTREGABD->BD: connection= getConnection()
+activate BD
+deactivate BD
+ENTREGABD->BD: closeConnection()
+activate BD
+deactivate BD
+deactivate ENTREGABD
+
+CTRL -> ENTREGABD : setCaminho(entrega,caminho)
+activate ENTREGABD
+ENTREGABD->BD: connection= getConnection()
+activate BD
+deactivate BD
+ENTREGABD->BD: closeConnection()
+activate BD
+deactivate BD
+deactivate ENTREGABD
+
+CTRL -> ENCBD : setIDEntrega(listaEncomendas,entrega)
+activate ENCBD
+ENCBD->BD: connection= getConnection()
+activate BD
+deactivate BD
+ENCBD->BD: closeConnection()
+activate BD
+deactivate BD
+deactivate ENCBD
+
+deactivate CTRL
+deactivate UI
+deactivate GEST
+
+
+
+@enduml

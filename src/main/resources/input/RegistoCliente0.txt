@@ -1,0 +1,142 @@
+CLIENTE
+cliente1@email.pt,123,Mar,411111111,123456701,MAR Shopping Matosinhos,41.209052507815244,-8.687287086708245,42,1234567891234501,01/21,123
+APRESENTA OS DADOS
+CONFIRMA
+PROXIMO CLIENTE
+===========================================================================================
+CLIENTE
+cliente2@email.pt,123,City,422222222,123456702,Centro Comercial New City,41.182363628707456,-8.692294402052777,9,1234567891234502,02/21,123
+APRESENTA OS DADOS
+CONFIRMA
+PROXIMO CLIENTE
+===========================================================================================
+CLIENTE
+cliente3@email.pt,123,Parque,433333333,123456703,Centro comercial parque,41.18462397702034,-8.68211220205267,26,1234567891234503,03/21,123
+APRESENTA OS DADOS
+CONFIRMA
+PROXIMO CLIENTE
+===========================================================================================
+CLIENTE
+cliente4@email.pt,123,Plaza,444444444,123456704,Centro Comercial Plaza,41.23340661610906,-8.621535302051184,101,1234567891234567,04/21,123
+APRESENTA OS DADOS
+CONFIRMA
+PROXIMO CLIENTE
+===========================================================================================
+CLIENTE
+cliente5@email.pt,123,Norte,455555555,123456705,NorteShopping,41.18084867888261,-8.654576302052822,76,1234567891234505,05/21,123
+APRESENTA OS DADOS
+CONFIRMA
+PROXIMO CLIENTE
+===========================================================================================
+CLIENTE
+cliente6@email.pt,123,Pereiro,466666666,123456706,Pereiro Post Office,41.17249147928438,-8.654926373217164,72,1234567891234506,06/21,123
+APRESENTA OS DADOS
+CONFIRMA
+PROXIMO CLIENTE
+===========================================================================================
+CLIENTE
+cliente7@email.pt,123,Carvalhido,477777777,123456707,Centro Comercial do Carvalhido,41.16779113230192,-8.630172602053205,93,1234567891234507,07/21,123
+APRESENTA OS DADOS
+CONFIRMA
+PROXIMO CLIENTE
+===========================================================================================
+CLIENTE
+cliente8@email.pt,123,Correia,488888888,123456708,CTT,41.171472631394025,-8.612856802053123,110,1234567891234508,08/21,123
+APRESENTA OS DADOS
+CONFIRMA
+PROXIMO CLIENTE
+===========================================================================================
+CLIENTE
+cliente9@email.pt,123,Forno,499999999,123456709,Posto Correios Forno,41.19262907307092,-8.575904230888346,140,1234567891234509,09/21,123
+APRESENTA OS DADOS
+CONFIRMA
+PROXIMO CLIENTE
+===========================================================================================
+CLIENTE
+cliente10@email.pt,123,Ermesinde,410000000,123456710,Centro de Distribuicao dos Correios de Ermesinde,41.202635495918976,-8.54497793088807,135,1234567891234510,10/21,123
+APRESENTA OS DADOS
+CONFIRMA
+PROXIMO CLIENTE
+===========================================================================================
+CLIENTE
+cliente11@email.pt,123,Arrabida,411000000,123456711,ArrabidaShopping,41.14147055903884,-8.636453502054039,75,1234567891234511,11/21,123
+APRESENTA OS DADOS
+CONFIRMA
+PROXIMO CLIENTE
+===========================================================================================
+CLIENTE
+cliente12@email.pt,123,Campo,412000000,123456712,Correios CTT Campo Alegre,41.152763857646484,-8.63105360205371,75,1234567891234512,12/21,123
+APRESENTA OS DADOS
+CONFIRMA
+PROXIMO CLIENTE
+===========================================================================================
+CLIENTE
+cliente13@email.pt,123,Brasilia,413000000,123456713,Shopping Brasilia - Associacao Comerciantes,41.15756277928595,-8.627837002053548,84,1234567891234513,01/22,123
+APRESENTA OS DADOS
+CONFIRMA
+PROXIMO CLIENTE
+===========================================================================================
+CLIENTE
+cliente14@email.pt,123,Conde,414000000,123456714,Posto de Correios de Conde Ferreira,41.17120183146073,-8.588192230889032,142,1234567891234514,02/22,123
+APRESENTA OS DADOS
+CONFIRMA
+PROXIMO CLIENTE
+===========================================================================================
+CLIENTE
+cliente15@email.pt,123,Cedofeita,415000000,123456715,Centro Comercial de Cedofeita,41.154558057425085,-8.619157930889543,85,1234567891234515,03/22,123
+APRESENTA OS DADOS
+CONFIRMA
+PROXIMO CLIENTE
+===========================================================================================
+CLIENTE
+cliente16@email.pt,123,Alameda,416000000,123456716,Alameda Shop Spot,41.16375523329717,-8.584184302053327,122,1234567891234516,04/22,123
+APRESENTA OS DADOS
+CONFIRMA
+PROXIMO CLIENTE
+===========================================================================================
+CLIENTE
+cliente17@email.pt,123,Valongo,417000000,123456717,Post Office Valongo,41.190016800589035,-8.497586402052518,138,1234567891234517,05/22,123
+APRESENTA OS DADOS
+CONFIRMA
+PROXIMO CLIENTE
+===========================================================================================
+CLIENTE
+cliente18@email.pt,123,Candy,418000000,123456718,Shop,41.14796023719179,-8.615831802053826,86,1234567891234518,06/22,123
+APRESENTA OS DADOS
+CONFIRMA
+PROXIMO CLIENTE
+===========================================================================================
+CLIENTE
+cliente19@email.pt,123,Travis,419000000,123456719,Traditional Shopping Street,41.15347747928632,-8.604759930889546,109,1234567891234519,07/21,123
+APRESENTA OS DADOS
+CONFIRMA
+PROXIMO CLIENTE
+===========================================================================================
+CLIENTE
+cliente20@email.pt,123,Colossal,420000000,123456720,Espiral Colossal,41.14367463824815,-8.60339243088989,76,1234567891234520,08/21,123
+APRESENTA OS DADOS
+CONFIRMA
+PROXIMO CLIENTE
+===========================================================================================
+CLIENTE
+cliente21@email.pt,123,Stop,421111111,123456721,Centro Comercial Stop,41.14600667928706,-8.594940030889799,92,1234567891234521,09/21,123
+APRESENTA OS DADOS
+CONFIRMA
+PROXIMO CLIENTE
+===========================================================================================
+CLIENTE
+cliente22@email.pt,123,Salvador,422000000,123456722,Praceta Salvador Caetano,41.1330929600718,-8.6081726020543,70,1234567891234522,10/22,123
+APRESENTA OS DADOS
+CONFIRMA
+PROXIMO CLIENTE
+===========================================================================================
+CLIENTE
+cliente23@email.pt,123,Peixe,423333333,123456723,FISHISCO Pesca,41.14431389689786,-8.57522170205393,9,1234567891234523,10/23,123
+APRESENTA OS DADOS
+CONFIRMA
+PROXIMO CLIENTE
+===========================================================================================
+CLIENTE
+cliente24@email.pt,123,Caetano,424444444,123456724,Tecofix Porto,41.153952035714354,-8.547053530889555,84,1234567891234524,10/24,123
+APRESENTA OS DADOS
+CONFIRMA

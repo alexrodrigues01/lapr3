@@ -1,0 +1,82 @@
+@startuml
+left to right direction
+
+class AdicionarDroneUI{
+}
+
+class AdicionarDroneController{
++Drone novoDrone(carga,capacidadeBateria,consumoHoraBateria,tensaoBateria,massa,potencia,velocidade,avionics,drag,rotors,cargaMaxima)
++updateDrone(lugar,drone)
+}
+
+class AplicacaoPOT{
++getInstance()
++getPlataforma()
++getSessaoAtual()
+}
+
+class SessaoUtilizador{
++getEmailUtilizador()
+}
+
+
+class Farmacia{
+
+}
+
+class LugarDrone{
++setScooter(Scooter setScooter)
++verificaDisponibilidade()
+}
+
+class Drone{
+-int id
+-int carga
+-double capacidadeBateria
+-double consumoHoraBateria
+-double tensaoBateria
+-double massa
+-double potencia
+-double velocidade;
+-double avionics;
+-double drag;
+-double rotors;
+-double cargaMaxima;
+
++Drone(int carga, double capacidadeBateria, double consumoHoraBateria, double tensaoBateria, double massa, double potencia, double velocidade, double avionics, double drag, double rotors, double cargaMaxima)
+}
+
+class FarmaciaBD{
++Farmacia getFarmaciabyGestor(email)
++updateLugarDrone(lugar)
++getLugarDronebyFarm(farmID)
+}
+
+class BaseDados{
++getConnection()
++closeConnection()
+}
+
+class DroneBD{
++novoDrone(int carga, double capacidadeBateria, double consumoHoraBateria, double tensaoBateria, double massa, double potencia, double velocidade, double avionics, double drag, double rotors, double cargaMaxima)
++updateDrone(drone)
+}
+
+AdicionarDroneUI..> AdicionarDroneController
+
+Farmacia "1" --> "1" LugarDrone: possui
+LugarDrone "1" --> "1" Drone : possui
+
+AdicionarDroneController ..> AplicacaoPOT
+
+AdicionarDroneController ..> FarmaciaBD
+AdicionarDroneController ..> DroneBD
+AdicionarDroneController ..> SessaoUtilizador
+AdicionarDroneController ..> Farmacia
+
+AdicionarDroneController ..> LugarDrone
+
+FarmaciaBD ..> BaseDados
+DroneBD ..> BaseDados
+DroneBD ..> Drone
+@enduml

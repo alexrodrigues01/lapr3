@@ -1,0 +1,68 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+
+
+Class AdicionarStockProdutoUI{
+
+}
+
+Class AdicionarStockProdutoController{
+    +getProdutosByFarmacia()
+    +validaProduto(idProduto)
+    +alteraStockProduto(idProduto,stockAdicionar)
+}
+
+Class ProdutoBD{
+    +getProdutoByFarmacia(idFarmacia)
+    +validarProdutoId(idFarmacia,idProduto)
+    +setStock(idProduto,stockAdicionar)
+}
+class Produto{
+
+}
+class BaseDados{
+  -Connection connection
+  +getConnection()
+  +closeConnection()
+}
+
+class Connection {
+}
+
+class Farmacia{
+    +getId()
+}
+
+class FarmaciaBD{
+    +getFarmaciaByGestor(emailGestor)
+}
+
+class AplicacaoPOT{
+    +getInstance()
+    +getSessaoAtual()
+}
+
+class SessaoUtilizador{
+    +getEmailUtilizador()
+}
+
+AdicionarStockProdutoUI ..> AdicionarStockProdutoController
+AdicionarStockProdutoController ..> ProdutoBD
+AdicionarStockProdutoController ..> Produto
+AdicionarStockProdutoController ..> FarmaciaBD
+AdicionarStockProdutoController ..> AplicacaoPOT
+AdicionarStockProdutoController ..> SessaoUtilizador
+
+ProdutoBD ..> Produto
+
+Farmacia "1" -- "0..*" Produto : possui >
+Farmacia "1" -- "1" GestorFarmacia : possui >
+GestorFarmacia "1" -- "1" Utilizador : atua como >
+GestorFarmacia "1" -- "0..*" Produto : adiciona >
+
+
+ProdutoBD ..> BaseDados
+BaseDados ..> Connection
+
+@enduml

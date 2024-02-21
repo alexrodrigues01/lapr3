@@ -1,0 +1,10 @@
+CLIENTE
+cliente10@email.pt,123,Ermesinde,410000000,123456710,Centro de Distribuicao dos Correios de Ermesinde,41.202635495918976,-8.54497793088807,201,1234567891234510,10/21,123
+APRESENTA OS DADOS
+CONFIRMA
+PROXIMO CLIENTE
+===========================================================================================
+CLIENTE
+cliente17@email.pt,123,Valongo,417000000,123456717,Post Office Valongo,41.190016800589035,-8.497586402052518,421,1234567891234517,05/22,123
+APRESENTA OS DADOS
+CONFIRMA

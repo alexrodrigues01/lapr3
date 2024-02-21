@@ -1,0 +1,108 @@
+@startuml
+autonumber
+
+actor "GestorFarmacia\n" as GES
+participant ":AdicionarStockProdutoUI" as UI
+participant ":AdicionarStockProdutoController" as CONTROLLER
+participant "AplicacaoPOT" as POT
+participant "app\n:AplicacaoPOT" as APP
+participant "sessao\n:SessaoUtilizador" as SES
+participant "FarmaciaBD" as FBD
+participant "farmacia\n:Farmacia" as F
+participant "listaProdutos:List<Produto>" as LP
+participant ":ProdutoBD" as PBD
+participant "produto\n:Produto" as P
+participant ":BaseDados" as BD
+participant "connection\n:Connection" as CON
+
+
+activate GES
+
+GES->UI:Inicia a adicao de stock de um produto
+activate UI
+
+UI->CONTROLLER:listaProdutos=getProdutosByFarmacia()
+activate CONTROLLER
+
+CONTROLLER -> POT : app = getInstance()
+activate POT
+deactivate POT
+CONTROLLER -> APP : sessao = getSessaoAtual()
+activate APP
+deactivate APP
+CONTROLLER -> SES : emailGestor = getEmailUtilizador()
+activate SES
+deactivate SES
+CONTROLLER -> FBD : farmacia = getFarmaciaByGestor(emailGestor)
+activate FBD
+FBD -> BD : connection = getConnection()
+activate BD
+deactivate BD
+FBD -> BD : closeConnection()
+activate BD
+deactivate BD
+deactivate FBD
+CONTROLLER -> F : idFarmacia = getId()
+activate F
+deactivate F
+CONTROLLER->LP: create()
+activate LP
+deactivate LP
+CONTROLLER->PBD:listaProdutos=getProdutoByFarmacia(idFarmacia)
+activate PBD
+PBD->BD:con=getConnection()
+activate BD
+deactivate BD
+PBD->BD:closeConnection()
+activate BD
+deactivate BD
+deactivate PBD
+
+deactivate CONTROLLER
+
+UI --> GES : Apresenta lista de produtos, solicitando a selecao do produto a adicionar stock
+deactivate UI
+
+GES -> UI : seleciona o produto a adicionar stock
+activate UI
+UI -> CONTROLLER : validaProduto(idProduto)
+    activate CONTROLLER
+
+        CONTROLLER -> PBD : validarProdutoId(idFarmacia,idProduto)
+        activate PBD
+        PBD -> BD : getConnection()
+        activate BD
+        deactivate BD
+        PBD -> BD : closeConnection()
+        activate BD
+        deactivate BD
+        deactivate PBD
+
+    deactivate CONTROLLER
+
+UI --> GES : mostra a informacao, solicitando confirmacao
+deactivate UI
+
+GES -> UI : confirma
+activate UI
+
+    UI -> CONTROLLER : alteraStockProduto(idProduto,stockAdicionar)
+    activate CONTROLLER
+
+        CONTROLLER-> PBD : setStock(idProduto,idFarmacia,stockAdicionar)
+        activate PBD
+        PBD -> BD : getConnection()
+        activate BD
+        deactivate BD
+        PBD -> BD : closeConnection()
+        activate BD
+        deactivate BD
+        deactivate PBD
+
+    deactivate CONTROLLER
+
+UI --> GES : adiciona stock do produto e informa acerca do sucesso da operacao
+deactivate UI
+deactivate GES
+@enduml
+

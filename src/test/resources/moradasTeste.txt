@@ -1,0 +1,5 @@
+morada;latitude;longitude
+Rua1,BuenosAires;-34.6131500;-58.3772300;43.513
+Rua2,Lapaz;-16.5000000;-68.1500000;456.567
+Rua3,Brasilia;-15.7797200;-47.9297200;1320.349
+Rua4,Santiago;-33.4569400;-70.6482700;27.895

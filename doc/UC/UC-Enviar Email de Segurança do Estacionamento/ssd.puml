@@ -1,0 +1,7 @@
+@startuml
+activate WatchServiceFiles
+WatchServiceFiles -> ":Sistema" : Iniciar o processo de enviar email de segurança
+activate ":Sistema"
+deactivate ":Sistema"
+deactivate WatchServiceFiles
+@enduml

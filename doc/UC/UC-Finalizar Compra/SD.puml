@@ -1,0 +1,256 @@
+@startuml
+autonumber
+
+actor "Cliente" AS CLIENTE
+participant ":FinalizarCompraUI" AS UI
+participant "controller :FinalizarCompraController" AS CONTROLLER
+participant ":CarrinhoCompras" AS CARRINHO
+participant ":AplicacaoPOT" AS POT
+participant "app :AplicacaoPOT" AS APP
+participant "sessao :SessaoUtilizador" AS SESSAO
+participant "clienteBD :ClienteBD" AS CLI_BD
+participant "produtoBD :ProdutoBD" AS PRODUTO_BD
+participant "encomendaBD :EncomendaBD" AS ENCOMENDA_BD
+participant "faturaBD :FaturaBD" AS FATURA_BD
+participant "farmaciaBD :FarmaciaBD" AS FARMACIA_BD
+participant "moradaBD :MoradaBD" AS MORADA_BD
+participant "notaBD :NotaBD" AS NOTA_BD
+participant ":BaseDados" AS BD
+participant ":ValidaParametros" AS VALIDA_PARAMETROS
+participant ":Emails" AS EMAIL
+participant "carrinho :HashMap<Produto,Integer>"
+
+activate CLIENTE
+CLIENTE -> UI : inicia a finalização e pagamento da encomenda
+activate UI
+
+    UI -> CONTROLLER** : controller = create()
+    activate CONTROLLER
+
+        CONTROLLER -> CLI_BD** : clienteBD = create()
+        CONTROLLER -> PRODUTO_BD** : produtoBD = create()
+        CONTROLLER -> ENCOMENDA_BD** : encomendaBD = create()
+        CONTROLLER -> FATURA_BD** : faturaBD = create()
+        CONTROLLER -> FARMACIA_BD** : farmaciaBD = create()
+        CONTROLLER -> MORADA_BD** : moradaBD = create()
+        CONTROLLER -> NOTA_BD** : notaBD = create()
+
+    deactivate CONTROLLER
+
+    UI -> CONTROLLER : creditos = getCreditos()
+    activate CONTROLLER
+
+        CONTROLLER -> POT : app = getInstance()
+        activate POT
+        deactivate POT
+
+        CONTROLLER -> APP : sessao = getSessaoAtual()
+        activate APP
+        deactivate APP
+
+        CONTROLLER -> SESSAO : emailCliente = getEmailUtilizador()
+        activate SESSAO
+        deactivate SESSAO
+
+        CONTROLLER -> CLI_BD : creditos = getCreditos(emailCliente)
+        activate CLI_BD
+
+            CLI_BD -> BD : connection = getConnection()
+            activate BD
+            deactivate BD
+
+            CLI_BD -> BD : closeConnection()
+            activate BD
+            deactivate BD
+
+        deactivate CLI_BD
+
+    deactivate CONTROLLER
+
+UI --> CLIENTE : Informa a quantidade de créditos que tem e \nsolicita a quantidade de créditos que deseja descontar
+deactivate UI
+
+CLIENTE -> UI : Introduz a quantidade de créditos
+activate UI
+
+UI --> CLIENTE : Solicita para introduzir o cvv do cartão
+deactivate UI
+
+CLIENTE -> UI : Introduz o cvv do cartão
+activate UI
+
+    UI -> CONTROLLER : validaCVV(cvv)
+    activate CONTROLLER
+
+        CONTROLLER -> CLI_BD : verificaCVV(emailCliente, cvv)
+        activate CLI_BD
+
+            CLI_BD -> BD : connection = getConnection()
+            activate BD
+            deactivate BD
+
+            CLI_BD -> BD : closeConnection()
+            activate BD
+            deactivate BD
+
+        deactivate CLI_BD
+
+    deactivate CONTROLLER
+
+UI --> CLIENTE : Solicita o nif que deseja colocar na fatura
+deactivate UI
+
+CLIENTE -> UI : Introduz o nif
+activate UI
+
+    UI -> CONTROLLER : finalizarCompra(numeroCreditosDescontados, nif)
+    activate CONTROLLER
+
+        CONTROLLER -> VALIDA_PARAMETROS : validaParametroNIF(nif)
+        activate VALIDA_PARAMETROS
+        deactivate VALIDA_PARAMETROS
+
+        CONTROLLER -> CARRINHO : carrinho = getCarrinho()
+        activate CARRINHO
+        deactivate CARRINHO
+
+        CONTROLLER -> CONTROLLER : validaStock(carrinho)
+        activate CONTROLLER
+
+            loop Para cada produto do carrinho
+
+                CONTROLLER -> PRODUTO_BD : stock = getStock(produtoID, farmaciaID)
+                activate PRODUTO_BD
+
+                    PRODUTO_BD -> BD : connection = getConnection()
+                    activate BD
+                    deactivate BD
+
+                    PRODUTO_BD -> BD : closeConnection()
+                    activate BD
+                    deactivate BD
+
+                deactivate PRODUTO_BD
+
+                note over CONTROLLER
+
+                    Calcula a quantidade necessaria pedir a outra farmacia
+                    quantidadeNecessariaPedir = quantidadeProduto - stock
+
+                end note
+
+                opt : quantidadeNecessariaPedir > 0
+
+                    ref over CONTROLLER, POT, APP, NOTA_BD, MORADA_BD, PRODUTO_BD
+
+                        UC - PedirProduto
+
+                    end ref
+
+                end opt
+
+            end loop
+
+        deactivate CONTROLLER
+
+        CONTROLLER -> CONTROLLER : carga = calcularPesoCarrinho(carrinho)
+        activate CONTROLLER
+        deactivate CONTROLLER
+
+        CONTROLLER -> ENCOMENDA_BD : encomendaID = novaEncomenda(farmaciaID, carga, carrinho, emailCliente)
+        activate ENCOMENDA_BD
+
+            ENCOMENDA_BD -> BD : connection = getConnection()
+            activate BD
+            deactivate BD
+
+            ENCOMENDA_BD -> BD : closeConnection()
+            activate BD
+            deactivate BD
+
+        deactivate ENCOMENDA_BD
+
+        CONTROLLER -> CARRINHO : precoTotal = getPrecoTotal()
+        activate CARRINHO
+        deactivate CARRINHO
+
+        CONTROLLER -> CLI_BD : adicionaCreditos(emailCliente, novosCreditos)
+        activate CLI_BD
+
+            CLI_BD -> BD : connection = getConnection()
+            activate BD
+            deactivate BD
+
+            CLI_BD -> BD : closeConnection()
+            activate BD
+            deactivate BD
+
+        deactivate CLI_BD
+
+        opt numeroCreditosDescontados != 0
+        CONTROLLER -> CLI_BD : descontaCreditos(emailCliente, numeroCreditosDescontados)
+        activate CLI_BD
+
+            CLI_BD -> BD : connection = getConnection()
+            activate BD
+            deactivate BD
+
+            CLI_BD -> BD : closeConnection()
+            activate BD
+            deactivate BD
+
+        deactivate CLI_BD
+        end opt
+
+        CONTROLLER -> CARRINHO : limparCarrinho()
+        activate CARRINHO
+        deactivate CARRINHO
+
+        CONTROLLER -> FATURA_BD : faturaID = novaFatura(encomendaID, numeroCreditosDescontados, TAXA_ENTREGA, nif, farmaciaID)
+        activate FATURA_BD
+
+            FATURA_BD -> BD : connection = getConnection()
+            activate BD
+            deactivate BD
+
+            FATURA_BD -> BD : closeConnection()
+            activate BD
+            deactivate BD
+
+        deactivate FATURA_BD
+
+        CONTROLLER -> FATURA_BD : fatura = getFatura(faturaID)
+        activate FATURA_BD
+
+            FATURA_BD -> BD : connection = getConnection()
+            activate BD
+            deactivate BD
+
+            FATURA_BD -> BD : closeConnection()
+            activate BD
+            deactivate BD
+
+        deactivate FATURA_BD
+
+        CONTROLLER -> FARMACIA_BD : nomeFarmacia = getNomeFarmacia(farmaciaID)
+        activate FARMACIA_BD
+
+            FARMACIA_BD -> BD : connection = getConnection()
+            activate BD
+            deactivate BD
+
+            FARMACIA_BD -> BD : closeConnection()
+            activate BD
+            deactivate BD
+
+        deactivate FARMACIA_BD
+
+        CONTROLLER -> EMAIL : sendEmail(nomeFarmacia ,emailCliente, "Fatura", fatura)
+        activate EMAIL
+        deactivate EMAIL
+
+    deactivate CONTROLLER
+UI --> CLIENTE : Informa do sucesso da operação e do envio da fatura para o email
+deactivate UI
+
+@enduml

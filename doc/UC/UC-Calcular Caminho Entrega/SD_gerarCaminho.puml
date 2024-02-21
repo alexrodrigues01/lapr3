@@ -1,0 +1,93 @@
+@startuml
+autonumber
+
+participant ":CaminhoTask" as CAMINHOTASK
+
+participant "estimativas\n:boolean" as ESTIMATIVAS
+participant "moradaFarmacia\n:Morada" as FARMACIA
+participant "moradasEncomendas\n:List<Morada>" as MORADASENCOMENDAS
+participant "isDrone\n:boolean" as ISDRONE
+
+participant "g\n: Graph<Morada, Double>" as GRAFO
+participant "moradas\nList<Morada>" as MORADAS
+participant ":AplicacaoPOT" as APP
+participant "moradasAcessiveis:List<Morada>" as MORADASACESSIVEIS
+participant ":GraphAlgorithms" as ALG
+participant "caminho\n:List<Morada>" as CAMINHO
+
+-> CAMINHOTASK : gerarCaminhogerarCaminho\n(estimativas, moradaFarmacia, moradasEncomendas, isDrone)
+activate CAMINHOTASK
+
+opt isDrone == true
+
+    CAMINHOTASK -> MORADAS : add(moradaFarmacia)
+    activate MORADAS
+    deactivate MORADAS
+
+    CAMINHOTASK -> MORADAS : addAll(moradasEncomendas)
+    activate MORADAS
+    deactivate MORADAS
+
+loop for each morada : moradas
+    break exception altitude > 150
+    CAMINHOTASK -> CAMINHOTASK : throw new Exception("As moradas a percorrer têm altitudes superiores a 150 metros.");
+    end opt
+end loop
+
+opt estimativas == true
+    CAMINHOTASK -> APP : g = getInstance().getMapaAereoEstimativas();
+    activate APP
+    deactivate APP
+else estimativas == false
+    CAMINHOTASK -> APP : g = getInstance().getMapaAereoDistancias();
+    activate APP
+    deactivate APP
+end opt
+
+else isDrone == false
+    opt estimativas == true
+        CAMINHOTASK -> APP : g = getInstance().getMapaTerrestreEstimativas();
+        activate APP
+        deactivate APP
+    else estimativas == false
+        CAMINHOTASK -> APP : g = getInstance().getMapaTerrestreDistancias();
+        activate APP
+        deactivate APP
+    end opt
+end opt
+
+break exception validVertex(moradaFarmacia) == false
+    CAMINHOTASK -> CAMINHOTASK : throw new Exception("A morada da farmacia nao esta no mapa.");
+end opt
+
+CAMINHOTASK -> ALG : moradasAcessiveis = breadthFirstSearch(g, moradaFarmacia)
+activate ALG
+deactivate ALG
+
+loop for each intermedia : moradasEncomendas
+    break exception validVertex(intermedia) == false
+        CAMINHOTASK -> CAMINHOTASK : throw new Exception("Uma das moradas de entrega nao se encontra no mapa.");
+    end opt
+end loop
+
+break exception containsAll(moradasEncomendas) == false
+    CAMINHOTASK -> CAMINHOTASK : throw new Exception("Nao e possivel aceder a uma das moradas desde a farmacia.");
+end opt
+
+CAMINHOTASK -> MORADASENCOMENDAS : add(moradaFarmacia)
+activate MORADASENCOMENDAS
+deactivate MORADASENCOMENDAS
+
+CAMINHOTASK -> ALG : caminho = shortestPathMultipleNodes(g, moradasEncomendas, moradaFarmacia, moradaFarmacia)
+activate ALG
+deactivate ALG
+
+break exception containsAll(moradasEncomendas) == false
+    CAMINHOTASK -> CAMINHOTASK : throw new Exception("Nao e possivel este caminho.")
+end opt
+
+<-- CAMINHOTASK : caminho
+
+deactivate CAMINHOTASK
+
+@enduml

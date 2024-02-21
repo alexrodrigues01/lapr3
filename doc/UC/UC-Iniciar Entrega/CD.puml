@@ -1,0 +1,46 @@
+@startuml
+
+class IniciarEntregaUI{
+iniciarEntrega()
+}
+
+class IniciarEntregaController{
+    - EntregaBD entregaBD;
+    - EncomendaBD encomendaBD;
+    - boolean isDrone;
+    - boolean isEstafeta;
+    - String email;
+
++ List<String> getEntregas(EstafetaBD estafetaBD, GestorFarmaciaBD gestorFarmaciaBD)
++ void iniciarEntrega(int idEntrega)
+}
+
+class AplicacaoPOT{
++ AplicacaoPOT getInstance()
++ SessaoUtilizador getSessaoAtual()
+}
+
+class SessaoUtilizador{
++ String getEmailUtilizador()
+}
+
+class EntregaBD{
++ List<Entrega> getEntregaByEstafeta(emailEstafeta);
++ List<Entrega> getEntregasToDoDrone(email);
++ boolean validaIdEntregaToDoDrone(email,idEntrega);
++ boolean validaIdEntregaEstafeta(email,idEntrega);
+}
+
+class EncomendaBD{
++List<Encomenda> getEncomendasByEntregaId
+}
+
+IniciarEntregaUI..>IniciarEntregaController
+IniciarEntregaController..>AplicacaoPOT
+IniciarEntregaController..>SessaoUtilizador
+IniciarEntregaController..>EntregaBD
+IniciarEntregaController ..> EncomendaBD
+
+
+
+@enduml

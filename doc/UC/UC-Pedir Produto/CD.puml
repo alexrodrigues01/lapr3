@@ -1,0 +1,46 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+left to right direction
+
+class PedirProdutoTask{
+    +pedirProduto(idFarmaciaRecetora, produtoID, quantidadeNecessaria)
+}
+
+class AplicacaoPOT{
+    +getInstance()
+    +getMapaTerrestreDistancias()
+}
+
+class MoradaBD{
+    +HashMap<Integer, Morada> getMoradasFarmacia()
+}
+
+class ProdutoBD{
+    +verificaStock(idFarmaciaEmissora, idProduto, quantidadeNecessaria)
+}
+
+class NotaBD{
+    +gerarNotas(idFarmaciaRecetora, idFarmaciaEmissora, idProduto, quantidadeNecessaria)
+}
+
+class BaseDados{
+    +Connection getConnection()
+    +closeConnection()
+}
+
+class GraphAlgorithms{
+    +double shortestPath(grafo, Morada, Morada, shortPath)
+}
+
+PedirProdutoTask ..> AplicacaoPOT
+PedirProdutoTask ..> MoradaBD
+PedirProdutoTask ..> ProdutoBD
+PedirProdutoTask ..> NotaBD
+PedirProdutoTask ..> GraphAlgorithms
+
+MoradaBD ..> BaseDados
+ProdutoBD ..> BaseDados
+NotaBD ..> BaseDados
+
+@enduml

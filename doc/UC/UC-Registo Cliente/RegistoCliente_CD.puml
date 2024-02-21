@@ -1,0 +1,52 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+
+Class RegistoClienteUI{
+
+}
+
+Class RegistoClienteController{
+    +novoCliente(nome, nif, telefone, morada, latitude, longitude, nCartCred, valCartCred, cvv, email, password)
+    +registarCliente(nome, nif, telefone, morada, latitude, longitude, nCartCred, valCartCred, cvv, email, password)
+}
+
+Class ValidarParametros{
+    +validarParametrosUtilizador(email, password, nome, nif, telefone)
+    +validarParametrosMorada(morada, latitude, longitude)
+    +validarParametrosCliente(nCartCred, valCartCred, cvv)
+}
+
+Class ClienteBD{
+    +validaCliente(email)
+    +registaCliente(email,nCartCred,valCartCred,cvv)
+
+}
+
+class BaseDados{
+  -Connection connection
+  +getConnection()
+  +closeConnection()
+}
+
+class UtilizadorBD {
+    +novoUtilizador(email,password,nome,nif,telefone,papel,morada,latitude,longitude)
+}
+
+class Connection {
+}
+
+
+RegistoClienteUI ..> RegistoClienteController
+RegistoClienteController ..> ClienteBD
+RegistoClienteController ..> UtilizadorBD
+RegistoClienteController ..> ValidarParametros
+ClienteBD ..> Cliente
+
+
+Cliente "1" -- "1" Morada: tem >
+Cliente "1" -- "1" Utilizador : atua como >
+ClienteBD ..> BaseDados
+BaseDados ..> Connection
+
+@enduml

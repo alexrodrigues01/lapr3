@@ -1,0 +1,5 @@
+morada1;morada2;coeficiente Atrito
+Centro de Distribuicao dos Correios de Ermesinde;Farmacia Marques da Cunha;0.5
+Farmacia Marques da Cunha;Centro de Distribuicao dos Correios de Ermesinde;0.5
+Centro de Distribuicao dos Correios de Ermesinde;Post Office Valongo;0.5
+Post Office Valongo;Centro de Distribuicao dos Correios de Ermesinde;0.5

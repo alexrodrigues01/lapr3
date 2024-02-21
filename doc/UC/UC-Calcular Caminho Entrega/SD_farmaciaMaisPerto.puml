@@ -1,0 +1,39 @@
+@startuml
+autonumber
+
+participant ":CaminhoTask" as CAMINHOTASK
+
+participant "g\n:Graph<Morada, Double>" as GRAFO
+participant ":ApicacaoPOT" as POT
+participant "menor\n:double" as MENOR
+participant "maisPerto\n:Morada" as MAISPERTO
+participant "value\n:Morada" as VALUE
+participant ":GraphAlgorithms" as ALG
+participant "menorAux\n:double" as MENORAUX
+
+
+-> CAMINHOTASK : getFarmaciaMaisPertoConsumo\n(caminho.get(1), farmacias, isDrone)
+activate CAMINHOTASK
+opt isDrone = true
+    CAMINHOTASK -> POT : g = getInstance().getMapaAereoEstimativas()
+    activate POT
+    deactivate POT
+else isDrone = false
+    CAMINHOTASK -> POT : g = getInstance().getMapaAereoEstimativas()
+    activate POT
+    deactivate POT
+end opt
+
+CAMINHOTASK -> CAMINHOTASK : menor = Double.POSITIVE_INFINITY
+CAMINHOTASK -> CAMINHOTASK : maisPerto = null
+
+loop for each Morada value : farmacias.values()
+        CAMINHOTASK -> CAMINHOTASK : menorAux = GraphAlgorithms.shortestPath(g, morada, value, new LinkedList<>())
+    opt menor > menorAux
+        CAMINHOTASK -> CAMINHOTASK : menor = menorAux
+        CAMINHOTASK -> CAMINHOTASK : maisPerto = value
+    end opt
+end loop
+<-- CAMINHOTASK : maisPerto
+deactivate CAMINHOTASK
+@enduml

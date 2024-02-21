@@ -1,0 +1,46 @@
+@startuml
+left to right direction
+
+class AdicionarLugarDroneUI{
+}
+
+class AdicionarLugarDroneController{
++validaParametros(int lugaresSemCarregamento, int lugaresComCarregamento,capacidadeEnergia)
++int getFarmaciaByGestor()
++setLugaresDrone()
+}
+
+
+class ValidaParametros{
++validaParametros(int lugaresSemCarregamento, int lugaresComCarregamento,capacidadeEnergia)
+}
+
+class AplicacaoPOT{
++getInstance()
++getSessaoAtual()
+}
+
+class SessaoUtilizador{
++getEmailUtilizador()
+}
+
+class FarmaciaBD{
++Farmacia getFarmaciaByGestor(email)
++setLugaresDrone(int farmaciaID, int lugaresSemCarregamento, int lugaresComCarregamento,capacidadeEnergia)
+}
+
+class BaseDados{
++getConnection()
++closeConnection()
+}
+
+AdicionarLugarDroneUI ..> AdicionarLugarDroneController
+
+AdicionarLugarDroneController ..> ValidaParametros
+AdicionarLugarDroneController ..> AplicacaoPOT
+AdicionarLugarDroneController ..> SessaoUtilizador
+AdicionarLugarDroneController ..> FarmaciaBD
+
+FarmaciaBD ..> BaseDados
+
+@enduml

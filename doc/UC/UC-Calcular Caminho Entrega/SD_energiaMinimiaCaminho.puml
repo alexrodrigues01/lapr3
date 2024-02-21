@@ -1,0 +1,62 @@
+@startuml
+autonumber
+
+participant ":CaminhoTask" as CAMINHOTASK
+
+participant "veiculo\n:Veiculo" as VEICULO
+participant "massaEncomendas\n:double" as MASSA
+participant "caminho\n:List<Morada" as CAMINHO
+participant "farmacias\n:Map<Integer, Morada>" as FARMACIAS
+participant "isDrone\n:boolean" as ISDRONE
+
+participant "caminhoMinimo\n:List<Morada>" as CAMINHOMINIMO
+participant "caminhoAux\n:LinkedList<Morada>" as CAMINHOAUX
+participant ":GraphAlgorithms" as ALG
+
+participant "output\n:double" as OUTPUT
+participant ":EstimarConsumoDroneTask" as ECD
+participant ":EstimarConsumoScooterTask" as ECS
+
+-> CAMINHOTASK : energiaMinimiaCaminho\n(veiculo, massaEncomendas,\n new ArrayList<>(caminho), farmacias, isDrone)
+activate CAMINHOTASK
+
+CAMINHOTASK -> CAMINHO : caminhoMinimo = subList(0, 1);
+activate CAMINHO
+deactivate CAMINHO
+
+CAMINHOTASK -> CAMINHOTASK : farmaciaMaisPerto = getFarmaciaMaisPertoConsumo(caminho.get(1), farmacias, isDrone);
+ref over CAMINHOTASK
+    SD_farmaciaMaisPerto
+end ref
+
+opt isDrone = true
+    CAMINHOTASK -> ALG : shortestPath(AplicacaoPOT.getInstance().getMapaAereoEstimativas(), caminho.get(1), farmaciaMaisPerto, caminhoAux)
+    activate ALG
+    deactivate ALG
+
+    CAMINHOTASK -> CAMINHOMINIMO : addAll(caminhoAux)
+    activate CAMINHOMINIMO
+    deactivate CAMINHOMINIMO
+
+    CAMINHOTASK -> ECD : output = estimarConsumoPercurso((Drone) veiculo, massaEncomendas, caminhoMinimo, false)
+    activate ECD
+    deactivate ECD
+else isDrone = false
+    CAMINHOTASK -> ALG : shortestPath(AplicacaoPOT.getInstance().getMapaTerrestreEstimativas(), caminho.get(1), farmaciaMaisPerto, caminhoAux)
+    activate ALG
+    deactivate ALG
+
+    CAMINHOTASK -> CAMINHOMINIMO : addAll(caminhoAux)
+    activate CAMINHOMINIMO
+    deactivate CAMINHOMINIMO
+
+    CAMINHOTASK -> ECS : output = calculoEstimativaConsumo(true, veiculo.getMassa(), massaEncomendas, caminhoMinimo, false)
+    activate ECS
+    deactivate ECS
+end opt
+
+<-- CAMINHOTASK : output
+
+deactivate CAMINHOTASK
+
+@enduml

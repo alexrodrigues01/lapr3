@@ -1,0 +1,18 @@
+@startuml
+
+autonumber
+participant ":CaminhoTask" as CAMINHOTASK
+
+participant "caminho\n:List<Morada" as CAMINHO
+participant "somaDistancia\n:double" as SOMA
+
+-> CAMINHOTASK : calcularDistanciaTotal(caminho)
+activate CAMINHOTASK
+CAMINHOTASK -> CAMINHOTASK : somaDistancias = 0
+loop int i = 0; i < moradas.size() - 1; i++
+    CAMINHOTASK -> CAMINHOTASK : somaDistancias += moradas.get(i).distanceFrom(moradas.get(i + 1)
+end loop
+<-- CAMINHOTASK : somaDistancias
+deactivate CAMINHOTASK
+
+@enduml

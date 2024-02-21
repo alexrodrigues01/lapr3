@@ -1,0 +1,104 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+left to right direction
+
+class FinalizarCompraUI{}
+
+class FinalizarCompraController{
+    +FinalizarCompraController FinalizarCompraController()
+    +getCreditos()
+    +validaCVV(cvv)
+    +finalizarCompra(numeroCreditosDescontados, nif)
+    -validaStock(carrinho)
+    -calcularPesoCarrinho(carrinho)
+}
+
+class CarrinhoCompras{
+    +getCarrinho()
+    +getPrecoTotal()
+    +limparCarrinho()
+}
+
+class AplicacaoPOT{
+    +getInstance()
+    +getSessaoAtual()
+}
+
+class SessaoUtilizador{
+    +String getEmailUtilizador()
+}
+
+class ClienteBD{
+    +ClienteBD ClienteBD()
+    +getCreditos(emailCliente)
+    +verificaCVV(emailCliente, cvv)
+    +adicionaCreditos(emailCliente, novosCreditos)
+    +descontaCreditos(emailCliente, numeroCreditosDescontados)
+}
+
+class ProdutoBD{
+    +int getStock(produtoID, farmaciaID)
+    +
+}
+
+class EncomendaBD{
+    +int novaEncomenda(farmaciaID, carga, carrinho, emailCliente)
+    +
+}
+
+class FaturaBD{
+    +int novaFatura(encomendaID, numeroCreditosDescontados, TAXA_ENTREGA, nif, farmaciaID)
+    +Fatura getFatura(faturaID)
+}
+
+class FarmaciaBD{
+    +FarmaciaBD FarmaciaBD()
+    +String getNomeFarmacia(farmaciaID)
+}
+
+class MoradaBD{
+    +MoradaBD MoradaBD()
+}
+
+class NotaBD{
+    +NotaBD NotaBD()
+}
+
+class Emails{
+    +sendEmail(nomeFarmacia ,emailCliente, "Fatura", fatura)
+}
+
+class BaseDados{
+    +Connection getConnection()
+    +closeConnection()
+}
+
+class ValidaParametros{
+    +validaParametroNIF(nif)
+}
+
+FinalizarCompraUI ..> FinalizarCompraController
+
+FinalizarCompraController ..> CarrinhoCompras
+FinalizarCompraController ..> AplicacaoPOT
+FinalizarCompraController ..> SessaoUtilizador
+FinalizarCompraController ..> ClienteBD
+FinalizarCompraController ..> ProdutoBD
+FinalizarCompraController ..> EncomendaBD
+FinalizarCompraController ..> FarmaciaBD
+FinalizarCompraController ..> FaturaBD
+FinalizarCompraController ..> MoradaBD
+FinalizarCompraController ..> NotaBD
+FinalizarCompraController ..> Emails
+FinalizarCompraController ..> ValidaParametros
+
+ClienteBD ..> BaseDados
+ProdutoBD ..> BaseDados
+EncomendaBD ..> BaseDados
+FarmaciaBD ..> BaseDados
+FaturaBD ..> BaseDados
+MoradaBD ..> BaseDados
+NotaBD ..> BaseDados
+
+@enduml

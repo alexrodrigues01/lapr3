@@ -1,0 +1,88 @@
+@startuml
+left to right direction
+
+class AdicionarScooterUI{
+}
+
+class AdicionarScooterController{
++Scooter novaScooter(int carga, double capacidadeBateria)
++update(lugar,scooter)
+}
+
+class AplicacaoPOT{
++getInstance()
++getPlataforma()
++getSessaoAtual()
+}
+
+class SessaoUtilizador{
++getEmailUtilizador()
+}
+
+
+class Farmacia{
+
+}
+
+class LugarEstacionamento{
+}
+
+class Scooter{
+-int id
+-BufferedImage qrCode
+-int carga
+-double capacidadeBateria
++Scooter(int carga, double capacidadeBateria)
+}
+class QRCode{
+-String CHARSET
+-Map hintMap
++BufferedImage createQRCode(String data)
++BufferedImage createQRCode(String qrCodeData,String charset, Map hintMap, int qrCodeheight, int qrCodewidth)
+
+}
+
+
+class FarmaciaBD{
++Farmacia getFarmaciabyGestor(String email)
++updateLugar(lugar)
++getLugarEstacionamentobyFarm(String farmID)
+}
+
+class BaseDados{
++getConnection()
++closeConnection()
+}
+
+
+
+class ScooterBD{
++novaScooter(int carga,double capacidadeBateria)
++updateScooter(Scooter scooter)
+
+}
+
+AdicionarScooterUI..> AdicionarScooterController
+
+Farmacia "1" --> "1" LugarEstacionamento: possui
+LugarEstacionamento "1" --> "1" Scooter : possui
+Scooter  ..>  QRCode
+
+
+
+
+
+AdicionarScooterController ..> AplicacaoPOT
+
+AdicionarScooterController ..> FarmaciaBD
+AdicionarScooterController ..> ScooterBD
+
+AdicionarScooterController ..> SessaoUtilizador
+AdicionarScooterController ..> Farmacia
+
+AdicionarScooterController ..> LugarEstacionamento
+
+FarmaciaBD ..> BaseDados
+ScooterBD ..> BaseDados
+ScooterBD ..> Scooter
+@enduml

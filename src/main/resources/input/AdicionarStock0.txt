@@ -1,0 +1,27 @@
+APRESENTA LISTA
+PRODUTO
+1,10000
+APRESENTA INFORMACAO
+CONFIRMA
+PROXIMO PRODUTO
+=========================================================================================================
+APRESENTA LISTA
+PRODUTO
+2,10000
+APRESENTA INFORMACAO
+CONFIRMA
+PROXIMO PRODUTO
+=========================================================================================================
+APRESENTA LISTA
+PRODUTO
+3,10000
+APRESENTA INFORMACAO
+CONFIRMA
+PROXIMO PRODUTO
+=========================================================================================================
+APRESENTA LISTA
+PRODUTO
+41,1000
+APRESENTA INFORMACAO
+CONFIRMA
+PROXIMO PRODUTO

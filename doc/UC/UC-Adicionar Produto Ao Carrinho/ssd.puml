@@ -1,0 +1,17 @@
+@startuml
+autonumber
+actor "Cliente/Utilizador\n Não Registado" as UNR
+
+activate UNR
+UNR -> ":Sistema" : Adicionar Produto ao Carrinho
+
+activate ":Sistema"
+":Sistema" --> UNR : Solicita a quantidade de produtos
+deactivate ":Sistema"
+UNR -> ":Sistema" : Insere a quantidade de produtos
+activate ":Sistema"
+":Sistema" --> UNR : Operação bem sucedida
+deactivate ":Sistema"
+
+deactivate UNR
+@enduml

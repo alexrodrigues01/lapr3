@@ -1,0 +1,18 @@
+@startuml
+autonumber
+actor "Cliente/Utilizador\n Não Registado" as UNR
+
+activate UNR
+UNR -> ":Sistema" : Visualizar catálogo de produtos
+activate ":Sistema"
+":Sistema" --> UNR : solicita a escolha entre os produtos\n da plataforma ou de uma farmacia especifica
+deactivate ":Sistema"
+
+
+UNR -> ":Sistema" : Escolhe a opção
+activate ":Sistema"
+":Sistema" --> UNR : Apresenta a lista de produtos
+deactivate ":Sistema"
+
+deactivate UNR
+@enduml

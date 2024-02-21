@@ -1,0 +1,1 @@
+idVeiculo;carga;email(se for Drone não se insere o email neste ficheiro)

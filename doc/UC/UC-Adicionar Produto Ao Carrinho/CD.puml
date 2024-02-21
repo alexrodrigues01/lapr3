@@ -1,0 +1,35 @@
+@startuml
+
+class AdicionarProdutoCarrinhoController{
+-int idProduto
+-Produto produto;
+-ProdutoBD produtoBD;
++ boolean validarProdutoId(int idFarmacia, int idProduto)
++void adicionarAoCarrinho(int quantidade)
++void setIdProduto(int idProduto)
+}
+class CatalogoUI
+class ProdutoBD{
+ + Produto getProdutoById(int idProduto)
+ +boolean validarProdutoId(int idFarmacia, int idProduto)
+}
+class Produto{
+}
+class Farmacia
+class CarrinhoCompras{
++void adicionarProduto(Produto produto, int quantidade)
+}
+class BaseDados{
++Connection getConnection()
+}
+
+CatalogoUI ..> AdicionarProdutoCarrinhoController
+Farmacia "1" --> "0..*" Produto : possui
+AdicionarProdutoCarrinhoController ..> ProdutoBD
+AdicionarProdutoCarrinhoController ..> Produto
+ProdutoBD ..> BaseDados
+ProdutoBD ..> Produto
+AdicionarProdutoCarrinhoController ..>CarrinhoCompras
+
+
+@enduml

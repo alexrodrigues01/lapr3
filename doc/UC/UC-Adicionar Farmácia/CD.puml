@@ -1,0 +1,70 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+left to right direction
+
+class AdicionarFarmaciaController{
+    +AdicionarFarmaciaController AdicionarFarmaciaController()
+    +validaFarmacia(nome, NIF, telemovel, email)
+    +validaLugaresEstacionamento(lugaresComSuporte, lugaresSemSuporte,capacidadeEnergia)
+    +validaGestorFarmacia(nome, email, nif, telemóvel, pwd)
+    +validaMoradas(moradaFarmacia, longitudeFarmacia, latitudeFarmacia, altitudeFarmacia, moradaGestor, longitudeGestor, latitudeGestor, altitudeGestor)
+    +addDados()
+}
+
+class AdicionarFarmaciaUI{}
+
+class BaseDados{
+    +getConnection()
+    +closeConnection()
+}
+
+class FarmaciaBD{
+    +FarmaciaBD FarmaciaBD()
+    +validaFarmacia(email, nif)
+    +int  novaFarmacia(nomeFarmacia, emailFarmacia, telemovelFarmacia, nifFarmacia, moradaFarmacia, latitudeFarmacia, longitudeFarmacia, altitudeFarmacia, emailGestor)
+    +setLugaresScooter(farmaciaID, lugaresSemSuporte, lugaresComSuporte, capacidadeEnergia)
+    +associaProdutos(farmaciaID)
+}
+
+class GestorFarmaciaBD{
+    +GestorFarmaciaBD GestorFarmaciaBD()
+    +validaGestorFarmacia(email, nif)
+    +novoGestorFarmacia(emailGestor)
+}
+
+class UtilizadorBD{
+    +UtilizadorBD UtilizadorBD()
+    +novoUtilizador(nomeGestor, emailGestor, telemovelGestor, nifGestor, pwd, PAPEL_GESTOR_FARMACIA, moradaGestorFarmacia, longitudeGestor, latitudeGestor, altitudeGestor)
+}
+
+class MoradaBD{
+    +MoradaBD MoradaBD()
+    +validaMorada(moradaFarmacia, longitudeFarmacia, latitudeFarmacia, altitudeFarmacia)
+    +validaMoradaFarmacia(moradaFarmacia, latitudeFarmacia, longitudeFarmacia, altitudeFarmacia)
+}
+
+class ValidarParametros{
+    +validaParametrosFarmacia(nome, NIF, telemovel, email)
+    +validaParametrosLugaresEstacionamento(lugaresSemSuporte, lugaresComSuporte)
+    +validaParametrosUtilizador(email, pwd, nome, nif, telemovel)
+    +validaParametrosMorada(moradaFarmacia, longitudeFarmacia, latitudeFarmacia)
+}
+
+AdicionarFarmaciaUI ..> AdicionarFarmaciaController
+
+AdicionarFarmaciaController ..> FarmaciaBD
+AdicionarFarmaciaController ..> GestorFarmaciaBD
+AdicionarFarmaciaController ..> UtilizadorBD
+AdicionarFarmaciaController ..> ValidarParametros
+AdicionarFarmaciaController ..> MoradaBD
+
+FarmaciaBD ..> BaseDados
+
+GestorFarmaciaBD ..> BaseDados
+
+UtilizadorBD ..>  BaseDados
+
+MoradaBD ..> BaseDados
+
+@enduml

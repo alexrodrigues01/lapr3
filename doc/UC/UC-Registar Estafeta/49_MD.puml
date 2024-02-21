@@ -1,0 +1,61 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+hide methods
+left to right direction
+
+class Estafeta {
+  -int numSegSocial
+  -int farmacia_id
+  -int estadoEstafeta_id
+}
+
+class Gestor {
+  -String nome
+  -double NIF
+  -double telefone
+  -String email
+}
+
+class Utilizador {
+  -String nome
+  -String email
+  -String password
+  -int nif
+  -int telefone
+  int papelId
+}
+
+class Farmacia {
+    -int id;
+    -String nome;
+    -int nif;
+    -int telefone;
+    -String email;
+    -String emailGestor;
+    -String moradaId;
+    -LugarEstacionamento lugarEstacionamento;
+    -LugarDrone lugarDrone;
+}
+
+class Morada{
+    -int id;
+    -String morada;
+    -double latitude;
+    -double longitude;
+    -double altitude;
+}
+
+Utilizador "1" -- "1" Gestor: atua como >
+Utilizador "1" -- "1" Estafeta: vai atuar como >
+
+Gestor "1" -- "1..*" Estafeta: regista >
+Gestor "1" -- "1" Farmacia: gere >
+Gestor "1" -- "1" Morada: tem >
+
+Farmacia "1" -- "1..*" Estafeta: emprega >
+Farmacia "1" -- "1" Morada: tem >
+
+Estafeta "1" -- "1" Morada: tem >
+
+@enduml

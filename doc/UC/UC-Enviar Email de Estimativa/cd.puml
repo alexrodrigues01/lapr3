@@ -1,0 +1,29 @@
+@startuml
+class WatchServiceFiles{
+void run()
+}
+class EnviarEmailEstimativaTask{
+void sendEmail(fileName)
+}
+
+class FileReader{
+Pair estimateFileReader()
+}
+class ScooterBD{
+String getScooterByID(idScooter)
+}
+class EstafetaBD{
+Estafeta getEstafetaById(idEstafeta)
+}
+class DroneBD{
+Drone getDroneByID(id)
+}
+
+WatchServiceFiles..>EnviarEmailEstimativaTask
+EnviarEmailEstimativaTask ..> FileReader
+FileReader..>ScooterBD
+FileReader..>EstafetaBD
+EstafetaBD..>Estafeta
+FileReader..>Pair
+FileReader ..> DroneBD
+@enduml

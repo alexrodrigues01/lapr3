@@ -1,0 +1,1040 @@
+morada1;morada2;coeficienteignorado
+Centro Comercial Plaza;MAR Shopping Matosinhos;0.5
+Centro Comercial Plaza;Centro Comercial New City;0.5
+Centro Comercial Plaza;Centro comercial parque;0.5
+Centro Comercial Plaza;Farmacia Guifoes;0.5
+Centro Comercial Plaza;NorteShopping;0.5
+Centro Comercial Plaza;Pereiro Post Office;0.5
+Centro Comercial Plaza;Farmacia Sousa Torres;0.5
+Centro Comercial Plaza;Farmacia Avenida;0.5
+Centro Comercial Plaza;Centro Comercial do Carvalhido;0.5
+Centro Comercial Plaza;CTT;0.5
+Centro Comercial Plaza;Posto Correios Forno;0.5
+Centro Comercial Plaza;Centro de Distribuicao dos Correios de Ermesinde;0.5
+Centro Comercial Plaza;ArrabidaShopping;0.5
+Centro Comercial Plaza;Correios CTT Campo Alegre;0.5
+Centro Comercial Plaza;Shopping Brasilia - Associacao Comerciantes;0.5
+Centro Comercial Plaza;Farmacia sa;0.5
+Centro Comercial Plaza;Posto de Correios de Conde Ferreira;0.5
+Centro Comercial Plaza;Farmacia Marques da Cunha;0.5
+Centro Comercial Plaza;Centro Comercial de Cedofeita;0.5
+Centro Comercial Plaza;Alameda Shop Spot;0.5
+Centro Comercial Plaza;Post Office Valongo;0.5
+Centro Comercial Plaza;Shop;0.5
+Centro Comercial Plaza;Farmacia Sa da Bandeira;0.5
+Centro Comercial Plaza;Traditional Shopping Street;0.5
+Centro Comercial Plaza;Espiral Colossal;0.5
+Centro Comercial Plaza;Centro Comercial Stop;0.5
+Centro Comercial Plaza;Praceta Salvador Caetano;0.5
+Centro Comercial Plaza;Farmacia Couto;0.5
+Centro Comercial Plaza;FISHISCO Pesca;0.5
+Centro Comercial Plaza;Tecofix Porto;0.5
+Centro Comercial Plaza;Farmacia de Fanzeres;0.5
+Centro Comercial Plaza;Farmacia Central Valongo;0.5
+Farmacia Sousa Torres;MAR Shopping Matosinhos;0.5
+Farmacia Sousa Torres;Centro Comercial New City;0.5
+Farmacia Sousa Torres;Centro comercial parque;0.5
+Farmacia Sousa Torres;Farmacia Guifoes;0.5
+Farmacia Sousa Torres;NorteShopping;0.5
+Farmacia Sousa Torres;Pereiro Post Office;0.5
+Farmacia Sousa Torres;Centro Comercial Plaza;0.5
+Farmacia Sousa Torres;Farmacia Avenida;0.5
+Farmacia Sousa Torres;Centro Comercial do Carvalhido;0.5
+Farmacia Sousa Torres;CTT;0.5
+Farmacia Sousa Torres;Posto Correios Forno;0.5
+Farmacia Sousa Torres;Centro de Distribuicao dos Correios de Ermesinde;0.5
+Farmacia Sousa Torres;ArrabidaShopping;0.5
+Farmacia Sousa Torres;Correios CTT Campo Alegre;0.5
+Farmacia Sousa Torres;Shopping Brasilia - Associacao Comerciantes;0.5
+Farmacia Sousa Torres;Farmacia sa;0.5
+Farmacia Sousa Torres;Posto de Correios de Conde Ferreira;0.5
+Farmacia Sousa Torres;Farmacia Marques da Cunha;0.5
+Farmacia Sousa Torres;Centro Comercial de Cedofeita;0.5
+Farmacia Sousa Torres;Alameda Shop Spot;0.5
+Farmacia Sousa Torres;Post Office Valongo;0.5
+Farmacia Sousa Torres;Shop;0.5
+Farmacia Sousa Torres;Farmacia Sa da Bandeira;0.5
+Farmacia Sousa Torres;Traditional Shopping Street;0.5
+Farmacia Sousa Torres;Espiral Colossal;0.5
+Farmacia Sousa Torres;Centro Comercial Stop;0.5
+Farmacia Sousa Torres;Praceta Salvador Caetano;0.5
+Farmacia Sousa Torres;Farmacia Couto;0.5
+Farmacia Sousa Torres;FISHISCO Pesca;0.5
+Farmacia Sousa Torres;Tecofix Porto;0.5
+Farmacia Sousa Torres;Farmacia de Fanzeres;0.5
+Farmacia Sousa Torres;Farmacia Central Valongo;0.5
+Posto Correios Forno;MAR Shopping Matosinhos;0.5
+Posto Correios Forno;Centro Comercial New City;0.5
+Posto Correios Forno;Centro comercial parque;0.5
+Posto Correios Forno;Farmacia Guifoes;0.5
+Posto Correios Forno;NorteShopping;0.5
+Posto Correios Forno;Pereiro Post Office;0.5
+Posto Correios Forno;Centro Comercial Plaza;0.5
+Posto Correios Forno;Farmacia Avenida;0.5
+Posto Correios Forno;Centro Comercial do Carvalhido;0.5
+Posto Correios Forno;CTT;0.5
+Posto Correios Forno;Centro de Distribuicao dos Correios de Ermesinde;0.5
+Posto Correios Forno;ArrabidaShopping;0.5
+Posto Correios Forno;Correios CTT Campo Alegre;0.5
+Posto Correios Forno;Shopping Brasilia - Associacao Comerciantes;0.5
+Posto Correios Forno;Farmacia sa;0.5
+Posto Correios Forno;Posto de Correios de Conde Ferreira;0.5
+Posto Correios Forno;Farmacia Marques da Cunha;0.5
+Posto Correios Forno;Centro Comercial de Cedofeita;0.5
+Posto Correios Forno;Alameda Shop Spot;0.5
+Posto Correios Forno;Post Office Valongo;0.5
+Posto Correios Forno;Shop;0.5
+Posto Correios Forno;Farmacia Sa da Bandeira;0.5
+Posto Correios Forno;Traditional Shopping Street;0.5
+Posto Correios Forno;Espiral Colossal;0.5
+Posto Correios Forno;Centro Comercial Stop;0.5
+Posto Correios Forno;Praceta Salvador Caetano;0.5
+Posto Correios Forno;Farmacia Couto;0.5
+Posto Correios Forno;FISHISCO Pesca;0.5
+Posto Correios Forno;Tecofix Porto;0.5
+Posto Correios Forno;Farmacia de Fanzeres;0.5
+Posto Correios Forno;Farmacia Central Valongo;0.5
+Centro de Distribuicao dos Correios de Ermesinde;MAR Shopping Matosinhos;0.5
+Centro de Distribuicao dos Correios de Ermesinde;Centro Comercial New City;0.5
+Centro de Distribuicao dos Correios de Ermesinde;Centro comercial parque;0.5
+Centro de Distribuicao dos Correios de Ermesinde;Farmacia Guifoes;0.5
+Centro de Distribuicao dos Correios de Ermesinde;NorteShopping;0.5
+Centro de Distribuicao dos Correios de Ermesinde;Pereiro Post Office;0.5
+Centro de Distribuicao dos Correios de Ermesinde;Farmacia Sousa Torres;0.5
+Centro de Distribuicao dos Correios de Ermesinde;Farmacia Avenida;0.5
+Centro de Distribuicao dos Correios de Ermesinde;Centro Comercial do Carvalhido;0.5
+Centro de Distribuicao dos Correios de Ermesinde;CTT;0.5
+Centro de Distribuicao dos Correios de Ermesinde;Posto Correios Forno;0.5
+Centro de Distribuicao dos Correios de Ermesinde;Centro Comercial Plaza;0.5
+Centro de Distribuicao dos Correios de Ermesinde;ArrabidaShopping;0.5
+Centro de Distribuicao dos Correios de Ermesinde;Correios CTT Campo Alegre;0.5
+Centro de Distribuicao dos Correios de Ermesinde;Shopping Brasilia - Associacao Comerciantes;0.5
+Centro de Distribuicao dos Correios de Ermesinde;Farmacia sa;0.5
+Centro de Distribuicao dos Correios de Ermesinde;Posto de Correios de Conde Ferreira;0.5
+Centro de Distribuicao dos Correios de Ermesinde;Farmacia Marques da Cunha;0.5
+Centro de Distribuicao dos Correios de Ermesinde;Centro Comercial de Cedofeita;0.5
+Centro de Distribuicao dos Correios de Ermesinde;Alameda Shop Spot;0.5
+Centro de Distribuicao dos Correios de Ermesinde;Post Office Valongo;0.5
+Centro de Distribuicao dos Correios de Ermesinde;Shop;0.5
+Centro de Distribuicao dos Correios de Ermesinde;Farmacia Sa da Bandeira;0.5
+Centro de Distribuicao dos Correios de Ermesinde;Traditional Shopping Street;0.5
+Centro de Distribuicao dos Correios de Ermesinde;Espiral Colossal;0.5
+Centro de Distribuicao dos Correios de Ermesinde;Centro Comercial Stop;0.5
+Centro de Distribuicao dos Correios de Ermesinde;Praceta Salvador Caetano;0.5
+Centro de Distribuicao dos Correios de Ermesinde;Farmacia Couto;0.5
+Centro de Distribuicao dos Correios de Ermesinde;FISHISCO Pesca;0.5
+Centro de Distribuicao dos Correios de Ermesinde;Tecofix Porto;0.5
+Centro de Distribuicao dos Correios de Ermesinde;Farmacia de Fanzeres;0.5
+Centro de Distribuicao dos Correios de Ermesinde;Farmacia Central Valongo;0.5
+Farmacia Marques da Cunha;MAR Shopping Matosinhos;0.5
+Farmacia Marques da Cunha;Centro Comercial New City;0.5
+Farmacia Marques da Cunha;Centro comercial parque;0.5
+Farmacia Marques da Cunha;Farmacia Guifoes;0.5
+Farmacia Marques da Cunha;NorteShopping;0.5
+Farmacia Marques da Cunha;Pereiro Post Office;0.5
+Farmacia Marques da Cunha;Farmacia Sousa Torres;0.5
+Farmacia Marques da Cunha;Farmacia Avenida;0.5
+Farmacia Marques da Cunha;Centro Comercial do Carvalhido;0.5
+Farmacia Marques da Cunha;CTT;0.5
+Farmacia Marques da Cunha;Posto Correios Forno;0.5
+Farmacia Marques da Cunha;Centro Comercial Plaza;0.5
+Farmacia Marques da Cunha;ArrabidaShopping;0.5
+Farmacia Marques da Cunha;Correios CTT Campo Alegre;0.5
+Farmacia Marques da Cunha;Shopping Brasilia - Associacao Comerciantes;0.5
+Farmacia Marques da Cunha;Farmacia sa;0.5
+Farmacia Marques da Cunha;Posto de Correios de Conde Ferreira;0.5
+Farmacia Marques da Cunha;Centro de Distribuicao dos Correios de Ermesinde;0.5
+Farmacia Marques da Cunha;Centro Comercial de Cedofeita;0.5
+Farmacia Marques da Cunha;Alameda Shop Spot;0.5
+Farmacia Marques da Cunha;Shop;0.5
+Farmacia Marques da Cunha;Farmacia Sa da Bandeira;0.5
+Farmacia Marques da Cunha;Traditional Shopping Street;0.5
+Farmacia Marques da Cunha;Espiral Colossal;0.5
+Farmacia Marques da Cunha;Centro Comercial Stop;0.5
+Farmacia Marques da Cunha;Praceta Salvador Caetano;0.5
+Farmacia Marques da Cunha;Farmacia Couto;0.5
+Farmacia Marques da Cunha;FISHISCO Pesca;0.5
+Farmacia Marques da Cunha;Tecofix Porto;0.5
+Farmacia Marques da Cunha;Farmacia de Fanzeres;0.5
+Farmacia Marques da Cunha;Farmacia Central Valongo;0.5
+Post Office Valongo;MAR Shopping Matosinhos;0.5
+Post Office Valongo;Centro Comercial New City;0.5
+Post Office Valongo;Centro comercial parque;0.5
+Post Office Valongo;Farmacia Guifoes;0.5
+Post Office Valongo;NorteShopping;0.5
+Post Office Valongo;Pereiro Post Office;0.5
+Post Office Valongo;Farmacia Sousa Torres;0.5
+Post Office Valongo;Farmacia Avenida;0.5
+Post Office Valongo;Centro Comercial do Carvalhido;0.5
+Post Office Valongo;CTT;0.5
+Post Office Valongo;Posto Correios Forno;0.5
+Post Office Valongo;Centro Comercial Plaza;0.5
+Post Office Valongo;ArrabidaShopping;0.5
+Post Office Valongo;Correios CTT Campo Alegre;0.5
+Post Office Valongo;Shopping Brasilia - Associacao Comerciantes;0.5
+Post Office Valongo;Farmacia sa;0.5
+Post Office Valongo;Posto de Correios de Conde Ferreira;0.5
+Post Office Valongo;Centro de Distribuicao dos Correios de Ermesinde;0.5
+Post Office Valongo;Centro Comercial de Cedofeita;0.5
+Post Office Valongo;Alameda Shop Spot;0.5
+Post Office Valongo;Shop;0.5
+Post Office Valongo;Farmacia Sa da Bandeira;0.5
+Post Office Valongo;Traditional Shopping Street;0.5
+Post Office Valongo;Espiral Colossal;0.5
+Post Office Valongo;Centro Comercial Stop;0.5
+Post Office Valongo;Praceta Salvador Caetano;0.5
+Post Office Valongo;Farmacia Couto;0.5
+Post Office Valongo;FISHISCO Pesca;0.5
+Post Office Valongo;Tecofix Porto;0.5
+Post Office Valongo;Farmacia de Fanzeres;0.5
+Post Office Valongo;Farmacia Central Valongo;0.5
+MAR Shopping Matosinhos;Post Office Valongo;0.5
+MAR Shopping Matosinhos;Centro Comercial New City;0.5
+MAR Shopping Matosinhos;Centro comercial parque;0.5
+MAR Shopping Matosinhos;NorteShopping;0.5
+MAR Shopping Matosinhos;Pereiro Post Office;0.5
+MAR Shopping Matosinhos;Farmacia Sousa Torres;0.5
+MAR Shopping Matosinhos;Farmacia Avenida;0.5
+MAR Shopping Matosinhos;Centro Comercial do Carvalhido;0.5
+MAR Shopping Matosinhos;CTT;0.5
+MAR Shopping Matosinhos;Posto Correios Forno;0.5
+MAR Shopping Matosinhos;Centro Comercial Plaza;0.5
+MAR Shopping Matosinhos;ArrabidaShopping;0.5
+MAR Shopping Matosinhos;Correios CTT Campo Alegre;0.5
+MAR Shopping Matosinhos;Shopping Brasilia - Associacao Comerciantes;0.5
+MAR Shopping Matosinhos;Farmacia sa;0.5
+MAR Shopping Matosinhos;Posto de Correios de Conde Ferreira;0.5
+MAR Shopping Matosinhos;Centro de Distribuicao dos Correios de Ermesinde;0.5
+MAR Shopping Matosinhos;Centro Comercial de Cedofeita;0.5
+MAR Shopping Matosinhos;Alameda Shop Spot;0.5
+MAR Shopping Matosinhos;Shop;0.5
+MAR Shopping Matosinhos;Farmacia Sa da Bandeira;0.5
+MAR Shopping Matosinhos;Traditional Shopping Street;0.5
+MAR Shopping Matosinhos;Espiral Colossal;0.5
+MAR Shopping Matosinhos;Centro Comercial Stop;0.5
+MAR Shopping Matosinhos;Praceta Salvador Caetano;0.5
+MAR Shopping Matosinhos;Farmacia Couto;0.5
+MAR Shopping Matosinhos;FISHISCO Pesca;0.5
+MAR Shopping Matosinhos;Tecofix Porto;0.5
+MAR Shopping Matosinhos;Farmacia de Fanzeres;0.5
+MAR Shopping Matosinhos;Farmacia Central Valongo;0.5
+MAR Shopping Matosinhos;Farmacia Marques da Cunha;0.5
+Farmacia Guifoes;Post Office Valongo;0.5
+Farmacia Guifoes;Centro Comercial New City;0.5
+Farmacia Guifoes;Centro comercial parque;0.5
+Farmacia Guifoes;NorteShopping;0.5
+Farmacia Guifoes;Pereiro Post Office;0.5
+Farmacia Guifoes;Farmacia Sousa Torres;0.5
+Farmacia Guifoes;Farmacia Avenida;0.5
+Farmacia Guifoes;Centro Comercial do Carvalhido;0.5
+Farmacia Guifoes;CTT;0.5
+Farmacia Guifoes;Posto Correios Forno;0.5
+Farmacia Guifoes;Centro Comercial Plaza;0.5
+Farmacia Guifoes;ArrabidaShopping;0.5
+Farmacia Guifoes;Correios CTT Campo Alegre;0.5
+Farmacia Guifoes;Shopping Brasilia - Associacao Comerciantes;0.5
+Farmacia Guifoes;Farmacia sa;0.5
+Farmacia Guifoes;Posto de Correios de Conde Ferreira;0.5
+Farmacia Guifoes;Centro de Distribuicao dos Correios de Ermesinde;0.5
+Farmacia Guifoes;Centro Comercial de Cedofeita;0.5
+Farmacia Guifoes;Alameda Shop Spot;0.5
+Farmacia Guifoes;Shop;0.5
+Farmacia Guifoes;Farmacia Sa da Bandeira;0.5
+Farmacia Guifoes;Traditional Shopping Street;0.5
+Farmacia Guifoes;Espiral Colossal;0.5
+Farmacia Guifoes;Centro Comercial Stop;0.5
+Farmacia Guifoes;Praceta Salvador Caetano;0.5
+Farmacia Guifoes;Farmacia Couto;0.5
+Farmacia Guifoes;FISHISCO Pesca;0.5
+Farmacia Guifoes;Tecofix Porto;0.5
+Farmacia Guifoes;Farmacia de Fanzeres;0.5
+Farmacia Guifoes;Farmacia Central Valongo;0.5
+Farmacia Guifoes;Farmacia Marques da Cunha;0.5
+Farmacia Central Valongo;MAR Shopping Matosinhos;0.5
+Farmacia Central Valongo;Centro comercial parque;0.5
+Farmacia Central Valongo;Farmacia Guifoes;0.5
+Farmacia Central Valongo;Centro Comercial Plaza;0.5
+Farmacia Central Valongo;NorteShopping;0.5
+Farmacia Central Valongo;Centro Comercial New City;0.5
+Farmacia Central Valongo;Pereiro Post Office;0.5
+Farmacia Central Valongo;Farmacia Sousa Torres;0.5
+Farmacia Central Valongo;Farmacia Avenida;0.5
+Farmacia Central Valongo;Centro Comercial do Carvalhido;0.5
+Farmacia Central Valongo;CTT;0.5
+Farmacia Central Valongo;Posto Correios Forno;0.5
+Farmacia Central Valongo;Centro de Distribuicao dos Correios de Ermesinde;0.5
+Farmacia Central Valongo;ArrabidaShopping;0.5
+Farmacia Central Valongo;Shopping Brasilia - Associacao Comerciantes;0.5
+Farmacia Central Valongo;Correios CTT Campo Alegre;0.5
+Farmacia Central Valongo;Farmacia sa;0.5
+Farmacia Central Valongo;Posto de Correios de Conde Ferreira;0.5
+Farmacia Central Valongo;Centro Comercial de Cedofeita;0.5
+Farmacia Central Valongo;Alameda Shop Spot;0.5
+Farmacia Central Valongo;Shop;0.5
+Farmacia Central Valongo;Farmacia Sa da Bandeira;0.5
+Farmacia Central Valongo;Traditional Shopping Street;0.5
+Farmacia Central Valongo;Espiral Colossal;0.5
+Farmacia Central Valongo;Centro Comercial Stop;0.5
+Farmacia Central Valongo;Praceta Salvador Caetano;0.5
+Farmacia Central Valongo;Farmacia Couto;0.5
+Farmacia Central Valongo;FISHISCO Pesca;0.5
+Farmacia Central Valongo;Tecofix Porto;0.5
+Farmacia Central Valongo;Farmacia de Fanzeres;0.5
+Farmacia Central Valongo;Post Office Valongo;0.5
+NorteShopping;MAR Shopping Matosinhos;0.5
+NorteShopping;Centro comercial parque;0.5
+NorteShopping;Centro Comercial Plaza;0.5
+NorteShopping;Centro Comercial New City;0.5
+NorteShopping;Farmacia Sousa Torres;0.5
+NorteShopping;Farmacia Avenida;0.5
+NorteShopping;Centro Comercial do Carvalhido;0.5
+NorteShopping;CTT;0.5
+NorteShopping;Posto Correios Forno;0.5
+NorteShopping;Centro de Distribuicao dos Correios de Ermesinde;0.5
+NorteShopping;ArrabidaShopping;0.5
+NorteShopping;Correios CTT Campo Alegre;0.5
+NorteShopping;Shopping Brasilia - Associacao Comerciantes;0.5
+NorteShopping;Farmacia sa;0.5
+NorteShopping;Posto de Correios de Conde Ferreira;0.5
+NorteShopping;Farmacia Marques da Cunha;0.5
+NorteShopping;Centro Comercial de Cedofeita;0.5
+NorteShopping;Alameda Shop Spot;0.5
+NorteShopping;Post Office Valongo;0.5
+NorteShopping;Shop;0.5
+NorteShopping;Farmacia Sa da Bandeira;0.5
+NorteShopping;Traditional Shopping Street;0.5
+NorteShopping;Espiral Colossal;0.5
+NorteShopping;Centro Comercial Stop;0.5
+NorteShopping;Praceta Salvador Caetano;0.5
+NorteShopping;Farmacia Couto;0.5
+NorteShopping;FISHISCO Pesca;0.5
+NorteShopping;Tecofix Porto;0.5
+NorteShopping;Farmacia de Fanzeres;0.5
+NorteShopping;Farmacia Central Valongo;0.5
+Centro comercial parque;MAR Shopping Matosinhos;0.5
+Centro comercial parque;Centro Comercial New City;0.5
+Centro comercial parque;Centro Comercial Plaza;0.5
+Centro comercial parque;NorteShopping;0.5
+Centro comercial parque;Pereiro Post Office;0.5
+Centro comercial parque;Farmacia Sousa Torres;0.5
+Centro comercial parque;Farmacia Avenida;0.5
+Centro comercial parque;Centro Comercial do Carvalhido;0.5
+Centro comercial parque;CTT;0.5
+Centro comercial parque;Posto Correios Forno;0.5
+Centro comercial parque;Centro de Distribuicao dos Correios de Ermesinde;0.5
+Centro comercial parque;ArrabidaShopping;0.5
+Centro comercial parque;Correios CTT Campo Alegre;0.5
+Centro comercial parque;Shopping Brasilia - Associacao Comerciantes;0.5
+Centro comercial parque;Farmacia sa;0.5
+Centro comercial parque;Posto de Correios de Conde Ferreira;0.5
+Centro comercial parque;Farmacia Marques da Cunha;0.5
+Centro comercial parque;Centro Comercial de Cedofeita;0.5
+Centro comercial parque;Alameda Shop Spot;0.5
+Centro comercial parque;Post Office Valongo;0.5
+Centro comercial parque;Shop;0.5
+Centro comercial parque;Farmacia Sa da Bandeira;0.5
+Centro comercial parque;Traditional Shopping Street;0.5
+Centro comercial parque;Espiral Colossal;0.5
+Centro comercial parque;Centro Comercial Stop;0.5
+Centro comercial parque;Praceta Salvador Caetano;0.5
+Centro comercial parque;Farmacia Couto;0.5
+Centro comercial parque;FISHISCO Pesca;0.5
+Centro comercial parque;Tecofix Porto;0.5
+Centro comercial parque;Farmacia de Fanzeres;0.5
+Centro comercial parque;Farmacia Central Valongo;0.5
+Centro comercial parque;Farmacia Guifoes;0.5
+Centro Comercial New City;MAR Shopping Matosinhos;0.5
+Centro Comercial New City;Centro comercial parque;0.5
+Centro Comercial New City;Farmacia Guifoes;0.5
+Centro Comercial New City;Centro Comercial Plaza;0.5
+Centro Comercial New City;NorteShopping;0.5
+Centro Comercial New City;Farmacia Sousa Torres;0.5
+Centro Comercial New City;Farmacia Avenida;0.5
+Centro Comercial New City;Centro Comercial do Carvalhido;0.5
+Centro Comercial New City;CTT;0.5
+Centro Comercial New City;Posto Correios Forno;0.5
+Centro Comercial New City;Centro de Distribuicao dos Correios de Ermesinde;0.5
+Centro Comercial New City;ArrabidaShopping;0.5
+Centro Comercial New City;Correios CTT Campo Alegre;0.5
+Centro Comercial New City;Shopping Brasilia - Associacao Comerciantes;0.5
+Centro Comercial New City;Farmacia sa;0.5
+Centro Comercial New City;Posto de Correios de Conde Ferreira;0.5
+Centro Comercial New City;Farmacia Marques da Cunha;0.5
+Centro Comercial New City;Centro Comercial de Cedofeita;0.5
+Centro Comercial New City;Alameda Shop Spot;0.5
+Centro Comercial New City;Post Office Valongo;0.5
+Centro Comercial New City;Shop;0.5
+Centro Comercial New City;Farmacia Sa da Bandeira;0.5
+Centro Comercial New City;Traditional Shopping Street;0.5
+Centro Comercial New City;Espiral Colossal;0.5
+Centro Comercial New City;Centro Comercial Stop;0.5
+Centro Comercial New City;Praceta Salvador Caetano;0.5
+Centro Comercial New City;Farmacia Couto;0.5
+Centro Comercial New City;FISHISCO Pesca;0.5
+Centro Comercial New City;Tecofix Porto;0.5
+Centro Comercial New City;Farmacia de Fanzeres;0.5
+Centro Comercial New City;Farmacia Central Valongo;0.5
+Pereiro Post Office;MAR Shopping Matosinhos;0.5
+Pereiro Post Office;Centro comercial parque;0.5
+Pereiro Post Office;Farmacia Guifoes;0.5
+Pereiro Post Office;Centro Comercial Plaza;0.5
+Pereiro Post Office;NorteShopping;0.5
+Pereiro Post Office;Centro Comercial New City;0.5
+Pereiro Post Office;Farmacia Sousa Torres;0.5
+Pereiro Post Office;Farmacia Avenida;0.5
+Pereiro Post Office;Centro Comercial do Carvalhido;0.5
+Pereiro Post Office;CTT;0.5
+Pereiro Post Office;Posto Correios Forno;0.5
+Pereiro Post Office;Centro de Distribuicao dos Correios de Ermesinde;0.5
+Pereiro Post Office;ArrabidaShopping;0.5
+Pereiro Post Office;Correios CTT Campo Alegre;0.5
+Pereiro Post Office;Shopping Brasilia - Associacao Comerciantes;0.5
+Pereiro Post Office;Farmacia sa;0.5
+Pereiro Post Office;Posto de Correios de Conde Ferreira;0.5
+Pereiro Post Office;Farmacia Marques da Cunha;0.5
+Pereiro Post Office;Centro Comercial de Cedofeita;0.5
+Pereiro Post Office;Alameda Shop Spot;0.5
+Pereiro Post Office;Post Office Valongo;0.5
+Pereiro Post Office;Shop;0.5
+Pereiro Post Office;Farmacia Sa da Bandeira;0.5
+Pereiro Post Office;Traditional Shopping Street;0.5
+Pereiro Post Office;Espiral Colossal;0.5
+Pereiro Post Office;Centro Comercial Stop;0.5
+Pereiro Post Office;Praceta Salvador Caetano;0.5
+Pereiro Post Office;Farmacia Couto;0.5
+Pereiro Post Office;FISHISCO Pesca;0.5
+Pereiro Post Office;Tecofix Porto;0.5
+Pereiro Post Office;Farmacia de Fanzeres;0.5
+Pereiro Post Office;Farmacia Central Valongo;0.5
+Farmacia Avenida;MAR Shopping Matosinhos;0.5
+Farmacia Avenida;Centro comercial parque;0.5
+Farmacia Avenida;Farmacia Guifoes;0.5
+Farmacia Avenida;Centro Comercial Plaza;0.5
+Farmacia Avenida;NorteShopping;0.5
+Farmacia Avenida;Centro Comercial New City;0.5
+Farmacia Avenida;Pereiro Post Office;0.5
+Farmacia Avenida;Farmacia Sousa Torres;0.5
+Farmacia Avenida;Centro Comercial do Carvalhido;0.5
+Farmacia Avenida;CTT;0.5
+Farmacia Avenida;Posto Correios Forno;0.5
+Farmacia Avenida;Centro de Distribuicao dos Correios de Ermesinde;0.5
+Farmacia Avenida;ArrabidaShopping;0.5
+Farmacia Avenida;Correios CTT Campo Alegre;0.5
+Farmacia Avenida;Shopping Brasilia - Associacao Comerciantes;0.5
+Farmacia Avenida;Farmacia sa;0.5
+Farmacia Avenida;Posto de Correios de Conde Ferreira;0.5
+Farmacia Avenida;Farmacia Marques da Cunha;0.5
+Farmacia Avenida;Centro Comercial de Cedofeita;0.5
+Farmacia Avenida;Alameda Shop Spot;0.5
+Farmacia Avenida;Post Office Valongo;0.5
+Farmacia Avenida;Shop;0.5
+Farmacia Avenida;Farmacia Sa da Bandeira;0.5
+Farmacia Avenida;Traditional Shopping Street;0.5
+Farmacia Avenida;Espiral Colossal;0.5
+Farmacia Avenida;Centro Comercial Stop;0.5
+Farmacia Avenida;Praceta Salvador Caetano;0.5
+Farmacia Avenida;Farmacia Couto;0.5
+Farmacia Avenida;FISHISCO Pesca;0.5
+Farmacia Avenida;Tecofix Porto;0.5
+Farmacia Avenida;Farmacia de Fanzeres;0.5
+Farmacia Avenida;Farmacia Central Valongo;0.5
+Centro Comercial do Carvalhido;MAR Shopping Matosinhos;0.5
+Centro Comercial do Carvalhido;Centro comercial parque;0.5
+Centro Comercial do Carvalhido;Farmacia Guifoes;0.5
+Centro Comercial do Carvalhido;Centro Comercial Plaza;0.5
+Centro Comercial do Carvalhido;NorteShopping;0.5
+Centro Comercial do Carvalhido;Centro Comercial New City;0.5
+Centro Comercial do Carvalhido;Pereiro Post Office;0.5
+Centro Comercial do Carvalhido;Farmacia Sousa Torres;0.5
+Centro Comercial do Carvalhido;Farmacia Avenida;0.5
+Centro Comercial do Carvalhido;CTT;0.5
+Centro Comercial do Carvalhido;Posto Correios Forno;0.5
+Centro Comercial do Carvalhido;Centro de Distribuicao dos Correios de Ermesinde;0.5
+Centro Comercial do Carvalhido;ArrabidaShopping;0.5
+Centro Comercial do Carvalhido;Correios CTT Campo Alegre;0.5
+Centro Comercial do Carvalhido;Shopping Brasilia - Associacao Comerciantes;0.5
+Centro Comercial do Carvalhido;Posto de Correios de Conde Ferreira;0.5
+Centro Comercial do Carvalhido;Farmacia Marques da Cunha;0.5
+Centro Comercial do Carvalhido;Centro Comercial de Cedofeita;0.5
+Centro Comercial do Carvalhido;Alameda Shop Spot;0.5
+Centro Comercial do Carvalhido;Post Office Valongo;0.5
+Centro Comercial do Carvalhido;Shop;0.5
+Centro Comercial do Carvalhido;Farmacia Sa da Bandeira;0.5
+Centro Comercial do Carvalhido;Traditional Shopping Street;0.5
+Centro Comercial do Carvalhido;Espiral Colossal;0.5
+Centro Comercial do Carvalhido;Centro Comercial Stop;0.5
+Centro Comercial do Carvalhido;Praceta Salvador Caetano;0.5
+Centro Comercial do Carvalhido;Farmacia Couto;0.5
+Centro Comercial do Carvalhido;FISHISCO Pesca;0.5
+Centro Comercial do Carvalhido;Tecofix Porto;0.5
+Centro Comercial do Carvalhido;Farmacia de Fanzeres;0.5
+Centro Comercial do Carvalhido;Farmacia Central Valongo;0.5
+Centro Comercial do Carvalhido;Farmacia sa;0.5
+Farmacia de Fanzeres;MAR Shopping Matosinhos;0.5
+Farmacia de Fanzeres;Centro comercial parque;0.5
+Farmacia de Fanzeres;Farmacia Guifoes;0.5
+Farmacia de Fanzeres;Centro Comercial Plaza;0.5
+Farmacia de Fanzeres;NorteShopping;0.5
+Farmacia de Fanzeres;Centro Comercial New City;0.5
+Farmacia de Fanzeres;Pereiro Post Office;0.5
+Farmacia de Fanzeres;Farmacia Sousa Torres;0.5
+Farmacia de Fanzeres;Farmacia Avenida;0.5
+Farmacia de Fanzeres;Centro Comercial do Carvalhido;0.5
+Farmacia de Fanzeres;CTT;0.5
+Farmacia de Fanzeres;Posto Correios Forno;0.5
+Farmacia de Fanzeres;Centro de Distribuicao dos Correios de Ermesinde;0.5
+Farmacia de Fanzeres;ArrabidaShopping;0.5
+Farmacia de Fanzeres;Shopping Brasilia - Associacao Comerciantes;0.5
+Farmacia de Fanzeres;Correios CTT Campo Alegre;0.5
+Farmacia de Fanzeres;Farmacia sa;0.5
+Farmacia de Fanzeres;Posto de Correios de Conde Ferreira;0.5
+Farmacia de Fanzeres;Farmacia Marques da Cunha;0.5
+Farmacia de Fanzeres;Centro Comercial de Cedofeita;0.5
+Farmacia de Fanzeres;Alameda Shop Spot;0.5
+Farmacia de Fanzeres;Post Office Valongo;0.5
+Farmacia de Fanzeres;Shop;0.5
+Farmacia de Fanzeres;Farmacia Sa da Bandeira;0.5
+Farmacia de Fanzeres;Traditional Shopping Street;0.5
+Farmacia de Fanzeres;Espiral Colossal;0.5
+Farmacia de Fanzeres;Centro Comercial Stop;0.5
+Farmacia de Fanzeres;Praceta Salvador Caetano;0.5
+Farmacia de Fanzeres;Farmacia Couto;0.5
+Farmacia de Fanzeres;FISHISCO Pesca;0.5
+Farmacia de Fanzeres;Tecofix Porto;0.5
+Farmacia de Fanzeres;Farmacia Central Valongo;0.5
+Praceta Salvador Caetano;MAR Shopping Matosinhos;0.5
+Praceta Salvador Caetano;Centro comercial parque;0.5
+Praceta Salvador Caetano;Farmacia Guifoes;0.5
+Praceta Salvador Caetano;Centro Comercial Plaza;0.5
+Praceta Salvador Caetano;NorteShopping;0.5
+Praceta Salvador Caetano;Centro Comercial New City;0.5
+Praceta Salvador Caetano;Pereiro Post Office;0.5
+Praceta Salvador Caetano;Farmacia Sousa Torres;0.5
+Praceta Salvador Caetano;Farmacia Avenida;0.5
+Praceta Salvador Caetano;Centro Comercial do Carvalhido;0.5
+Praceta Salvador Caetano;CTT;0.5
+Praceta Salvador Caetano;Posto Correios Forno;0.5
+Praceta Salvador Caetano;Centro de Distribuicao dos Correios de Ermesinde;0.5
+Praceta Salvador Caetano;ArrabidaShopping;0.5
+Praceta Salvador Caetano;Shopping Brasilia - Associacao Comerciantes;0.5
+Praceta Salvador Caetano;Correios CTT Campo Alegre;0.5
+Praceta Salvador Caetano;Farmacia sa;0.5
+Praceta Salvador Caetano;Posto de Correios de Conde Ferreira;0.5
+Praceta Salvador Caetano;Farmacia Marques da Cunha;0.5
+Praceta Salvador Caetano;Centro Comercial de Cedofeita;0.5
+Praceta Salvador Caetano;Alameda Shop Spot;0.5
+Praceta Salvador Caetano;Post Office Valongo;0.5
+Praceta Salvador Caetano;Shop;0.5
+Praceta Salvador Caetano;Farmacia Sa da Bandeira;0.5
+Praceta Salvador Caetano;Traditional Shopping Street;0.5
+Praceta Salvador Caetano;Espiral Colossal;0.5
+Praceta Salvador Caetano;Centro Comercial Stop;0.5
+Praceta Salvador Caetano;Farmacia Couto;0.5
+Praceta Salvador Caetano;FISHISCO Pesca;0.5
+Praceta Salvador Caetano;Tecofix Porto;0.5
+Praceta Salvador Caetano;Farmacia de Fanzeres;0.5
+Praceta Salvador Caetano;Farmacia Central Valongo;0.5
+Farmacia Couto;MAR Shopping Matosinhos;0.5
+Farmacia Couto;Centro comercial parque;0.5
+Farmacia Couto;Farmacia Guifoes;0.5
+Farmacia Couto;Centro Comercial Plaza;0.5
+Farmacia Couto;NorteShopping;0.5
+Farmacia Couto;Centro Comercial New City;0.5
+Farmacia Couto;Pereiro Post Office;0.5
+Farmacia Couto;Farmacia Sousa Torres;0.5
+Farmacia Couto;Farmacia Avenida;0.5
+Farmacia Couto;Centro Comercial do Carvalhido;0.5
+Farmacia Couto;CTT;0.5
+Farmacia Couto;Posto Correios Forno;0.5
+Farmacia Couto;Centro de Distribuicao dos Correios de Ermesinde;0.5
+Farmacia Couto;ArrabidaShopping;0.5
+Farmacia Couto;Shopping Brasilia - Associacao Comerciantes;0.5
+Farmacia Couto;Correios CTT Campo Alegre;0.5
+Farmacia Couto;Farmacia sa;0.5
+Farmacia Couto;Posto de Correios de Conde Ferreira;0.5
+Farmacia Couto;Farmacia Marques da Cunha;0.5
+Farmacia Couto;Centro Comercial de Cedofeita;0.5
+Farmacia Couto;Alameda Shop Spot;0.5
+Farmacia Couto;Post Office Valongo;0.5
+Farmacia Couto;Shop;0.5
+Farmacia Couto;Farmacia Sa da Bandeira;0.5
+Farmacia Couto;Traditional Shopping Street;0.5
+Farmacia Couto;Espiral Colossal;0.5
+Farmacia Couto;Centro Comercial Stop;0.5
+Farmacia Couto;Praceta Salvador Caetano;0.5
+Farmacia Couto;FISHISCO Pesca;0.5
+Farmacia Couto;Tecofix Porto;0.5
+Farmacia Couto;Farmacia de Fanzeres;0.5
+Farmacia Couto;Farmacia Central Valongo;0.5
+Correios CTT Campo Alegre;MAR Shopping Matosinhos;0.5
+Correios CTT Campo Alegre;Centro comercial parque;0.5
+Correios CTT Campo Alegre;Farmacia Guifoes;0.5
+Correios CTT Campo Alegre;Centro Comercial Plaza;0.5
+Correios CTT Campo Alegre;NorteShopping;0.5
+Correios CTT Campo Alegre;Centro Comercial New City;0.5
+Correios CTT Campo Alegre;Pereiro Post Office;0.5
+Correios CTT Campo Alegre;Farmacia Sousa Torres;0.5
+Correios CTT Campo Alegre;Farmacia Avenida;0.5
+Correios CTT Campo Alegre;Centro Comercial do Carvalhido;0.5
+Correios CTT Campo Alegre;CTT;0.5
+Correios CTT Campo Alegre;Posto Correios Forno;0.5
+Correios CTT Campo Alegre;Centro de Distribuicao dos Correios de Ermesinde;0.5
+Correios CTT Campo Alegre;ArrabidaShopping;0.5
+Correios CTT Campo Alegre;Shopping Brasilia - Associacao Comerciantes;0.5
+Correios CTT Campo Alegre;Farmacia sa;0.5
+Correios CTT Campo Alegre;Posto de Correios de Conde Ferreira;0.5
+Correios CTT Campo Alegre;Farmacia Marques da Cunha;0.5
+Correios CTT Campo Alegre;Centro Comercial de Cedofeita;0.5
+Correios CTT Campo Alegre;Alameda Shop Spot;0.5
+Correios CTT Campo Alegre;Post Office Valongo;0.5
+Correios CTT Campo Alegre;Shop;0.5
+Correios CTT Campo Alegre;Farmacia Sa da Bandeira;0.5
+Correios CTT Campo Alegre;Traditional Shopping Street;0.5
+Correios CTT Campo Alegre;Espiral Colossal;0.5
+Correios CTT Campo Alegre;Centro Comercial Stop;0.5
+Correios CTT Campo Alegre;Praceta Salvador Caetano;0.5
+Correios CTT Campo Alegre;Farmacia Couto;0.5
+Correios CTT Campo Alegre;FISHISCO Pesca;0.5
+Correios CTT Campo Alegre;Tecofix Porto;0.5
+Correios CTT Campo Alegre;Farmacia de Fanzeres;0.5
+Correios CTT Campo Alegre;Farmacia Central Valongo;0.5
+Centro Comercial Stop;MAR Shopping Matosinhos;0.5
+Centro Comercial Stop;Centro comercial parque;0.5
+Centro Comercial Stop;Farmacia Guifoes;0.5
+Centro Comercial Stop;Centro Comercial Plaza;0.5
+Centro Comercial Stop;NorteShopping;0.5
+Centro Comercial Stop;Centro Comercial New City;0.5
+Centro Comercial Stop;Pereiro Post Office;0.5
+Centro Comercial Stop;Farmacia Sousa Torres;0.5
+Centro Comercial Stop;Farmacia Avenida;0.5
+Centro Comercial Stop;Centro Comercial do Carvalhido;0.5
+Centro Comercial Stop;CTT;0.5
+Centro Comercial Stop;Posto Correios Forno;0.5
+Centro Comercial Stop;Centro de Distribuicao dos Correios de Ermesinde;0.5
+Centro Comercial Stop;ArrabidaShopping;0.5
+Centro Comercial Stop;Shopping Brasilia - Associacao Comerciantes;0.5
+Centro Comercial Stop;Correios CTT Campo Alegre;0.5
+Centro Comercial Stop;Farmacia sa;0.5
+Centro Comercial Stop;Posto de Correios de Conde Ferreira;0.5
+Centro Comercial Stop;Farmacia Marques da Cunha;0.5
+Centro Comercial Stop;Centro Comercial de Cedofeita;0.5
+Centro Comercial Stop;Alameda Shop Spot;0.5
+Centro Comercial Stop;Post Office Valongo;0.5
+Centro Comercial Stop;Shop;0.5
+Centro Comercial Stop;Farmacia Sa da Bandeira;0.5
+Centro Comercial Stop;Traditional Shopping Street;0.5
+Centro Comercial Stop;Espiral Colossal;0.5
+Centro Comercial Stop;Praceta Salvador Caetano;0.5
+Centro Comercial Stop;Farmacia Couto;0.5
+Centro Comercial Stop;FISHISCO Pesca;0.5
+Centro Comercial Stop;Tecofix Porto;0.5
+Centro Comercial Stop;Farmacia de Fanzeres;0.5
+Centro Comercial Stop;Farmacia Central Valongo;0.5
+Farmacia Sa da Bandeira;MAR Shopping Matosinhos;0.5
+Farmacia Sa da Bandeira;Centro comercial parque;0.5
+Farmacia Sa da Bandeira;Farmacia Guifoes;0.5
+Farmacia Sa da Bandeira;Centro Comercial Plaza;0.5
+Farmacia Sa da Bandeira;NorteShopping;0.5
+Farmacia Sa da Bandeira;Centro Comercial New City;0.5
+Farmacia Sa da Bandeira;Pereiro Post Office;0.5
+Farmacia Sa da Bandeira;Farmacia Sousa Torres;0.5
+Farmacia Sa da Bandeira;Farmacia Avenida;0.5
+Farmacia Sa da Bandeira;Centro Comercial do Carvalhido;0.5
+Farmacia Sa da Bandeira;CTT;0.5
+Farmacia Sa da Bandeira;Posto Correios Forno;0.5
+Farmacia Sa da Bandeira;Centro de Distribuicao dos Correios de Ermesinde;0.5
+Farmacia Sa da Bandeira;ArrabidaShopping;0.5
+Farmacia Sa da Bandeira;Shopping Brasilia - Associacao Comerciantes;0.5
+Farmacia Sa da Bandeira;Correios CTT Campo Alegre;0.5
+Farmacia Sa da Bandeira;Farmacia sa;0.5
+Farmacia Sa da Bandeira;Posto de Correios de Conde Ferreira;0.5
+Farmacia Sa da Bandeira;Farmacia Marques da Cunha;0.5
+Farmacia Sa da Bandeira;Centro Comercial de Cedofeita;0.5
+Farmacia Sa da Bandeira;Alameda Shop Spot;0.5
+Farmacia Sa da Bandeira;Post Office Valongo;0.5
+Farmacia Sa da Bandeira;Shop;0.5
+Farmacia Sa da Bandeira;Traditional Shopping Street;0.5
+Farmacia Sa da Bandeira;Espiral Colossal;0.5
+Farmacia Sa da Bandeira;Centro Comercial Stop;0.5
+Farmacia Sa da Bandeira;Praceta Salvador Caetano;0.5
+Farmacia Sa da Bandeira;Farmacia Couto;0.5
+Farmacia Sa da Bandeira;FISHISCO Pesca;0.5
+Farmacia Sa da Bandeira;Tecofix Porto;0.5
+Farmacia Sa da Bandeira;Farmacia de Fanzeres;0.5
+Farmacia Sa da Bandeira;Farmacia Central Valongo;0.5
+CTT;MAR Shopping Matosinhos;0.5
+CTT;Centro comercial parque;0.5
+CTT;Farmacia Guifoes;0.5
+CTT;Centro Comercial Plaza;0.5
+CTT;NorteShopping;0.5
+CTT;Centro Comercial New City;0.5
+CTT;Pereiro Post Office;0.5
+CTT;Farmacia Sousa Torres;0.5
+CTT;Farmacia Avenida;0.5
+CTT;Centro Comercial do Carvalhido;0.5
+CTT;Posto Correios Forno;0.5
+CTT;Centro de Distribuicao dos Correios de Ermesinde;0.5
+CTT;ArrabidaShopping;0.5
+CTT;Correios CTT Campo Alegre;0.5
+CTT;Shopping Brasilia - Associacao Comerciantes;0.5
+CTT;Farmacia sa;0.5
+CTT;Posto de Correios de Conde Ferreira;0.5
+CTT;Farmacia Marques da Cunha;0.5
+CTT;Centro Comercial de Cedofeita;0.5
+CTT;Alameda Shop Spot;0.5
+CTT;Post Office Valongo;0.5
+CTT;Shop;0.5
+CTT;Farmacia Sa da Bandeira;0.5
+CTT;Traditional Shopping Street;0.5
+CTT;Espiral Colossal;0.5
+CTT;Centro Comercial Stop;0.5
+CTT;Praceta Salvador Caetano;0.5
+CTT;Farmacia Couto;0.5
+CTT;FISHISCO Pesca;0.5
+CTT;Tecofix Porto;0.5
+CTT;Farmacia de Fanzeres;0.5
+CTT;Farmacia Central Valongo;0.5
+Farmacia sa;MAR Shopping Matosinhos;0.5
+Farmacia sa;Centro comercial parque;0.5
+Farmacia sa;Farmacia Guifoes;0.5
+Farmacia sa;Centro Comercial Plaza;0.5
+Farmacia sa;NorteShopping;0.5
+Farmacia sa;Centro Comercial New City;0.5
+Farmacia sa;Pereiro Post Office;0.5
+Farmacia sa;Farmacia Sousa Torres;0.5
+Farmacia sa;Farmacia Avenida;0.5
+Farmacia sa;Centro Comercial do Carvalhido;0.5
+Farmacia sa;CTT;0.5
+Farmacia sa;Posto Correios Forno;0.5
+Farmacia sa;Centro de Distribuicao dos Correios de Ermesinde;0.5
+Farmacia sa;ArrabidaShopping;0.5
+Farmacia sa;Shopping Brasilia - Associacao Comerciantes;0.5
+Farmacia sa;Correios CTT Campo Alegre;0.5
+Farmacia sa;Posto de Correios de Conde Ferreira;0.5
+Farmacia sa;Farmacia Marques da Cunha;0.5
+Farmacia sa;Centro Comercial de Cedofeita;0.5
+Farmacia sa;Alameda Shop Spot;0.5
+Farmacia sa;Post Office Valongo;0.5
+Farmacia sa;Shop;0.5
+Farmacia sa;Farmacia Sa da Bandeira;0.5
+Farmacia sa;Espiral Colossal;0.5
+Farmacia sa;Centro Comercial Stop;0.5
+Farmacia sa;Praceta Salvador Caetano;0.5
+Farmacia sa;Farmacia Couto;0.5
+Farmacia sa;FISHISCO Pesca;0.5
+Farmacia sa;Tecofix Porto;0.5
+Farmacia sa;Farmacia de Fanzeres;0.5
+Farmacia sa;Farmacia Central Valongo;0.5
+ArrabidaShopping;MAR Shopping Matosinhos;0.5
+ArrabidaShopping;Farmacia Avenida;0.5
+ArrabidaShopping;Centro comercial parque;0.5
+ArrabidaShopping;Farmacia Guifoes;0.5
+ArrabidaShopping;Centro Comercial Plaza;0.5
+ArrabidaShopping;NorteShopping;0.5
+ArrabidaShopping;Centro Comercial New City;0.5
+ArrabidaShopping;Pereiro Post Office;0.5
+ArrabidaShopping;Farmacia Sousa Torres;0.5
+ArrabidaShopping;Centro Comercial do Carvalhido;0.5
+ArrabidaShopping;CTT;0.5
+ArrabidaShopping;Posto Correios Forno;0.5
+ArrabidaShopping;Centro de Distribuicao dos Correios de Ermesinde;0.5
+ArrabidaShopping;Correios CTT Campo Alegre;0.5
+ArrabidaShopping;Shopping Brasilia - Associacao Comerciantes;0.5
+ArrabidaShopping;Farmacia sa;0.5
+ArrabidaShopping;Posto de Correios de Conde Ferreira;0.5
+ArrabidaShopping;Farmacia Marques da Cunha;0.5
+ArrabidaShopping;Centro Comercial de Cedofeita;0.5
+ArrabidaShopping;Alameda Shop Spot;0.5
+ArrabidaShopping;Post Office Valongo;0.5
+ArrabidaShopping;Shop;0.5
+ArrabidaShopping;Farmacia Sa da Bandeira;0.5
+ArrabidaShopping;Traditional Shopping Street;0.5
+ArrabidaShopping;Espiral Colossal;0.5
+ArrabidaShopping;Centro Comercial Stop;0.5
+ArrabidaShopping;Praceta Salvador Caetano;0.5
+ArrabidaShopping;Farmacia Couto;0.5
+ArrabidaShopping;FISHISCO Pesca;0.5
+ArrabidaShopping;Tecofix Porto;0.5
+ArrabidaShopping;Farmacia de Fanzeres;0.5
+ArrabidaShopping;Farmacia Central Valongo;0.5
+Shopping Brasilia - Associacao Comerciantes;MAR Shopping Matosinhos;0.5
+Shopping Brasilia - Associacao Comerciantes;Centro comercial parque;0.5
+Shopping Brasilia - Associacao Comerciantes;Farmacia Guifoes;0.5
+Shopping Brasilia - Associacao Comerciantes;Centro Comercial Plaza;0.5
+Shopping Brasilia - Associacao Comerciantes;NorteShopping;0.5
+Shopping Brasilia - Associacao Comerciantes;Centro Comercial New City;0.5
+Shopping Brasilia - Associacao Comerciantes;Pereiro Post Office;0.5
+Shopping Brasilia - Associacao Comerciantes;Farmacia Sousa Torres;0.5
+Shopping Brasilia - Associacao Comerciantes;Farmacia Avenida;0.5
+Shopping Brasilia - Associacao Comerciantes;Centro Comercial do Carvalhido;0.5
+Shopping Brasilia - Associacao Comerciantes;CTT;0.5
+Shopping Brasilia - Associacao Comerciantes;Posto Correios Forno;0.5
+Shopping Brasilia - Associacao Comerciantes;Centro de Distribuicao dos Correios de Ermesinde;0.5
+Shopping Brasilia - Associacao Comerciantes;ArrabidaShopping;0.5
+Shopping Brasilia - Associacao Comerciantes;Farmacia sa;0.5
+Shopping Brasilia - Associacao Comerciantes;Posto de Correios de Conde Ferreira;0.5
+Shopping Brasilia - Associacao Comerciantes;Farmacia Marques da Cunha;0.5
+Shopping Brasilia - Associacao Comerciantes;Centro Comercial de Cedofeita;0.5
+Shopping Brasilia - Associacao Comerciantes;Alameda Shop Spot;0.5
+Shopping Brasilia - Associacao Comerciantes;Post Office Valongo;0.5
+Shopping Brasilia - Associacao Comerciantes;Shop;0.5
+Shopping Brasilia - Associacao Comerciantes;Farmacia Sa da Bandeira;0.5
+Shopping Brasilia - Associacao Comerciantes;Traditional Shopping Street;0.5
+Shopping Brasilia - Associacao Comerciantes;Espiral Colossal;0.5
+Shopping Brasilia - Associacao Comerciantes;Centro Comercial Stop;0.5
+Shopping Brasilia - Associacao Comerciantes;Praceta Salvador Caetano;0.5
+Shopping Brasilia - Associacao Comerciantes;Farmacia Couto;0.5
+Shopping Brasilia - Associacao Comerciantes;FISHISCO Pesca;0.5
+Shopping Brasilia - Associacao Comerciantes;Tecofix Porto;0.5
+Shopping Brasilia - Associacao Comerciantes;Farmacia de Fanzeres;0.5
+Shopping Brasilia - Associacao Comerciantes;Farmacia Central Valongo;0.5
+Shopping Brasilia - Associacao Comerciantes;Correios CTT Campo Alegre;0.5
+Centro Comercial de Cedofeita;MAR Shopping Matosinhos;0.5
+Centro Comercial de Cedofeita;Centro comercial parque;0.5
+Centro Comercial de Cedofeita;Farmacia Guifoes;0.5
+Centro Comercial de Cedofeita;Centro Comercial Plaza;0.5
+Centro Comercial de Cedofeita;NorteShopping;0.5
+Centro Comercial de Cedofeita;Centro Comercial New City;0.5
+Centro Comercial de Cedofeita;Pereiro Post Office;0.5
+Centro Comercial de Cedofeita;Farmacia Sousa Torres;0.5
+Centro Comercial de Cedofeita;Farmacia Avenida;0.5
+Centro Comercial de Cedofeita;Centro Comercial do Carvalhido;0.5
+Centro Comercial de Cedofeita;CTT;0.5
+Centro Comercial de Cedofeita;Posto Correios Forno;0.5
+Centro Comercial de Cedofeita;Centro de Distribuicao dos Correios de Ermesinde;0.5
+Centro Comercial de Cedofeita;Shopping Brasilia - Associacao Comerciantes;0.5
+Centro Comercial de Cedofeita;Correios CTT Campo Alegre;0.5
+Centro Comercial de Cedofeita;Farmacia sa;0.5
+Centro Comercial de Cedofeita;Posto de Correios de Conde Ferreira;0.5
+Centro Comercial de Cedofeita;Farmacia Marques da Cunha;0.5
+Centro Comercial de Cedofeita;Alameda Shop Spot;0.5
+Centro Comercial de Cedofeita;Post Office Valongo;0.5
+Centro Comercial de Cedofeita;Farmacia Sa da Bandeira;0.5
+Centro Comercial de Cedofeita;Traditional Shopping Street;0.5
+Centro Comercial de Cedofeita;Espiral Colossal;0.5
+Centro Comercial de Cedofeita;Centro Comercial Stop;0.5
+Centro Comercial de Cedofeita;Praceta Salvador Caetano;0.5
+Centro Comercial de Cedofeita;Farmacia Couto;0.5
+Centro Comercial de Cedofeita;FISHISCO Pesca;0.5
+Centro Comercial de Cedofeita;Tecofix Porto;0.5
+Centro Comercial de Cedofeita;Farmacia de Fanzeres;0.5
+Centro Comercial de Cedofeita;Farmacia Central Valongo;0.5
+Centro Comercial de Cedofeita;ArrabidaShopping;0.5
+Centro Comercial de Cedofeita;Shop;0.5
+Shop;MAR Shopping Matosinhos;0.5
+Shop;Centro comercial parque;0.5
+Shop;Farmacia Guifoes;0.5
+Shop;Centro Comercial Plaza;0.5
+Shop;NorteShopping;0.5
+Shop;Centro Comercial New City;0.5
+Shop;Pereiro Post Office;0.5
+Shop;Farmacia Sousa Torres;0.5
+Shop;Farmacia Avenida;0.5
+Shop;Centro Comercial do Carvalhido;0.5
+Shop;CTT;0.5
+Shop;Posto Correios Forno;0.5
+Shop;Centro de Distribuicao dos Correios de Ermesinde;0.5
+Shop;ArrabidaShopping;0.5
+Shop;Correios CTT Campo Alegre;0.5
+Shop;Farmacia sa;0.5
+Shop;Posto de Correios de Conde Ferreira;0.5
+Shop;Farmacia Marques da Cunha;0.5
+Shop;Centro Comercial de Cedofeita;0.5
+Shop;Alameda Shop Spot;0.5
+Shop;Post Office Valongo;0.5
+Shop;Farmacia Sa da Bandeira;0.5
+Shop;Traditional Shopping Street;0.5
+Shop;Espiral Colossal;0.5
+Shop;Centro Comercial Stop;0.5
+Shop;Praceta Salvador Caetano;0.5
+Shop;Farmacia Couto;0.5
+Shop;FISHISCO Pesca;0.5
+Shop;Tecofix Porto;0.5
+Shop;Farmacia de Fanzeres;0.5
+Shop;Farmacia Central Valongo;0.5
+Posto de Correios de Conde Ferreira;MAR Shopping Matosinhos;0.5
+Posto de Correios de Conde Ferreira;Centro comercial parque;0.5
+Posto de Correios de Conde Ferreira;Farmacia Guifoes;0.5
+Posto de Correios de Conde Ferreira;Centro Comercial Plaza;0.5
+Posto de Correios de Conde Ferreira;NorteShopping;0.5
+Posto de Correios de Conde Ferreira;Centro Comercial New City;0.5
+Posto de Correios de Conde Ferreira;Pereiro Post Office;0.5
+Posto de Correios de Conde Ferreira;Farmacia Sousa Torres;0.5
+Posto de Correios de Conde Ferreira;Farmacia Avenida;0.5
+Posto de Correios de Conde Ferreira;Centro Comercial do Carvalhido;0.5
+Posto de Correios de Conde Ferreira;Posto Correios Forno;0.5
+Posto de Correios de Conde Ferreira;Centro de Distribuicao dos Correios de Ermesinde;0.5
+Posto de Correios de Conde Ferreira;ArrabidaShopping;0.5
+Posto de Correios de Conde Ferreira;Shopping Brasilia - Associacao Comerciantes;0.5
+Posto de Correios de Conde Ferreira;Correios CTT Campo Alegre;0.5
+Posto de Correios de Conde Ferreira;Farmacia Marques da Cunha;0.5
+Posto de Correios de Conde Ferreira;Centro Comercial de Cedofeita;0.5
+Posto de Correios de Conde Ferreira;Alameda Shop Spot;0.5
+Posto de Correios de Conde Ferreira;Post Office Valongo;0.5
+Posto de Correios de Conde Ferreira;Shop;0.5
+Posto de Correios de Conde Ferreira;Farmacia Sa da Bandeira;0.5
+Posto de Correios de Conde Ferreira;Traditional Shopping Street;0.5
+Posto de Correios de Conde Ferreira;Espiral Colossal;0.5
+Posto de Correios de Conde Ferreira;Centro Comercial Stop;0.5
+Posto de Correios de Conde Ferreira;Praceta Salvador Caetano;0.5
+Posto de Correios de Conde Ferreira;Farmacia Couto;0.5
+Posto de Correios de Conde Ferreira;FISHISCO Pesca;0.5
+Posto de Correios de Conde Ferreira;Tecofix Porto;0.5
+Posto de Correios de Conde Ferreira;Farmacia de Fanzeres;0.5
+Posto de Correios de Conde Ferreira;Farmacia Central Valongo;0.5
+Alameda Shop Spot;MAR Shopping Matosinhos;0.5
+Alameda Shop Spot;Centro comercial parque;0.5
+Alameda Shop Spot;Farmacia Guifoes;0.5
+Alameda Shop Spot;Centro Comercial Plaza;0.5
+Alameda Shop Spot;NorteShopping;0.5
+Alameda Shop Spot;Centro Comercial New City;0.5
+Alameda Shop Spot;Pereiro Post Office;0.5
+Alameda Shop Spot;Farmacia Sousa Torres;0.5
+Alameda Shop Spot;Farmacia Avenida;0.5
+Alameda Shop Spot;Centro Comercial do Carvalhido;0.5
+Alameda Shop Spot;CTT;0.5
+Alameda Shop Spot;Centro de Distribuicao dos Correios de Ermesinde;0.5
+Alameda Shop Spot;ArrabidaShopping;0.5
+Alameda Shop Spot;Shopping Brasilia - Associacao Comerciantes;0.5
+Alameda Shop Spot;Correios CTT Campo Alegre;0.5
+Alameda Shop Spot;Farmacia sa;0.5
+Alameda Shop Spot;Farmacia Marques da Cunha;0.5
+Alameda Shop Spot;Centro Comercial de Cedofeita;0.5
+Alameda Shop Spot;Post Office Valongo;0.5
+Alameda Shop Spot;Shop;0.5
+Alameda Shop Spot;Farmacia Sa da Bandeira;0.5
+Alameda Shop Spot;Traditional Shopping Street;0.5
+Alameda Shop Spot;Espiral Colossal;0.5
+Alameda Shop Spot;Centro Comercial Stop;0.5
+Alameda Shop Spot;Praceta Salvador Caetano;0.5
+Alameda Shop Spot;Farmacia Couto;0.5
+Alameda Shop Spot;FISHISCO Pesca;0.5
+Alameda Shop Spot;Tecofix Porto;0.5
+Alameda Shop Spot;Farmacia de Fanzeres;0.5
+Alameda Shop Spot;Farmacia Central Valongo;0.5
+Alameda Shop Spot;Posto Correios Forno;0.5
+Tecofix Porto;MAR Shopping Matosinhos;0.5
+Tecofix Porto;Centro comercial parque;0.5
+Tecofix Porto;Farmacia Guifoes;0.5
+Tecofix Porto;Centro Comercial Plaza;0.5
+Tecofix Porto;NorteShopping;0.5
+Tecofix Porto;Centro Comercial New City;0.5
+Tecofix Porto;Pereiro Post Office;0.5
+Tecofix Porto;Farmacia Sousa Torres;0.5
+Tecofix Porto;Farmacia Avenida;0.5
+Tecofix Porto;Centro Comercial do Carvalhido;0.5
+Tecofix Porto;CTT;0.5
+Tecofix Porto;Posto Correios Forno;0.5
+Tecofix Porto;Centro de Distribuicao dos Correios de Ermesinde;0.5
+Tecofix Porto;ArrabidaShopping;0.5
+Tecofix Porto;Shopping Brasilia - Associacao Comerciantes;0.5
+Tecofix Porto;Correios CTT Campo Alegre;0.5
+Tecofix Porto;Farmacia sa;0.5
+Tecofix Porto;Posto de Correios de Conde Ferreira;0.5
+Tecofix Porto;Farmacia Marques da Cunha;0.5
+Tecofix Porto;Centro Comercial de Cedofeita;0.5
+Tecofix Porto;Alameda Shop Spot;0.5
+Tecofix Porto;Post Office Valongo;0.5
+Tecofix Porto;Shop;0.5
+Tecofix Porto;Farmacia Sa da Bandeira;0.5
+Tecofix Porto;Traditional Shopping Street;0.5
+Tecofix Porto;Espiral Colossal;0.5
+Tecofix Porto;Centro Comercial Stop;0.5
+Tecofix Porto;Praceta Salvador Caetano;0.5
+Tecofix Porto;Farmacia Couto;0.5
+Tecofix Porto;Farmacia de Fanzeres;0.5
+Tecofix Porto;Farmacia Central Valongo;0.5
+Tecofix Porto;FISHISCO Pesca;0.5
+FISHISCO Pesca;MAR Shopping Matosinhos;0.5
+FISHISCO Pesca;Centro comercial parque;0.5
+FISHISCO Pesca;Farmacia Guifoes;0.5
+FISHISCO Pesca;Centro Comercial Plaza;0.5
+FISHISCO Pesca;NorteShopping;0.5
+FISHISCO Pesca;Centro Comercial New City;0.5
+FISHISCO Pesca;Pereiro Post Office;0.5
+FISHISCO Pesca;Farmacia Sousa Torres;0.5
+FISHISCO Pesca;Farmacia Avenida;0.5
+FISHISCO Pesca;Centro Comercial do Carvalhido;0.5
+FISHISCO Pesca;CTT;0.5
+FISHISCO Pesca;Posto Correios Forno;0.5
+FISHISCO Pesca;Centro de Distribuicao dos Correios de Ermesinde;0.5
+FISHISCO Pesca;ArrabidaShopping;0.5
+FISHISCO Pesca;Shopping Brasilia - Associacao Comerciantes;0.5
+FISHISCO Pesca;Correios CTT Campo Alegre;0.5
+FISHISCO Pesca;Farmacia sa;0.5
+FISHISCO Pesca;Posto de Correios de Conde Ferreira;0.5
+FISHISCO Pesca;Farmacia Marques da Cunha;0.5
+FISHISCO Pesca;Centro Comercial de Cedofeita;0.5
+FISHISCO Pesca;Tecofix Porto;0.5
+FISHISCO Pesca;Post Office Valongo;0.5
+FISHISCO Pesca;Shop;0.5
+FISHISCO Pesca;Farmacia Sa da Bandeira;0.5
+FISHISCO Pesca;Traditional Shopping Street;0.5
+FISHISCO Pesca;Espiral Colossal;0.5
+FISHISCO Pesca;Centro Comercial Stop;0.5
+FISHISCO Pesca;Praceta Salvador Caetano;0.5
+FISHISCO Pesca;Farmacia Couto;0.5
+FISHISCO Pesca;Farmacia de Fanzeres;0.5
+FISHISCO Pesca;Farmacia Central Valongo;0.5
+Espiral Colossal;MAR Shopping Matosinhos;0.5
+Espiral Colossal;Centro comercial parque;0.5
+Espiral Colossal;Farmacia Guifoes;0.5
+Espiral Colossal;Centro Comercial Plaza;0.5
+Espiral Colossal;NorteShopping;0.5
+Espiral Colossal;Centro Comercial New City;0.5
+Espiral Colossal;Pereiro Post Office;0.5
+Espiral Colossal;Farmacia Sousa Torres;0.5
+Espiral Colossal;Farmacia Avenida;0.5
+Espiral Colossal;Centro Comercial do Carvalhido;0.5
+Espiral Colossal;CTT;0.5
+Espiral Colossal;Posto Correios Forno;0.5
+Espiral Colossal;Centro de Distribuicao dos Correios de Ermesinde;0.5
+Espiral Colossal;ArrabidaShopping;0.5
+Espiral Colossal;Shopping Brasilia - Associacao Comerciantes;0.5
+Espiral Colossal;Correios CTT Campo Alegre;0.5
+Espiral Colossal;Farmacia sa;0.5
+Espiral Colossal;Posto de Correios de Conde Ferreira;0.5
+Espiral Colossal;Farmacia Marques da Cunha;0.5
+Espiral Colossal;Centro Comercial de Cedofeita;0.5
+Espiral Colossal;Alameda Shop Spot;0.5
+Espiral Colossal;Post Office Valongo;0.5
+Espiral Colossal;Shop;0.5
+Espiral Colossal;Farmacia Sa da Bandeira;0.5
+Espiral Colossal;Traditional Shopping Street;0.5
+Espiral Colossal;Praceta Salvador Caetano;0.5
+Espiral Colossal;Farmacia Couto;0.5
+Espiral Colossal;FISHISCO Pesca;0.5
+Espiral Colossal;Tecofix Porto;0.5
+Espiral Colossal;Farmacia de Fanzeres;0.5
+Espiral Colossal;Farmacia Central Valongo;0.5
+Espiral Colossal;Centro Comercial Stop;0.5
+Traditional Shopping Street;MAR Shopping Matosinhos;0.5
+Traditional Shopping Street;Centro comercial parque;0.5
+Traditional Shopping Street;Farmacia Guifoes;0.5
+Traditional Shopping Street;Centro Comercial Plaza;0.5
+Traditional Shopping Street;NorteShopping;0.5
+Traditional Shopping Street;Centro Comercial New City;0.5
+Traditional Shopping Street;Pereiro Post Office;0.5
+Traditional Shopping Street;Farmacia Sousa Torres;0.5
+Traditional Shopping Street;Farmacia Avenida;0.5
+Traditional Shopping Street;Centro Comercial do Carvalhido;0.5
+Traditional Shopping Street;Posto Correios Forno;0.5
+Traditional Shopping Street;Centro de Distribuicao dos Correios de Ermesinde;0.5
+Traditional Shopping Street;ArrabidaShopping;0.5
+Traditional Shopping Street;Shopping Brasilia - Associacao Comerciantes;0.5
+Traditional Shopping Street;Correios CTT Campo Alegre;0.5
+Traditional Shopping Street;CTT;0.5
+Traditional Shopping Street;Posto de Correios de Conde Ferreira;0.5
+Traditional Shopping Street;Farmacia Marques da Cunha;0.5
+Traditional Shopping Street;Centro Comercial de Cedofeita;0.5
+Traditional Shopping Street;Post Office Valongo;0.5
+Traditional Shopping Street;Shop;0.5
+Traditional Shopping Street;Farmacia Sa da Bandeira;0.5
+Traditional Shopping Street;Espiral Colossal;0.5
+Traditional Shopping Street;Centro Comercial Stop;0.5
+Traditional Shopping Street;Praceta Salvador Caetano;0.5
+Traditional Shopping Street;Farmacia Couto;0.5
+Traditional Shopping Street;FISHISCO Pesca;0.5
+Traditional Shopping Street;Tecofix Porto;0.5
+Traditional Shopping Street;Farmacia de Fanzeres;0.5
+Traditional Shopping Street;Farmacia Central Valongo;0.5

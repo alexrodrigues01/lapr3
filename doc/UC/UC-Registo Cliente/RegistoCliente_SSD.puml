@@ -1,0 +1,23 @@
+@startuml
+autonumber
+actor "Utilizador nao registado" as UNR
+
+activate UNR
+UNR -> ":Sistema" : Registar novo Utilizador como Cliente
+
+activate ":Sistema"
+":Sistema" --> UNR : Solicita dados do utilizador (nome, NIF, telefone, morada, coordenadas GPS, informacao cartao credito, email, password)
+deactivate ":Sistema"
+UNR -> ":Sistema" : introduz os dados solicitados
+
+activate ":Sistema"
+":Sistema" --> UNR : valida e apresenta os dados, solicitando confirmacao
+deactivate ":Sistema"
+UNR -> ":Sistema" : confirma
+
+activate ":Sistema"
+":Sistema" --> UNR: regista dados do novo utilizador e informa acerca do sucesso da operacao
+deactivate ":Sistema"
+
+deactivate UNR
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+class EstimarConsumoDroneTask {
+    +static final double ACELERACAO_GRAVITICA
+    +static final Drone droneEstimado
+    +static final double ENTREGA_MASSA_ESTIMADA
+
+    -double estimarConsumoPercurso(Drone drone, double massaEntrega, List<Morada> percurso)
+    -double estimarConsumoSimples(Morada m1, Morada m2)
+    -double estimarConsumoViagem(Drone drone, Morada m1, Morada m2, double massaEntrega)
+    -double distanciaComVento(Drone drone, Morada m1, Morada m2)
+    -double produtoEscalar(double[] vetor1, double[] vetor2)
+    -double[] calcularVetor(double modulo, Morada m1, Morada m2)
+    -double[] tempoDistanciaEntrega(Drone drone, List<Morada> percurso)
+}
+
+class Constantes {
+    +double VENTOX_DRONE
+    +double VENTOY_DRONE
+}
+
+EstimarConsumoDroneTask ..> Constantes
+
+@enduml

@@ -1,0 +1,43 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+
+
+Class RegistoProdutoUI{
+
+}
+
+Class RegistoProdutoController{
+    +novoProduto(nome, precoUnitario, massaUnitaria, iva)
+    +registarProduto(nome, precoUnitario, massaUnitaria, iva)
+}
+
+Class ValidarParametros{
+    +validarParametrosProduto(nome, precoUnitario, massaUnitaria, iva)
+}
+
+Class ProdutoBD{
+    +validaProduto(nome)
+    +registaProduto(nome, precoUnitario, massaUnitaria, iva)
+
+}
+
+class BaseDados{
+    -Connection connection
+    +getConnection()
+    +closeConnection()
+}
+
+class Connection {
+}
+
+RegistoProdutoUI ..> RegistoProdutoController
+RegistoProdutoController ..> ProdutoBD
+RegistoProdutoController ..> ValidarParametros
+ProdutoBD ..> Produto
+
+
+ProdutoBD ..> BaseDados
+BaseDados ..> Connection
+
+@enduml

@@ -1,0 +1,75 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+hide methods
+left to right direction
+
+class Admin{}
+
+class Cliente{}
+
+class Encomenda{}
+
+class Entrega{}
+
+class Estafeta{}
+
+class Farmacia{}
+
+class Fatura{}
+
+class GestorFarmacia{}
+
+class LugaresEstacionamento{}
+
+class Morada{}
+
+class Scooter{}
+
+class Drone{}
+
+class Produto{}
+
+class Utilizador{}
+
+
+
+Admin "1" -- "1" Utilizador : atua como >
+Admin "1" -- "0..1" Farmacia : adiciona >
+
+Cliente "1" -- "0..*" Encomenda : faz >
+Cliente "1" -- "1" Utilizador : atua como >
+Cliente "1" -- "1" Morada : tem >
+
+Encomenda "1" -- "1..*" Produto : sobre >
+
+Entrega "1" -- "1..*" Encomenda : contem >
+Entrega "1" -- "0..1" Veiculo : utiliza >
+
+Estafeta "1" -- "1" Scooter : usa >
+Estafeta "1" -- "1" Morada : tem >
+Estafeta "1" -- "0..*" Entrega : faz >
+Estafeta "1" -- "1" Utilizador : atua como >
+
+Farmacia "1" -- "1" Morada : possui >
+Farmacia "1" -- "1..*" Estafeta : possui >
+Farmacia "1" -- "1" GestorFarmacia : possui >
+Farmacia "1" -- "0..*" Fatura : gera >
+Farmacia "1" -- "0..*" Produto : possui >
+Farmacia "1" -- "*" LugaresEstacionamento : contem >
+Farmacia "1" -- "*" LugarDrone: contem >
+
+
+Fatura "1" -- "1..*" Encomenda : sobre >
+
+GestorFarmacia "1" -- "1" Utilizador : atua como >
+GestorFarmacia "1" -- "1" Morada : tem >
+GestorFarmacia "1" -- "1" Estafeta : adiciona >
+
+LugaresEstacionamento "1" -- "0..1" Scooter : possui >
+LugarDrone "1" -- "0..1" Drone : possui >
+
+Drone "1" -- "1" Veiculo : é um >
+Scooter "1" -- "1" Veiculo : é um >
+
+@enduml

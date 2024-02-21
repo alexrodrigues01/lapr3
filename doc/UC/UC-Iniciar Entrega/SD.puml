@@ -1,0 +1,107 @@
+@startuml
+participant Estafeta
+participant ":IniciarEntregaUI" as IniciarEntregaUI
+participant ":IniciarEntregaController" as CTRL
+participant ":AplicacaoPOT" AS POT
+participant "app :AplicacaoPOT" AS APP
+participant "sessao :SessaoUtilizador" AS SESSAO
+participant "gestorFarmaciaBD:GestorFarmaciaBD" as GestorFarmaciaBD
+participant "estafetaBD:EstafetaBD" as EstafetaBD
+participant "entregaBD:EntregaBD" as EntregaBD
+participant "encomendaBD:EncomendaBD" as EncomendaBD
+
+Estafeta-> IniciarEntregaUI: Iniciar entrega
+activate IniciarEntregaUI
+activate Estafeta
+IniciarEntregaUI->CTRL:entregas=getEntregas()
+
+activate CTRL
+        CTRL -> POT : app = getInstance()
+        activate POT
+        deactivate POT
+
+        CTRL -> APP : sessao = getSessaoAtual()
+        activate APP
+        deactivate APP
+
+        CTRL -> SESSAO : email = getEmailUtilizador()
+        activate SESSAO
+        deactivate SESSAO
+
+        CTRL -> EstafetaBD : isEstafeta=isEstafeta(email)
+        activate EstafetaBD
+        deactivate EstafetaBD
+
+        alt if isEstafeta==true
+
+               CTRL -> EntregaBD : lista=getEntregaByEstafeta(email)
+               activate EntregaBD
+               deactivate EntregaBD
+
+        else
+
+                CTRL -> GestorFarmaciaBD : validaGestor=validaGestor(email)
+                activate GestorFarmaciaBD
+                deactivate GestorFarmaciaBD
+
+                opt se existir gestor com este email
+
+                    CTRL -> EntregaBD : lista=getEntregasToDoDrone(email)
+                    activate EntregaBD
+                    deactivate EntregaBD
+
+                end
+        end
+
+        activate EntregaBD
+        deactivate EntregaBD
+
+deactivate CTRL
+
+IniciarEntregaUI-->Estafeta: Apresenta a entrega e solicita confirmação
+deactivate IniciarEntregaUI
+Estafeta-> IniciarEntregaUI: Confirma
+activate IniciarEntregaUI
+IniciarEntregaUI->CTRL:iniciarEntrega()
+activate CTRL
+
+    opt isDrone==true
+
+        CTRL->EntregaBD:validaIdEntregaToDoDrone(email,idEntrega)
+        activate EntregaBD
+        deactivate EntregaBD
+
+    end
+
+    opt isEstafeta==true
+
+        CTRL->EntregaBD:validaIdEntregaToDoDrone(email,idEntrega)
+        activate EntregaBD
+        deactivate EntregaBD
+
+    end
+
+    CTRL->EncomendaBD:listaEncomenda=getEncomendasByEntregaId(idEntrega);
+    activate EncomendaBD
+    deactivate EncomendaBD
+
+
+
+    CTRL->EntregaBD:iniciarEntrega(idEntrega)
+    activate EntregaBD
+    deactivate EntregaBD
+
+    loop
+    CTRL->"listaEncomenda:\nList<Encomenda>":encomenda=get(i)
+    activate "listaEncomenda:\nList<Encomenda>"
+    deactivate "listaEncomenda:\nList<Encomenda>"
+    CTRL->Emails:sendEmail(sender,emailCliente,assunto,texto)
+    activate Emails
+    deactivate Emails
+    end
+deactivate CTRL
+IniciarEntregaUI-->Estafeta: Operação bem sucedida
+deactivate IniciarEntregaUI
+deactivate Estafeta
+
+@enduml

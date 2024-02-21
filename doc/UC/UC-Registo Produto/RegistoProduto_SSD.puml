@@ -1,0 +1,24 @@
+@startuml
+autonumber
+actor "GestorFarmacia\n" as GES
+
+activate GES
+GES -> ":Sistema" : Registar novo Produto
+
+activate ":Sistema"
+":Sistema" --> GES : Solicita dados do produto (nome, preco unitario, massa unitaria, iva)
+deactivate ":Sistema"
+GES -> ":Sistema" : introduz os dados solicitados
+
+activate ":Sistema"
+":Sistema" --> GES : valida e apresenta os dados, solicitando confirmacao
+deactivate ":Sistema"
+GES -> ":Sistema" : confirma
+
+activate ":Sistema"
+":Sistema" --> GES: regista dados do novo utilizador e informa acerca do sucesso da operacao
+deactivate ":Sistema"
+
+deactivate GES
+@enduml
+

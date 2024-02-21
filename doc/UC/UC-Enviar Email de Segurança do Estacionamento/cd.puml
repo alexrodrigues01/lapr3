@@ -1,0 +1,25 @@
+@startuml
+class WatchServiceFiles{
+void run()
+}
+class EnviarEmailSegurançaTask{
+void sendEmail(fileName)
+}
+
+class FileReader{
+Pair lockFileReader()
+}
+class ScooterBD{
+String getScooterByID(idScooter)
+}
+class EstafetaBD{
+Estafeta getEstafetaById(idEstafeta)
+}
+
+WatchServiceFiles..>EnviarEmailSegurançaTask
+EnviarEmailSegurançaTask ..> FileReader
+FileReader..>ScooterBD
+FileReader..>EstafetaBD
+EstafetaBD..>Estafeta
+FileReader..>Pair
+@enduml

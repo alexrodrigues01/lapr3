@@ -1,0 +1,7 @@
+morada1;morada2;coeficienteignorado
+Farmacia Sa da Bandeira;Shop;0.5
+Farmacia Sa da Bandeira;Espiral Colossal;0.5
+Shop;Farmacia Sa da Bandeira;0.5
+Shop;Espiral Colossal;0.5
+Espiral Colossal;Shop;0.5
+Espiral Colossal;Farmacia Sa da Bandeira;0.5

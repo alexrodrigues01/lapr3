@@ -1,0 +1,23 @@
+@startuml
+autonumber
+actor "Gestor farmácia" as GER
+
+activate GER
+GER -> ":Sistema" : inicia a introdução de lugares de estacionamento para drones
+activate ":Sistema"
+":Sistema" --> GER : solicita os dados (numero de lugares sem carregamento,numero de lugares \n com carregamento)
+deactivate ":Sistema"
+
+GER -> ":Sistema" : introduz os dados solicitados
+activate ":Sistema"
+":Sistema" --> GER : apresenta os dados e solicita confirmação
+deactivate ":Sistema"
+
+GER -> ":Sistema" : confirma os dados
+activate ":Sistema"
+":Sistema" --> GER : informa do sucesso da operação
+deactivate ":Sistema"
+
+deactivate GER
+
+@enduml

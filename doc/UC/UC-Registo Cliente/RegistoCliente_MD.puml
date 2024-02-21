@@ -1,0 +1,24 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+
+hide methods
+
+left to right direction
+
+
+class Cliente{}
+
+
+class Morada{}
+
+
+class Utilizador{}
+
+
+Cliente "1" -- "1" Utilizador : atua como >
+
+Cliente "1" -- "1" Morada : tem >
+
+
+@enduml

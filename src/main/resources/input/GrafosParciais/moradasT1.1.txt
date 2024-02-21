@@ -1,0 +1,5 @@
+morada;latitude;longitude;altitude
+Centro de Distribuicao dos Correios de Ermesinde;41.202635495918976;-8.54497793088807;140
+Farmacia Marques da Cunha;41.19764197928214;-8.49959703088823;140
+Post Office Valongo;41.190016800589035;-8.497586402052518;140
+MAR Shopping Matosinhos;41.209052507815244;-8.687287086708245;42

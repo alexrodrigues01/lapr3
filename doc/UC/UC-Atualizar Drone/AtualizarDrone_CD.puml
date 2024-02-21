@@ -1,0 +1,49 @@
+@startuml
+
+left to right direction
+
+class AtualizarDroneUI{
+}
+
+class AtualizarDroneController{
++List<String> getListaDrone()
++String getDronebyID(droneID)
++validaDados(carga,capacidadeBateria,estadoDroneID,consumoHoraBateria,\ntensaoBateria,massa,potencia,velocidade,avionics,drag,rotors,cargaMaxima)
++updateDados(droneID)
+}
+
+class DroneBD{
++List<String> getListaDrone()
++String getDronebyID(droneID)
++updateDadosDrone(droneID)
+}
+
+class BaseDados{
++getConnection()
++closeConnection()
+}
+
+class Drone{
+-int id
+-int carga
+-double capacidadeBateria
+-double consumoHoraBateria
+-double tensaoBateria
+-double massa
+-double potencia
+-double velocidade;
+-double avionics;
+-double drag;
+-double rotors;
+-double cargaMaxima;
+
++Drone(int carga, double capacidadeBateria, double consumoHoraBateria, double tensaoBateria, double massa, double potencia, double velocidade, double avionics, double drag, double rotors, double cargaMaxima)
+}
+
+AtualizarDroneUI ..> AtualizarDroneController
+AtualizarDroneController ..> DroneBD
+AtualizarDroneController ..> Drone
+DroneBD ..> BaseDados
+DroneBD ..> Drone
+
+@enduml

@@ -1,0 +1,83 @@
+@startuml
+autonumber
+
+participant "task :AtribuirEncomendaFarmaciaTask" AS TASK
+participant "moradaBD :MoradaBD" AS MORADA_BD
+participant ":AplicacaoPOT" AS APP_POT
+participant ":app :AplicacaoPOT" AS APP
+participant ":GraphAlgorithms" AS GRAPH_ALG
+
+participant "grafo :Graph"
+participant "moradas :HashMap<Integer, Morada>"
+participant "moradaCliente :Morada"
+participant "carrinho :HashMap<Produto,Integer>"
+participant "List<Pair<Double, Integer>> distanciaFarmacias"
+
+-> TASK : atribuiEncomendaFarmacia(emailCliente, carrinho)
+activate TASK
+
+    TASK -> MORADA_BD : moradas = getMoradasFarmacia()
+    activate MORADA_BD
+
+        MORADA_BD -> BD : connection = getConnection()
+        activate BD
+        deactivate BD
+
+        MORADA_BD -> BD : closeConnection()
+        activate BD
+        deactivate BD
+
+    deactivate MORADA_BD
+
+    TASK -> MORADA_BD : moradaCliente = getMoradaUtilizador(emailCliente)
+    activate MORADA_BD
+
+        MORADA_BD -> BD : connection = getConnection()
+        activate BD
+        deactivate BD
+
+        MORADA_BD -> BD : closeConnection()
+        activate BD
+        deactivate BD
+
+    deactivate CLIENTE_BD
+
+    TASK -> APP_POT : app = getInstance()
+    activate APP_POT
+    deactivate APP_POT
+
+    TASK -> APP : grafo = getMapaTerrestreDistancias()
+    activate APP
+    deactivate APP
+
+    loop para todas as moradas das farmacias
+
+        TASK -> GRAPH_ALG : distancia = shortestPath(grafo, moradaFarmacia, moradaCliente, shortPath)
+        activate GRAPH_ALG
+        deactivate GRAPH_ALG
+
+        note over TASK
+
+            As farmacias e a respetiva distancia são
+            adicionas à estrutura "distanciaFarmacias"
+            caso haja algum caminho entre a farmácia e
+            a morada do cliente
+
+        end note
+
+    end loop
+
+    TASK -> TASK : ordenaFarmacias()
+    activate TASK
+    deactivate TASK
+
+    note over TASK
+
+        vai buscar a farmácia que está em primeiro lugar
+        (menor distância)
+
+    end note
+
+<-- TASK: farmaciaID
+deactivate TASK
+@enduml

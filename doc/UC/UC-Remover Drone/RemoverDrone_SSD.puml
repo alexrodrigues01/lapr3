@@ -1,0 +1,23 @@
+@startuml
+autonumber
+actor "Gestor farmácia" as GER
+
+activate GER
+GER -> ":Sistema" : inicia a remoção de um drone
+activate ":Sistema"
+":Sistema" --> GER : apresenta a lista de drones \n e solicita que escolha um
+deactivate ":Sistema"
+
+GER -> ":Sistema" : seleciona um drone
+activate ":Sistema"
+":Sistema" --> GER : apresenta os dados do drone\n e solicita confirmação para remover
+deactivate ":Sistema"
+
+GER -> ":Sistema" : confirma a remoção
+activate ":Sistema"
+":Sistema" --> GER : informa do sucesso da operação
+deactivate ":Sistema"
+
+deactivate GER
+
+@enduml

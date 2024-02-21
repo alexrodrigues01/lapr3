@@ -1,0 +1,26 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+
+hide methods
+
+left to right direction
+
+class Produto{}
+
+class Utilizador{}
+
+class GestorFarmacia{}
+
+class Farmacia{}
+
+Farmacia "1" -- "0..*" Produto : possui >
+
+Farmacia "1" -- "1" GestorFarmacia : possui >
+
+GestorFarmacia "1" -- "1" Utilizador : atua como >
+
+GestorFarmacia "1" -- "0..*" Produto : adiciona >
+
+
+@enduml

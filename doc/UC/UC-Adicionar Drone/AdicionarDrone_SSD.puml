@@ -1,0 +1,23 @@
+@startuml
+autonumber
+actor "Gestor farmácia" as GER
+
+activate GER
+GER -> ":Sistema" : inicia a especificação de um drone
+activate ":Sistema"
+":Sistema" --> GER : solicita os dados \n(carga,capacidade bateria,consumo por hora da bateria, \ntensao da bateria, massa do drone, potencia, massa, \npotencia, velocidade, valor de avionics, valor de drag, \nvalor de rotors, carga maxima)
+deactivate ":Sistema"
+
+GER -> ":Sistema" : introduz os dados solicitados
+activate ":Sistema"
+":Sistema" --> GER : apresenta os dados e solicita confirmação
+deactivate ":Sistema"
+
+GER -> ":Sistema" : confirma os dados
+activate ":Sistema"
+":Sistema" --> GER : informa do sucesso da operação
+deactivate ":Sistema"
+
+deactivate GER
+
+@enduml

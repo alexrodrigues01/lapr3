@@ -1,0 +1,39 @@
+@startuml
+autonumber
+
+actor "Utilizador Não \nRegistado/Cliente" as UNR
+participant ":CatalogoUI" as UI
+participant ":VisualizarCatalogo\nController" as CTRL
+participant "listaProd:List<Produto>" as listaProd
+participant "ProdutoBD"
+participant "BaseDados"
+
+activate UNR
+UNR -> UI : Visualizar catálogo de produtos
+activate UI
+
+
+UI->CTRL: listaProdutos=getTodosProdutos()
+
+
+activate CTRL
+CTRL->CTRL: listaProdutos=null
+CTRL->ProdutoBD:listaProdutos=getProdutos()
+activate ProdutoBD
+ProdutoBD->BaseDados:con=getConnection()
+activate BaseDados
+deactivate BaseDados
+ProdutoBD->BaseDados:closeConnection()
+activate BaseDados
+deactivate BaseDados
+deactivate ProdutoBD
+
+deactivate CTRL
+
+
+UI --> UNR : Apresenta a lista de produtos
+deactivate UI
+
+deactivate UNR
+@enduml
+

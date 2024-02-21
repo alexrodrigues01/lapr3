@@ -1,0 +1,8 @@
+@startuml
+autonumber
+
+participant ":Sistema" as SIS
+
+SIS -> SIS : o sistema inicia o processo de calcular\n o caminho e o consumo energético\n de um veículo nesse percurso
+
+@enduml

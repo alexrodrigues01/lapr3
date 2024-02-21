@@ -1,0 +1,3 @@
+morada1;morada2
+Rua1,BuenosAires;Rua2,Lapaz
+Rua3,Brasilia;Rua4,Santiago

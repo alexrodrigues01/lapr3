@@ -1,0 +1,77 @@
+@startuml
+
+usecase UC1 as "UC - Calcular Caminho Entrega"
+usecase UC2 as "UC - Estimar Consumo Energético Drone"
+usecase UC3 as "UC - Adicionar Drone"
+usecase UC4 as "UC - Adicionar Farmácia"
+usecase UC5 as "UC - Adicionar Parque Estacionamento Drones"
+usecase UC6 as "UC - Adicionar Produto ao carrinho"
+usecase UC7 as "UC - Adicionar Scooter"
+usecase UC8 as "UC - Adicionar Stock de Produto"
+usecase UC9 as "UC - Atribuir Farmacia Próxima"
+usecase UC11 as "UC - Atualizar Drone "
+usecase UC12 as "UC - Atualizar Scooter"
+usecase UC13 as "UC - Criar Entrega"
+usecase UC14 as "UC - EmailAPI"
+usecase UC15 as "UC - Enviar Email Estimativa"
+usecase UC16 as "UC - Enviar Email Segurança do Estacionamento"
+usecase UC17 as "UC - Estimar Consumo Energético Scooter"
+usecase UC18 as "UC - Finalizar Compra"
+usecase UC19 as "UC - Iniciar Entrega"
+usecase UC20 as "UC - Pedir Produto"
+usecase UC21 as "UC - Registar Estafeta"
+usecase UC22 as "UC - Registo Cliente"
+usecase UC23 as "UC - Remover Drone"
+usecase UC24 as "UC - Remover Scooter"
+usecase UC25 as "UC - Visualizar Catalogo de Produtos"
+
+
+
+actor "Administrador" as ADM
+actor "Gestor de Farmácia" as GF
+actor "Cliente" as C
+actor "Estafeta" as EST
+actor "Sistema" as SIST
+actor "Utilizador Não Registado" as USR
+
+left to right direction
+
+
+SIST -->(UC1)
+SIST -->(UC2)
+GF --> (UC3)
+ADM --> (UC4)
+GF --> (UC5)
+C--> (UC6)
+USR --> (UC6)
+GF --> (UC7)
+GF --> (UC8)
+SIST --> (UC9)
+GF --> (UC11)
+GF --> (UC12)
+GF --> (UC13)
+SIST --> (UC14)
+SIST --> (UC15)
+SIST --> (UC16)
+SIST --> (UC17)
+C --> (UC18)
+EST --> (UC19)
+GF --> (UC19)
+SIST --> (UC20)
+GF --> (UC21)
+USR --> (UC22)
+GF --> (UC23)
+GF --> (UC24)
+C --> (UC25)
+
+
+
+
+
+
+
+
+
+
+
+@enduml

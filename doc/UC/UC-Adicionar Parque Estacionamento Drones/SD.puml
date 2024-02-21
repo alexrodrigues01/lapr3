@@ -1,0 +1,82 @@
+@startuml
+autonumber
+
+actor "Gestor" as ADMIN
+participant ":AdicionarLugarDroneUI" as UI
+participant ":AdicionarLugarDroneController" as CONTROLLER
+participant ":ValidaParametros" as VALIDA
+participant "AplicacaoPOT" as APLICACAOPOT
+participant "app:AplicacaoPOT" as APP
+participant "sessao:SessaoUtilizador" as SESSAO
+participant "farmaciaBD:FarmaciaBD" as FARMBD
+
+
+participant ":BaseDados" AS BD
+participant "connection: Connection" as CN
+
+
+
+
+ADMIN -> UI : Seleciona introduzir lugares para drones
+activate ADMIN
+
+activate UI
+UI --> ADMIN : Solicita as informações sobre os lugares
+deactivate UI
+
+ADMIN -> UI : Introduz as informações dos lugares (nr lugares sem carregamento, nr lugares com \n carregamento, capacidadeEnergia)
+activate UI
+UI -> CONTROLLER** : controller = create()
+    activate CONTROLLER
+
+        CONTROLLER -> FARMBD** : farmaciaBD = create()
+        deactivate CONTROLLER
+UI -> CONTROLLER : validaParametros(lugaresSemCarregamento,\nlugaresComCarregamento,capacidadeEnergia)
+activate CONTROLLER
+CONTROLLER-> VALIDA : validaParametrosLugarEstacionamento(lugaresSemCarregamento\n lugaresComCarregamento,capacidadeEnergia)
+activate VALIDA
+deactivate VALIDA
+deactivate CONTROLLER
+UI -> CONTROLLER : farmaciaID= getFarmaciaByGestor()
+activate CONTROLLER
+    CONTROLLER -> APLICACAOPOT: app = getInstance()
+    activate APLICACAOPOT
+    deactivate APLICACAOPOT
+     CONTROLLER-> APP :  getSessaoAtual()
+                                  activate APP
+                                  deactivate APP
+
+           CONTROLLER -> SESSAO: email=getEmailUtilizador()
+                activate SESSAO
+                deactivate SESSAO
+
+ CONTROLLER -> FARMBD: farmacia=getFarmaciabyGestor(email)
+ activate FARMBD
+ FARMBD -> BD : connection=getConnection()
+ activate BD
+ deactivate BD
+ FARMBD -> BD : closeConnection()
+ activate BD
+ deactivate BD
+ deactivate FARMBD
+deactivate CONTROLLER
+UI --> ADMIN : apresenta dados e solicita confirmação
+deactivate UI
+ADMIN -> UI: confirma
+activate UI
+UI-> CONTROLLER : setLugaresDrone()
+activate CONTROLLER
+CONTROLLER -> FARMBD: setLugaresDrone(farmaciaID,lugaresSemCarregamento,lugaresComCarregamento,capacidadeEnergia)
+activate FARMBD
+ FARMBD -> BD : connection=getConnection()
+ activate BD
+ deactivate BD
+ FARMBD -> BD : closeConnection()
+ activate BD
+ deactivate BD
+deactivate FARMBD
+deactivate CONTROLLER
+UI--> ADMIN : informa do sucesso da operação
+deactivate UI
+deactivate ADMIN
+@enduml

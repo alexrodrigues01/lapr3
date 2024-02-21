@@ -1,0 +1,7 @@
+morada1;morada2;coeficiente Atrito
+Farmacia Sousa Torres;Centro Comercial Plaza;0.5
+Farmacia Sousa Torres;Posto Correios Forno;0.5
+Centro Comercial Plaza;Farmacia Sousa Torres;0.5
+Centro Comercial Plaza;Posto Correios Forno;0.5
+Posto Correios Forno;Farmacia Sousa Torres;0.5
+Posto Correios Forno;Centro Comercial Plaza;0.5

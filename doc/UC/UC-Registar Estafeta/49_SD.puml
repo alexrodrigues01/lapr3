@@ -1,0 +1,110 @@
+@startuml
+autonumber
+actor "Gestor" as G
+participant ":RegistarEstafetaUI" as UI
+participant ":RegistarEstafetaController" as CONTROL
+participant ":ValidarParametros" as VP
+participant ":EstafetaBD" as EBD
+participant ":MoradaBD" as MBD
+participant ":UtilizadorBD" as UBD
+participant "AplicacaoPOT" as POT
+participant "app\n:AplicacaoPOT" as APP
+participant "sessao\n:SessaoUtilizador" as SES
+participant "FarmaciaBD" as FBD
+participant "farmacia\n:Farmacia" as F
+participant ":BaseDados" as BASE
+participant "connection\n:Connection" as CON
+
+activate G
+G -> UI : inicia o registo de um Estafeta
+activate UI
+UI --> G : solicita os dados necessários \n(i.e. email, password, nome, NIF,\n telefone, numSegurançaSocial,\n cargaMaxima, morada, longitude,\n latitude e altitude)
+deactivate UI
+
+G -> UI : introduz os dados solicitados
+activate UI
+UI -> CONTROL : validarEstafeta\n(email, password, nome, NIF,\n telefone, numSegurançaSocial,\n cargaMaxima, morada, longitude,\n latitude e altitude)
+activate CONTROL
+CONTROL -> VP : validarParametrosUtilizador\n(email, password, nome, NIF, telefone)
+activate VP
+deactivate VP
+CONTROL -> VP : validarParametrosEstafeta\n(numSegurançaSocial, cargaMaxima)
+activate VP
+deactivate VP
+CONTROL -> VP : validarParametrosMorada\n(morada, longitude, latitude, altitude)
+activate VP
+deactivate VP
+
+CONTROL -> EBD : validaEstafeta\n(email,nif,numSegSocial)
+activate EBD
+EBD --> BASE : connection = getConnection()
+activate BASE
+deactivate BASE
+EBD --> BASE : closeConnection()
+activate BASE
+deactivate BASE
+deactivate EBD
+
+CONTROL -> MBD : validaMorada\n(morada, latitude, longitude, altitude)
+activate MBD
+MBD --> BASE : connection = getConnection()
+activate BASE
+deactivate BASE
+MBD --> BASE : closeConnection()
+activate BASE
+deactivate BASE
+deactivate MBD
+
+deactivate CONTROL
+UI --> G : apresenta dados e solicita confirmação
+deactivate UI
+
+G -> UI : confirma
+activate UI
+UI -> CONTROL : registaEstafeta\n(email, password, nome, NIF,\n telefone, numSegurançaSocial,\n cargaMaxima, morada, longitude,\n latitude e altitude)
+activate CONTROL
+CONTROL -> UBD : novoUtilizadornovoUtilizador(email, password,nome,nif,telefone\n, Constantes.PAPEL_ESTAFETA,morada,latitude,longitude,altitude)
+activate UBD
+UBD --> BASE : connection = getConnection()
+activate BASE
+deactivate BASE
+UBD --> BASE : closeConnection()
+activate BASE
+deactivate BASE
+deactivate UBD
+CONTROL -> POT : app = getInstance()
+activate POT
+deactivate POT
+CONTROL -> APP : sessao = getSessaoAtual()
+activate APP
+deactivate APP
+CONTROL -> SES : emailGestor = getEmailUtilizador()
+activate SES
+deactivate SES
+CONTROL -> FBD : farmacia = getFarmaciaByGestor(emailGestor)
+activate FBD
+FBD -> BASE : connection = getConnection()
+activate BASE
+deactivate BASE
+FBD -> BASE : closeConnection()
+activate BASE
+deactivate BASE
+deactivate FBD
+CONTROL -> F : idFarmacia = getId()
+activate F
+deactivate F
+CONTROL -> EBD : registaEstafeta(email, idFarmacia, numSegSocial, cargaMaxima)
+activate EBD
+EBD --> BASE : connection = getConnection()
+activate BASE
+deactivate BASE
+EBD --> BASE : closeConnection()
+activate BASE
+deactivate BASE
+deactivate EBD
+UI --> G : informa operação bem sucedida
+deactivate CONTROL
+deactivate UI
+deactivate G
+
+@enduml

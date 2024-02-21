@@ -1,0 +1,100 @@
+@startuml
+autonumber
+
+participant ":CaminhoTask" as CAMINHOTASK
+
+participant "estimativas\n:boolean" as ESTIMATIVAS
+participant "moradaFarmacia\n:Morada" as FARMACIA
+participant "moradasEncomendas\n:List<Morada>" as MORADASENCOMENDAS
+participant "massaEncomendas\n:double" as MASSA
+participant "veiculo\n:Veiculo" as VEICULO
+participant "isDrone\n:boolean" as ISDRONE
+participant "moradaBD\n:MoradaBD" as MORADABD
+
+participant "caminho\n:List<Morada" as CAMINHO
+participant "array\n:double[]" as ARRAY
+participant "energiaEstimada\n:double" as ENERGIAESTIMADA
+participant "estimarConsumoDrone\n:EstimarConsumoTask" as ECD
+participant "estimarConsumoScooter\n:EstimarConsumoTask" as ECS
+
+participant "farmacias\n:Map< Integer, Morada>" as FARMACIAS
+participant ":BaseDados" as BASE
+participant "connection\n:Connection" as CON
+
+participant ":Constantes" as CONSTANTES
+
+
+-> CAMINHOTASK : caminho(estimativas, moradaFarmacia,\n moradasEncomendas, massaEncomendas,\n veiculo, isDrone, moradaBD)
+activate CAMINHOTASK
+
+ref over CAMINHOTASK
+    SD_gerarCaminho
+end ref
+
+CAMINHOTASK -> CAMINHOTASK : caminho = gerarCaminho(estimativas, moradaFarmacia, moradasEncomendas, isDrone)
+CAMINHOTASK -> ARRAY** : create()
+
+opt isDrone == true
+
+CAMINHOTASK -> ARRAY : array[0] = estimarConsumoDrone.estimarConsumoPercurso(veiculo, massaEncomendas, caminho)
+activate ARRAY
+deactivate ARRAY
+
+else isDrone == false
+
+CAMINHOTASK -> ARRAY : array[0] = estimarConsumoScooter.calculoEstimativaConsumo(estimativas, veiculo.getMassa(), massaEncomendas, caminho)
+activate ARRAY
+deactivate ARRAY
+
+end opt
+
+CAMINHOTASK -> VEICULO : energiaEstimada = getCapacidadeBateria() * getCarga() / 100 * 3600
+activate VEICULO
+deactivate VEICULO
+
+CAMINHOTASK -> MORADABD : farmacias = getMoradasFarmacia()
+activate MORADABD
+MORADABD -> BASE : connection = getConnection()
+activate BASE
+deactivate BASE
+MORADABD -> BASE : closeConnection()
+activate BASE
+deactivate BASE
+deactivate MORADABD
+
+opt energiaDisponivel < array[0]
+    opt (energiaDisponivel > energiaMinimiaCaminho(veiculo, massaEncomendas, new ArrayList<>(caminho), farmacias, isDrone))
+        ref over CAMINHOTASK
+            SD_energiaMinimiaCaminho
+        end ref
+
+        CAMINHOTASK -> CAMINHOTASK : adicionarParagensCarregamento(veiculo, massaEncomendas, caminho, new ArrayList<>(caminho.subList(0, 2)), 2, array[0], energiaDisponivel, farmacias, isDrone, false)
+        activate CAMINHOTASK
+        deactivate CAMINHOTASK
+
+    end opt
+end opt
+
+CAMINHOTASK -> CAMINHOTASK : array[2] = calcularDistanciaTotal(caminho)
+ref over CAMINHOTASK
+    SD_calcularDistanciaTotal
+end ref
+
+opt isDrone == true
+
+    CAMINHOTASK -> ARRAY : array[1] = array[2] / ((Drone) veiculo).getVelocidade()
+    activate ARRAY
+    deactivate ARRAY
+
+else isDrone == false
+
+    CAMINHOTASK -> ARRAY : array[1] = array[2] / Constantes.VELOCIDADE_SCOOTER
+    activate ARRAY
+    deactivate ARRAY
+
+end opt
+
+<-- CAMINHOTASK : new Pair<>(caminho, array)
+
+deactivate CAMINHOTASK
+@enduml

@@ -1,0 +1,27 @@
+@startuml
+
+class RemoverDroneUI{
+}
+
+class RemoverDroneController{
++List<String> getListaDrone()
++String getDronebyID(droneID)
++removerDrone(droneID)
+}
+
+class DroneBD{
++List<String> getListaDrone()
++String getDronebyID(droneID)
++removerDrone(droneID)
+}
+
+class BaseDados{
++getConnection()
++closeConnection()
+}
+
+RemoverDroneUI ..> RemoverDroneController
+RemoverDroneController ..> DroneBD
+DroneBD ..> BaseDados
+
+@enduml

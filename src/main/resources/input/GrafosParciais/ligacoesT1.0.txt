@@ -1,0 +1,3 @@
+morada1;morada2;coeficiente Atrito
+CTT;Farmacia Sousa Torres;0.5
+Farmacia Sousa Torres;CTT;0.5

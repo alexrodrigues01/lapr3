@@ -1,0 +1,152 @@
+@startuml
+autonumber
+
+actor "Gestor" as ADMIN
+participant ":AdicionarScooterUI" as UI
+participant ":AdicionarScooterController" as CONTROLLER
+participant "AplicacaoPOT" as APLICACAOPOT
+participant "app:AplicacaoPOT" as APP
+
+participant "scooterBD:ScooterBD" as SCOOTBD
+participant "scooter :Scooter" AS SCOOT
+participant "QRCode" as QR
+participant "sessao:SessaoUtilizador" as SESSAO
+participant "farmaciaBD:FarmaciaBD" as REGFARM
+participant "gestor :GestorFarmacia" AS GESTOR
+participant ":BaseDados" AS BD
+participant "connection: Connection" as CN
+participant "farmacia: Farmacia" as FARM
+participant "lugar: LugarEstacionamento" as LUGAR
+
+participant "aut:AutorizacaoFacade" as AF
+participant "registoUtilizadores : RegistoUtilizadores" AS REG_USER
+participant "utilizador :Utilizador" as USER
+
+ADMIN -> UI : Seleciona adicionar uma nova scooter
+activate ADMIN
+
+activate UI
+UI --> ADMIN : Solicita as informações sobre a scooter
+deactivate UI
+
+ADMIN -> UI : Introduz as informações da scooter (carga,capacidade bateria)
+activate UI
+UI -> CONTROLLER** : controller = create()
+    activate CONTROLLER
+        CONTROLLER -> SCOOTBD**: scooterBD= create()
+        CONTROLLER -> REGFARM** : farmaciaBD = create()
+
+        deactivate CONTROLLER
+    UI -> CONTROLLER : scooter = novaScooter(carga,capacidadeBateria,estadoScooterID,\nconsumoHoraBateria,tensaoBateria,peso,potenciaMotor)
+    activate CONTROLLER
+    CONTROLLER -> APLICACAOPOT: app = getInstance()
+    activate APLICACAOPOT
+    deactivate APLICACAOPOT
+
+
+
+
+
+
+        CONTROLLER -> SCOOTBD : scooter = novaScooter(carga,capacidadeBateria)
+        activate SCOOTBD
+
+            SCOOTBD -> SCOOT** : create(carga,capacidadeBateria,estadoScooterID,\nconsumoHoraBateria,tensaoBateria,peso,potenciaMotor)
+
+        deactivate SCOOTBD
+
+            activate SCOOT
+            SCOOT -> SCOOT : validaDados()
+            SCOOT -> QR : createQRCode()
+                activate QR
+                deactivate QR
+            deactivate SCOOT
+
+        CONTROLLER-> APP :  getSessaoAtual()
+                              activate APP
+                              deactivate APP
+
+        CONTROLLER -> SESSAO: email=getEmailUtilizador()
+        activate SESSAO
+        deactivate SESSAO
+
+
+
+        CONTROLLER -> REGFARM: farmacia=getFarmaciabyGestor(email)
+        activate REGFARM
+        REGFARM -> BD : connection=getConnection()
+        activate BD
+        deactivate BD
+          REGFARM -> BD : closeConnection()
+        activate BD
+        deactivate BD
+
+        deactivate REGFARM
+
+        CONTROLLER -> FARM: farmID=getID()
+        activate FARM
+        deactivate FARM
+
+
+        CONTROLLER-> REGFARM: lugar=getLugarEstacionamentobyFarm(farmID)
+        activate REGFARM
+         REGFARM -> BD : connection=getConnection()
+                activate BD
+                deactivate BD
+                  REGFARM -> BD : closeConnection()
+                activate BD
+                deactivate BD
+        deactivate REGFARM
+
+
+
+
+
+
+
+    deactivate CONTROLLER
+
+
+
+
+UI --> ADMIN : Apresenta as informações e pede para confirmar
+deactivate UI
+
+ADMIN -> UI : Confirma
+activate UI
+    UI -> CONTROLLER : updateScooter(lugar,scooter)
+    activate CONTROLLER
+
+
+        CONTROLLER -> REGFARM: updateLugar(lugar)
+        activate REGFARM
+             REGFARM -> BD : connection=getConnection()
+                activate BD
+                deactivate BD
+                  REGFARM -> BD : closeConnection()
+                activate BD
+                deactivate BD
+        deactivate REGFARM
+
+
+        CONTROLLER-> SCOOTBD: updateScooter(scooter)
+   activate SCOOTBD
+
+
+           SCOOTBD -> BD : connection=getConnection()
+
+                        activate BD
+                        deactivate BD
+                          SCOOTBD -> BD : closeConnection()
+                        activate BD
+                        deactivate BD
+
+              deactivate SCOOTBD
+
+    deactivate CONTROLLER
+
+UI --> ADMIN : Adiciona as informações à base de dados e informa do seu sucesso
+deactivate UI
+deactivate ADMIN
+
+@enduml

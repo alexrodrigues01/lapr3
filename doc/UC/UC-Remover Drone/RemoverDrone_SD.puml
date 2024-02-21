@@ -1,0 +1,71 @@
+@startuml
+autonumber
+
+actor "Gestor" as GEST
+participant ":RemoverDroneUI" as UI
+participant ":RemoverDroneController" as CONTROLLER
+participant ":DroneBD" as DBD
+participant ":BaseDados" as BD
+participant "listaDrone :List<String>"
+
+
+GEST -> UI : Seleciona remover um drone
+activate GEST
+activate UI
+UI->CONTROLLER: listaDrone=getListaDrone()
+activate CONTROLLER
+
+CONTROLLER -> DBD : listaDrone= getListaDrone()
+
+activate DBD
+deactivate CONTROLLER
+  DBD -> BD : connection=getConnection()
+        activate BD
+        deactivate BD
+          DBD -> BD : closeConnection()
+        activate BD
+        deactivate BD
+deactivate DBD
+
+UI --> GEST: Apresenta a lista de drones
+deactivate UI
+
+GEST-> UI : Seleciona o id do drone que \n pretende remover
+activate UI
+UI->CONTROLLER: infoDrone=getDronebyID(droneID)
+activate CONTROLLER
+CONTROLLER -> DBD : infoDrone=getDronebyID(droneID)
+
+activate DBD
+deactivate CONTROLLER
+ DBD -> BD : connection=getConnection()
+        activate BD
+        deactivate BD
+          DBD -> BD : closeConnection()
+        activate BD
+        deactivate BD
+deactivate DBD
+deactivate CONTROLLER
+UI-->GEST: Apresenta os dados do drone \n e solicita confirmação da remoção
+deactivate UI
+
+GEST-> UI: Confirma
+activate UI
+UI->CONTROLLER: removerDrone(droneID)
+activate CONTROLLER
+CONTROLLER-> DBD: removerDrone(droneID)
+activate DBD
+ DBD -> BD : connection=getConnection()
+        activate BD
+        deactivate BD
+          DBD -> BD : closeConnection()
+        activate BD
+        deactivate BD
+deactivate DBD
+deactivate CONTROLLER
+UI--> GEST : informa do sucesso da operação
+deactivate UI
+
+deactivate GEST
+
+@enduml

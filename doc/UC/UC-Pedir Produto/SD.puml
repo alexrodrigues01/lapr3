@@ -1,0 +1,86 @@
+@startuml
+autonumber
+
+participant ":PedirProdutoTask" AS TASK
+participant "moradaBD :MoradaBD" AS MORADA_BD
+participant ":AplicacaoPOT" AS APP_POT
+participant "app :AplicacaoPOT" AS APP
+participant ":GraphAlgorithms" AS GRAFO
+participant "produto :ProdutoBD" AS PRODUTO_BD
+participant "notaBD :NotaBD" AS NOTA
+participant "produto :Produto" AS PRODUTO
+participant "moradas :HashMap<Integer, Morada>"
+participant "farmacias :ArrayList<Double, integer>"
+participant ":BaseDados" AS BD
+participant "grafo :Graph"
+
+-> TASK : pedirProduto(idFarmaciaRecetora, produtoID, quantidadeNecessaria)
+activate TASK
+
+    TASK -> MORADA_BD : moradas = getMoradasFarmacia()
+    activate MORADA_BD
+    deactivate MORADA_BD
+
+    TASK -> APP_POT : app = getInstance()
+    activate APP_POT
+    deactivate APP_POT
+
+    TASK -> APP : grafo = getMapaTerrestreDistancias()
+    activate APP
+    deactivate APP
+
+    loop para todas as moradas das farmácias
+
+        TASK -> PRODUTO_BD : verificaStock(idFarmaciaEmissora, idProduto, quantidadeNecessaria)
+        activate PRODUTO_BD
+
+            PRODUTO_BD -> BD : connection = getConnection()
+            activate BD
+            deactivate BD
+
+            PRODUTO_BD -> BD : closeConnection()
+            activate BD
+            deactivate BD
+
+        deactivate PRODUTO_BD
+
+        opt verificaStock == true
+
+            TASK -> GRAFO : distancia = shortestPath(grafo, moradaFarmaciaRecetora, moradaFarmaciaEmissora, shortPath)
+            activate GRAFO
+            deactivate GRAFO
+
+            TASK -> GRAFO : distancia += shortestPath(grafo, moradaFarmaciaEmissora, moradaFarmaciaRecetora, shortPath)
+            activate GRAFO
+            deactivate GRAFO
+
+            note over TASK
+                Todas as farmácias à estrutura
+                "farmacias" (distancia, idFarmacia)
+            end note
+        end opt
+
+    end loop
+
+    note over TASK
+        Vai ordenar a farmácia pelo menor consumo
+        e retirao id da farmacia que estiver em
+        primeiro lugar (menor distância)
+    end note
+
+    TASK -> NOTA : gerarNotas(idFarmaciaRecetora, idFarmaciaEmissora, idProduto, quantidadeNecessaria)
+    activate NOTA
+
+        NOTA -> BD : connection = getConnection()
+        activate BD
+        deactivate BD
+
+        NOTA -> BD : closeConnection()
+        activate BD
+        deactivate BD
+
+    deactivate NOTA
+
+deactivate TASK
+
+@enduml

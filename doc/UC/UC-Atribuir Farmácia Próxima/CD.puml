@@ -1,0 +1,37 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+left to right direction
+
+class AtribuirEncomendaFarmaciaTask{
+    +int atribuiEncomendaFarmacia(emailCliente, carrinho)
+}
+
+class AplicacaoPOT{
+    +getInstance()
+    +getMapaTerrestreDistancias()
+}
+
+class BaseDados{
+    +Connection getConnection()
+    +closeConnection()
+}
+
+class GraphAlgorithms{
+    +double shortestPath(grafo, Morada, Morada, shortPath)
+}
+
+class MoradaBD{
+    +HashMap<Integer, Morada> getMoradasFarmacia()
+    +Morada getMoradaUtilizador(emailCliente)
+}
+
+
+AtribuirEncomendaFarmaciaTask ..> MoradaBD
+AtribuirEncomendaFarmaciaTask ..> AplicacaoPOT
+AtribuirEncomendaFarmaciaTask ..> GraphAlgorithms
+
+MoradaBD ..> BaseDados
+
+
+@enduml

@@ -1,0 +1,19 @@
+ESTAFETA
+estafeta5@email.pt,123,Estafeta,355555555,987654321,15555555555,5,MAR Shopping Matosinhos,41.209052507815244,-8.687287086708245,42
+CONFIRMA
+PROXIMO ESTAFETA
+=====================================================================================================
+ESTAFETA
+estafeta6@email.pt,123,Estafeta,366666666,987654321,16666666666,5,MAR Shopping Matosinhos,41.209052507815244,-8.687287086708245,42
+CONFIRMA
+PROXIMO ESTAFETA
+=====================================================================================================
+ESTAFETA
+estafeta7@email.pt,123,Estafeta,377777777,987654321,17777777777,5,MAR Shopping Matosinhos,41.209052507815244,-8.687287086708245,42
+CONFIRMA
+PROXIMO ESTAFETA
+=====================================================================================================
+ESTAFETA
+estafeta8@email.pt,123,Estafeta,388888888,987654321,18888888888,5,MAR Shopping Matosinhos,41.209052507815244,-8.687287086708245,42
+CONFIRMA
+PROXIMO ESTAFETA

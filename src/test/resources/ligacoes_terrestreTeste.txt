@@ -1,0 +1,3 @@
+morada1;morada2;coeficiente Atrito
+Rua1,BuenosAires;Rua2,Lapaz;0.004
+Rua3,Brasilia;Rua4,Santiago;0.004

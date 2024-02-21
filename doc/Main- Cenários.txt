@@ -1,0 +1,2037 @@
+try {
+
+            AplicacaoPOT app = AplicacaoPOT.getInstance();
+
+            //---------------------------------------------------------------//
+            //setup para cenários 2
+
+            //2.2.1
+            OutputFileWriter.write("============================================================================\n");
+            OutputFileWriter.write("CENÁRIOS DE TESTE:");
+            OutputFileWriter.write("\n============================================================================\n");
+            OutputFileWriter.write("\nCenário T1.0\n");
+
+            PreencherGrafo.getVento("src/main/resources/input/GrafosParciais/ventoT1.0.txt");
+            app.setGrafos(new MoradaBD(), "src/main/resources/input/GrafosParciais/moradasT1.0.txt", "src/main/resources/input/GrafosParciais/ligacoesT1.0.txt", "src/main/resources/input/GrafosParciais/ligacoesT1.0.txt");
+
+            System.out.println("farmacia");
+            AdicionarFarmaciaUI.run(221);
+            System.out.println("farmacia criada");
+
+            System.out.println("cliente");
+            RegistoClienteUI.run(221);
+            System.out.println("cliente criado");
+
+            app.doLogin("gestor2@email.pt", "123");
+            System.out.println("acrescentar Stock");
+            AdicionarStockProdutoUI.run(0);
+            System.out.println("acrescentar Stock concluido");
+
+            System.out.println("registar estafeta");
+            RegistarEstafetaUI.run(2);
+            System.out.println("registar estafeta concluido");
+            app.doLogout();
+
+            app.doLogin("gestor2@email.pt", "123");
+
+            System.out.println("adicionar scooter");
+            AdicionarScooterUI.run(1);
+            System.out.println("adicionar scooter concluido");
+
+            app.doLogout();
+
+            app.doLogin("cliente8@email.pt", "123");
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(3);
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+            app.doLogin("gestor2@email.pt", "123");
+
+            System.out.println("Criar entrega");
+            CriarEntregaUI.run("221");
+
+            app.doLogout();
+
+            new FarmaciaBD().deleteRun();
+
+            //2.2.2
+            OutputFileWriter.write("\n============================================================================\n");
+            OutputFileWriter.write("Cenário T1.1\n");
+
+            PreencherGrafo.getVento("src/main/resources/input/GrafosParciais/ventoT1.1.txt");
+            app.setGrafos(new MoradaBD(), "src/main/resources/input/GrafosParciais/moradasT1.1.txt", "src/main/resources/input/GrafosParciais/ligacoesT1.1.txt", "src/main/resources/input/GrafosParciais/ligacoesT1.1.txt");
+
+            System.out.println("farmacia");
+            AdicionarFarmaciaUI.run(222);
+            System.out.println("farmacia criada");
+
+            System.out.println("cliente");
+            RegistoClienteUI.run(222);
+            System.out.println("cliente criado");
+
+            app.doLogin("gestor3@email.pt", "123");
+            System.out.println("acrescentar Stock");
+            AdicionarStockProdutoUI.run(0);
+            System.out.println("acrescentar Stock concluido");
+
+            System.out.println("registar estafeta");
+            RegistarEstafetaUI.run(3);
+            System.out.println("registar estafeta concluido");
+            app.doLogout();
+
+            app.doLogin("gestor3@email.pt", "123");
+
+            System.out.println("adicionar scooter");
+            AdicionarScooterUI.run(1);
+            System.out.println("adicionar scooter concluido");
+
+            app.doLogout();
+
+            app.doLogin("cliente10@email.pt", "123");
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(3);
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+            app.doLogin("cliente17@email.pt", "123");
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(3);
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+            app.doLogin("gestor3@email.pt", "123");
+
+            System.out.println("Criar entrega");
+            CriarEntregaUI.run("222");
+            System.out.println("criar entrega concluida");
+
+            app.doLogout();
+
+            new FarmaciaBD().deleteRun();
+
+            //2.2.3
+            OutputFileWriter.write("\n============================================================================\n");
+            OutputFileWriter.write("\nCenário T2.0\n");
+
+            PreencherGrafo.getVento("src/main/resources/input/GrafosParciais/ventoT2.0.txt");
+            app.setGrafos(new MoradaBD(), "src/main/resources/input/GrafosParciais/moradasT2.0.txt", "src/main/resources/input/GrafosParciais/ligacoesT2.0.txt", "src/main/resources/input/GrafosParciais/ligacoesT2.0.txt");
+
+            System.out.println("farmacia");
+            AdicionarFarmaciaUI.run(223);   // morada farmacia e gestor
+            System.out.println("farmacia criada");
+
+            System.out.println("cliente");
+            RegistoClienteUI.run(223);  // clientes e moradas
+            System.out.println("cliente criado");
+
+            app.doLogin("gestor2@email.pt", "123");
+            System.out.println("acrescentar Stock");
+            AdicionarStockProdutoUI.run(0); // default 0
+            System.out.println("acrescentar Stock concluido");
+
+            System.out.println("registar estafeta");
+            RegistarEstafetaUI.run(2); // id gestor
+            System.out.println("registar estafeta concluido");
+            app.doLogout();
+
+            app.doLogin("gestor2@email.pt", "123");
+
+            System.out.println("adicionar scooter");
+            AdicionarScooterUI.run(2);  //100% ; 3000
+            System.out.println("adicionar scooter concluido");
+
+            app.doLogout();
+
+            app.doLogin("cliente8@email.pt", "123");
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(3); //100g
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0); // default 0
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("gestor2@email.pt", "123");
+
+            System.out.println("Criar entrega");
+            CriarEntregaUI.run("221");  // 221 (1 entrega), 222 (2 entregas) [so funciona com delete previo]
+            System.out.println("criar entrega concluida");
+
+            app.doLogout();
+
+            new FarmaciaBD().deleteRun();
+
+            //2.2.4
+            OutputFileWriter.write("\n============================================================================\n");
+            OutputFileWriter.write("\nCenário T2.1\n");
+
+            PreencherGrafo.getVento("src/main/resources/input/GrafosParciais/ventoT2.1.txt");
+            app.setGrafos(new MoradaBD(), "src/main/resources/input/GrafosParciais/moradasT2.1.txt", "src/main/resources/input/GrafosParciais/ligacoesT2.1.txt", "src/main/resources/input/GrafosParciais/ligacoesT2.1.txt");
+
+            System.out.println("farmacia");
+            AdicionarFarmaciaUI.run(224);   // morada farmacia e gestor
+            System.out.println("farmacia criada");
+
+            System.out.println("cliente");
+            RegistoClienteUI.run(224);  // clientes e moradas
+            System.out.println("cliente criado");
+
+            app.doLogin("gestor3@email.pt", "123"); // gestor
+            System.out.println("acrescentar Stock");
+            AdicionarStockProdutoUI.run(0); // default 0
+            System.out.println("acrescentar Stock concluido");
+
+            System.out.println("registar estafeta");
+            RegistarEstafetaUI.run(3); // id gestor
+            System.out.println("registar estafeta concluido");
+            app.doLogout();
+
+            app.doLogin("gestor3@email.pt", "123"); // gestor
+
+            System.out.println("adicionar scooter");
+            AdicionarScooterUI.run(2);  //100% ; 3000
+            System.out.println("adicionar scooter concluido");
+
+            app.doLogout();
+
+            app.doLogin("cliente10@email.pt", "123"); // cliente 1
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(3); //100g
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0); // default 0
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("cliente17@email.pt", "123"); // cliente 2
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(3); //100g
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0); // default 0
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("gestor3@email.pt", "123"); // gestor
+
+            System.out.println("Criar entrega");
+            CriarEntregaUI.run("222");  // 221 (1 entrega), 222 (2 entregas) [so funciona com delete previo]
+            System.out.println("criar entrega concluida");
+
+            app.doLogout();
+
+            new FarmaciaBD().deleteRun();
+
+            //2.2.6
+            OutputFileWriter.write("\n============================================================================\n");
+            OutputFileWriter.write("\nCenário T3.1\n");
+
+            PreencherGrafo.getVento("src/main/resources/input/GrafosParciais/ventoT3.1.txt");
+            app.setGrafos(new MoradaBD(), "src/main/resources/input/GrafosParciais/moradasT3.1.txt", "src/main/resources/input/GrafosParciais/ligacoesT3.1.txt", "src/main/resources/input/GrafosParciais/ligacoesT3.1.txt");
+
+            System.out.println("farmacia");
+            AdicionarFarmaciaUI.run(226);   // morada farmacia e gestor
+            System.out.println("farmacia criada");
+
+            System.out.println("cliente");
+            RegistoClienteUI.run(226);  // clientes e moradas
+            System.out.println("cliente criado");
+
+            app.doLogin("gestor2@email.pt", "123"); // gestor
+            System.out.println("acrescentar Stock");
+            AdicionarStockProdutoUI.run(0); // default 0
+            System.out.println("acrescentar Stock concluido");
+
+            System.out.println("registar estafeta");
+            RegistarEstafetaUI.run(3); // id gestor
+            System.out.println("registar estafeta concluido");
+            app.doLogout();
+
+            app.doLogin("gestor2@email.pt", "123"); // gestor
+
+            System.out.println("adicionar scooter");
+            AdicionarScooterUI.run(3);  //70% ; 3000
+            System.out.println("adicionar scooter concluido");
+
+            app.doLogout();
+
+            app.doLogin("cliente4@email.pt", "123"); // cliente 1
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(3); //100g
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0); // default 0
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("cliente9@email.pt", "123"); // cliente 2
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(3); //100g
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0); // default 0
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("gestor2@email.pt", "123"); // gestor
+
+            System.out.println("Criar entrega");
+            CriarEntregaUI.run("222");  // 221 (1 entrega), 222 (2 entregas) [so funciona com delete previo]
+            System.out.println("criar entrega concluida");
+
+            app.doLogout();
+
+            new FarmaciaBD().deleteRun();
+
+            //2.2.8
+            //info igual ao anterior
+            OutputFileWriter.write("\n============================================================================\n");
+            OutputFileWriter.write("\nCenário T4.1\n");
+
+            PreencherGrafo.getVento("src/main/resources/input/GrafosParciais/ventoT4.1.txt");
+            app.setGrafos(new MoradaBD(), "src/main/resources/input/GrafosParciais/moradasT4.1.txt", "src/main/resources/input/GrafosParciais/ligacoesT4.1.txt", "src/main/resources/input/GrafosParciais/ligacoesT4.1.txt");
+
+            System.out.println("farmacia");
+            AdicionarFarmaciaUI.run(226);   // morada farmacia e gestor
+            System.out.println("farmacia criada");
+
+            System.out.println("cliente");
+            RegistoClienteUI.run(226);  // clientes e moradas
+            System.out.println("cliente criado");
+
+            app.doLogin("gestor2@email.pt", "123"); // gestor
+            System.out.println("acrescentar Stock");
+            AdicionarStockProdutoUI.run(0); // default 0
+            System.out.println("acrescentar Stock concluido");
+
+            System.out.println("registar estafeta");
+            RegistarEstafetaUI.run(3); // id gestor
+            System.out.println("registar estafeta concluido");
+            app.doLogout();
+
+            app.doLogin("gestor2@email.pt", "123"); // gestor
+
+            System.out.println("adicionar scooter");
+            AdicionarScooterUI.run(2);  //100% ; 3000
+            System.out.println("adicionar scooter concluido");
+
+            app.doLogout();
+
+            app.doLogin("cliente4@email.pt", "123"); // cliente 1
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(4); //25kg
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0); // default 0
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("cliente9@email.pt", "123"); // cliente 2
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(4); //25kg
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0); // default 0
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("gestor2@email.pt", "123"); // gestor
+
+            System.out.println("Criar entrega");
+            CriarEntregaUI.run("222");  // 221 (1 entrega), 222 (2 entregas) [so funciona com delete previo]
+            System.out.println("criar entrega concluida");
+
+            app.doLogout();
+
+            new FarmaciaBD().deleteRun();
+
+            //2.2.10
+            OutputFileWriter.write("\n============================================================================\n");
+            OutputFileWriter.write("\nCenário T5.1\n");
+
+            PreencherGrafo.getVento("src/main/resources/input/GrafosParciais/ventoT5.1.txt");
+            app.setGrafos(new MoradaBD(), "src/main/resources/input/GrafosParciais/moradasT5.1.txt", "src/main/resources/input/GrafosParciais/ligacoesT5.1.txt", "src/main/resources/input/GrafosParciais/ligacoesT5.1.txt");
+
+            System.out.println("farmacia");
+            AdicionarFarmaciaUI.run(226);   // morada farmacia e gestor
+            System.out.println("farmacia criada");
+
+            System.out.println("cliente");
+            RegistoClienteUI.run(2210);  // clientes e moradas
+            System.out.println("cliente criado");
+
+            app.doLogin("gestor2@email.pt", "123"); // gestor
+            System.out.println("acrescentar Stock");
+            AdicionarStockProdutoUI.run(0); // default 0
+            System.out.println("acrescentar Stock concluido");
+
+            System.out.println("registar estafeta");
+            RegistarEstafetaUI.run(3); // id gestor
+            System.out.println("registar estafeta concluido");
+            app.doLogout();
+
+            app.doLogin("gestor2@email.pt", "123"); // gestor
+
+            System.out.println("adicionar scooter");
+            AdicionarScooterUI.run(2);  //100% ; 3000
+            System.out.println("adicionar scooter concluido");
+
+            app.doLogout();
+
+            app.doLogin("cliente9@email.pt", "123"); // cliente 1
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(4); //25kg
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0); // default 0
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("cliente4@email.pt", "123"); // cliente 2
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(4); //25kg
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0); // default 0
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("gestor2@email.pt", "123"); // gestor
+
+            System.out.println("Criar entrega");
+            CriarEntregaUI.run("222");  // 221 (1 entrega), 222 (2 entregas) [so funciona com delete previo]
+            System.out.println("criar entrega concluida");
+
+            app.doLogout();
+
+            new FarmaciaBD().deleteRun();
+
+            //2.2.12
+            OutputFileWriter.write("\n============================================================================\n");
+            OutputFileWriter.write("\nCenário T6.1\n");
+
+            PreencherGrafo.getVento("src/main/resources/input/GrafosParciais/ventoT6.1.txt");
+            app.setGrafos(new MoradaBD(), "src/main/resources/input/GrafosParciais/moradasT6.1.txt", "src/main/resources/input/GrafosParciais/ligacoesT6.1.txt", "src/main/resources/input/GrafosParciais/ligacoesT6.1.txt");
+
+            System.out.println("farmacia");
+            AdicionarFarmaciaUI.run(226);   // morada farmacia e gestor
+            System.out.println("farmacia criada");
+
+            System.out.println("cliente");
+            RegistoClienteUI.run(2212);  // clientes e moradas
+            System.out.println("cliente criado");
+
+            app.doLogin("gestor2@email.pt", "123"); // gestor
+            System.out.println("acrescentar Stock");
+            AdicionarStockProdutoUI.run(0); // default 0
+            System.out.println("acrescentar Stock concluido");
+
+            System.out.println("registar estafeta");
+            RegistarEstafetaUI.run(3); // id gestor
+            System.out.println("registar estafeta concluido");
+            app.doLogout();
+
+            app.doLogin("gestor2@email.pt", "123"); // gestor
+
+            System.out.println("adicionar scooter");
+            AdicionarScooterUI.run(2);  //100% ; 3000
+            System.out.println("adicionar scooter concluido");
+
+            app.doLogout();
+
+            app.doLogin("cliente4@email.pt", "123"); // cliente 1
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(3); //100g
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0); // default 0
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("cliente9@email.pt", "123"); // cliente 2
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(3); //100g
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0); // default 0
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("gestor2@email.pt", "123"); // gestor
+
+            System.out.println("Criar entrega");
+            CriarEntregaUI.run("222");  // 221 (1 entrega), 222 (2 entregas) [so funciona com delete previo]
+            System.out.println("criar entrega concluida");
+
+            app.doLogout();
+
+            new FarmaciaBD().deleteRun();
+
+            //2.2.14
+            OutputFileWriter.write("\n============================================================================\n");
+            OutputFileWriter.write("\nCenário T7.1\n");
+
+            PreencherGrafo.getVento("src/main/resources/input/GrafosParciais/ventoT7.1.txt");
+            app.setGrafos(new MoradaBD(), "src/main/resources/input/GrafosParciais/moradasT7.1.txt", "src/main/resources/input/GrafosParciais/ligacoesT7.1.txt", "src/main/resources/input/GrafosParciais/ligacoesT7.1.txt");
+
+            System.out.println("farmacia");
+            AdicionarFarmaciaUI.run(226);   // morada farmacia e gestor
+            System.out.println("farmacia criada");
+
+            System.out.println("cliente");
+            RegistoClienteUI.run(2212);  // clientes e moradas
+            System.out.println("cliente criado");
+
+            app.doLogin("gestor2@email.pt", "123"); // gestor
+            System.out.println("acrescentar Stock");
+            AdicionarStockProdutoUI.run(0); // default 0
+            System.out.println("acrescentar Stock concluido");
+
+            System.out.println("registar estafeta");
+            RegistarEstafetaUI.run(3); // id gestor
+            System.out.println("registar estafeta concluido");
+            app.doLogout();
+
+            app.doLogin("gestor2@email.pt", "123"); // gestor
+
+            System.out.println("adicionar scooter");
+            AdicionarScooterUI.run(2);  //100% ; 3000
+            System.out.println("adicionar scooter concluido");
+
+            app.doLogout();
+
+            app.doLogin("cliente4@email.pt", "123"); // cliente 1
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(3); //100g
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0); // default 0
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("cliente9@email.pt", "123"); // cliente 2
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(3); //100g
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0); // default 0
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("gestor2@email.pt", "123"); // gestor
+
+            System.out.println("Criar entrega");
+            CriarEntregaUI.run("222");  // 221 (1 entrega), 222 (2 entregas) [so funciona com delete previo]
+            System.out.println("criar entrega concluida");
+
+            app.doLogout();
+
+            new FarmaciaBD().deleteRun();
+            //---------------------------------------------------------------//
+
+
+            //CENARIO 3
+
+            //3.2.3 (cenario A1.2)
+            OutputFileWriter.write("\n============================================================================\n");
+            OutputFileWriter.write("\nCenário A1.2\n");
+
+            PreencherGrafo.getVento("src/main/resources/input/GrafosParciais/ventoA_1.2_2.1.txt");
+            app.setGrafos(new MoradaBD(), "src/main/resources/input/GrafosParciais/moradas323.txt", "src/main/resources/input/GrafosParciais/ligacoes323.txt", "src/main/resources/input/GrafosParciais/ligacoes323.txt");
+
+            System.out.println("farmacia");
+            AdicionarFarmaciaUI.run(323);   // morada farmacia e gestor
+            System.out.println("farmacia criada");
+
+            System.out.println("cliente");
+            RegistoClienteUI.run(323);  // clientes e moradas
+            System.out.println("cliente criado");
+
+            app.doLogin("gestor3@email.pt", "123");
+
+            System.out.println("acrescentar Stock");
+            AdicionarStockProdutoUI.run(0); // default 0
+            System.out.println("acrescentar Stock concluido");
+
+            System.out.println("adicionar lugar drone");
+            AdicionarLugarDroneUI.run(0);
+            System.out.println("adicionar lugar drone concluido");
+
+            System.out.println("adicionar drone");
+            AdicionarDroneUI.run(323);
+            System.out.println("adicionar drone concluido");
+
+            app.doLogout();
+
+            app.doLogin("cliente4@email.pt", "123");
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(2); //7kg
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0); // default 0
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("cliente24@email.pt", "123");
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(2); //7kg
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0); // default 0
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("gestor3@email.pt", "123");
+
+            System.out.println("Criar entrega");
+            CriarEntregaUI.run("3"); //encomenda 1 e 2
+            System.out.println("criar entrega concluida");
+
+            app.doLogout();
+
+            new FarmaciaBD().deleteRun();
+
+            //3.2.5 (cenario A2.1)
+            OutputFileWriter.write("\n============================================================================\n");
+            OutputFileWriter.write("\nCenário A2.1\n");
+
+            PreencherGrafo.getVento("src/main/resources/input/GrafosParciais/ventoA_1.2_2.1.txt");
+            app.setGrafos(new MoradaBD(), "src/main/resources/input/GrafosParciais/moradas325.txt", "src/main/resources/input/GrafosParciais/ligacoes325.txt", "src/main/resources/input/GrafosParciais/ligacoes325.txt");
+
+            System.out.println("farmacia");
+            AdicionarFarmaciaUI.run(325);   // morada farmacia e gestor
+            System.out.println("farmacia criada");
+
+            System.out.println("cliente");
+            RegistoClienteUI.run(325);  // clientes e moradas
+            System.out.println("cliente criado");
+
+            app.doLogin("gestor5@email.pt", "123");
+
+            System.out.println("acrescentar Stock");
+            AdicionarStockProdutoUI.run(0); // default 0
+            System.out.println("acrescentar Stock concluido");
+
+            System.out.println("adicionar lugar drone");
+            AdicionarLugarDroneUI.run(0);
+            System.out.println("adicionar lugar drone concluido");
+
+            System.out.println("adicionar drone");
+            AdicionarDroneUI.run(3);
+            System.out.println("adicionar drone concluido");
+
+            app.doLogout();
+
+            app.doLogin("cliente16@email.pt", "123");
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(2); //7kg
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0); // default 0
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("cliente24@email.pt", "123");
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(2); //7kg
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0); // default 0
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("gestor5@email.pt", "123");
+
+            System.out.println("Criar entrega");
+            CriarEntregaUI.run("3"); //encomenda 1 e 2
+            System.out.println("criar entrega concluida");
+
+            app.doLogout();
+
+            new FarmaciaBD().deleteRun();
+
+            //3.2.7 (cenario A3.1)
+            OutputFileWriter.write("\n============================================================================\n");
+            OutputFileWriter.write("\nCenário A3.1\n");
+
+            PreencherGrafo.getVento("src/main/resources/input/GrafosParciais/ventoA_3.1.txt");
+            app.setGrafos(new MoradaBD(), "src/main/resources/input/GrafosParciais/moradas327.txt", "src/main/resources/input/GrafosParciais/ligacoes327.txt", "src/main/resources/input/GrafosParciais/ligacoes327.txt");
+
+            System.out.println("farmacia");
+            AdicionarFarmaciaUI.run(327);   // morada farmacia e gestor
+            System.out.println("farmacia criada");
+
+            System.out.println("cliente");
+            RegistoClienteUI.run(327);  // clientes e moradas
+            System.out.println("cliente criado");
+
+            app.doLogin("gestor7@email.pt", "123");
+
+            System.out.println("acrescentar Stock");
+            AdicionarStockProdutoUI.run(0); // default 0
+            System.out.println("acrescentar Stock concluido");
+
+            System.out.println("adicionar lugar drone");
+            AdicionarLugarDroneUI.run(0);
+            System.out.println("adicionar lugar drone concluido");
+
+            System.out.println("adicionar drone");
+            AdicionarDroneUI.run(3);
+            System.out.println("adicionar drone concluido");
+
+            app.doLogout();
+
+            app.doLogin("cliente18@email.pt", "123");
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(2); //7kg
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0); // default 0
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("cliente20@email.pt", "123");
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(2); //7kg
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0); // default 0
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("gestor7@email.pt", "123");
+
+            System.out.println("Criar entrega");
+            CriarEntregaUI.run("3"); //encomenda 1 e 2
+            System.out.println("criar entrega concluida");
+
+            app.doLogout();
+
+            new FarmaciaBD().deleteRun();
+
+
+            //---------------------------------------------------------------//
+            //Setup Cenarios de Comparacao - 4
+            app.setVento();
+            app.setGrafos(new MoradaBD(), Constantes.FICHEIRO_MORADA_NOME, Constantes.FICHEIRO_LIGACOES_TERRESTRE_NOME, Constantes.FICHEIRO_LIGACOES_AEREO_NOME);
+
+            System.out.println("farmacia");
+            AdicionarFarmaciaUI.run(0);
+            System.out.println("farmacia criada");
+
+            System.out.println("cliente");
+            RegistoClienteUI.run(0);
+            System.out.println("cliente criado");
+
+            for (int i = 1; i <= 8; i++) {
+
+                app.doLogin("gestor" + i + "@email.pt", "123");
+                if (i != 2) {
+                    System.out.println("acrescentar Stock");
+                    AdicionarStockProdutoUI.run(0);
+                    System.out.println("acrescentar Stock concluido");
+                }
+
+                System.out.println("-----------------------------------------");
+                System.out.println(i);
+                System.out.println("------------------------------------------");
+
+                System.out.println("registar estafeta");
+                RegistarEstafetaUI.run(i);
+                System.out.println("registar estafeta concluido");
+                app.doLogout();
+
+            }
+
+            //---------------------------------------------------------------//
+
+            //4.1.1
+            OutputFileWriter.write("\n============================================================================\n");
+            OutputFileWriter.write("\nCenário C1.0\n");
+
+            app.doLogin("gestor5@email.pt", "123");
+
+            System.out.println("adicionar scooter");
+            AdicionarScooterUI.run(0);
+            System.out.println("adicionar scooter concluido");
+
+            System.out.println("adicionar lugar drone");
+            AdicionarLugarDroneUI.run(0);
+            System.out.println("adicionar lugar drone concluido");
+
+            System.out.println("adicionar drone");
+            AdicionarDroneUI.run(0);
+            System.out.println("adicionar drone concluido");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente14@email.pt", "123");
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(1);
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("gestor5@email.pt", "123");
+
+            System.out.println("Criar entrega");
+            CriarEntregaUI.run("411_1");
+            System.out.println("criar entrega concluida");
+
+            app.doLogout();
+
+            app.doLogin("cliente14@email.pt", "123");
+
+            System.out.println("fazer compra 2");
+            FazerCompraUI.run(1);
+            System.out.println("compra completa 2");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("gestor5@email.pt", "123");
+
+            System.out.println("Criar entrega");
+            CriarEntregaUI.run("411_2");
+            System.out.println("criar entrega concluida 2");
+
+            app.doLogout();
+
+            app.doLogin("cliente14@email.pt", "123");
+
+            System.out.println("fazer compra 3");
+            FazerCompraUI.run(0);
+            System.out.println("compra completa 3");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("gestor5@email.pt", "123");
+
+            System.out.println("Criar entrega 3");
+            CriarEntregaUI.run("411_3");
+            System.out.println("criar entrega concluida 3");
+
+            app.doLogout();
+
+            app.doLogin("cliente14@email.pt", "123");
+
+            System.out.println("fazer compra 4");
+            FazerCompraUI.run(0);
+            System.out.println("compra completa 4");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("gestor5@email.pt", "123");
+
+            System.out.println("Criar entrega 4");
+            CriarEntregaUI.run("411_4");
+            System.out.println("criar entrega concluida 4");
+
+            app.doLogout();
+//
+//
+
+            //Setup para cenários 4
+
+            //4.1.2
+            OutputFileWriter.write("\n============================================================================\n");
+            OutputFileWriter.write("\nCenário C1.1\n");
+
+            app.doLogin("gestor5@email.pt", "123");
+
+            System.out.println("adicionar scooter");
+            AdicionarScooterUI.run(0);
+            System.out.println("adicionar scooter concluido");
+
+            System.out.println("adicionar lugar drone");
+            AdicionarLugarDroneUI.run(0);
+            System.out.println("adicionar lugar drone concluido");
+
+            System.out.println("adicionar drone");
+            AdicionarDroneUI.run(0);
+            System.out.println("adicionar drone concluido");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente14@email.pt", "123");
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(1);
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente16@email.pt", "123");
+
+            System.out.println("fazer compra 2");
+            FazerCompraUI.run(1);
+            System.out.println("compra completa 2");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("gestor5@email.pt", "123");
+
+            System.out.println("Criar entrega");
+            CriarEntregaUI.run("412_1");
+            System.out.println("criar entrega concluida");
+
+            app.doLogout();
+
+            // Posto de Correios de Conde Ferreira
+
+            app.doLogin("cliente14@email.pt", "123");
+
+            System.out.println("fazer compra 2");
+            FazerCompraUI.run(1);
+            System.out.println("compra completa 2");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente16@email.pt", "123");
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(1);
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("gestor5@email.pt", "123");
+
+            System.out.println("Criar entrega");
+            CriarEntregaUI.run("412_2");
+            System.out.println("criar entrega concluida 2");
+
+            app.doLogout();
+
+            app.doLogin("cliente14@email.pt", "123");
+
+            System.out.println("fazer compra 3");
+            FazerCompraUI.run(0);
+            System.out.println("compra completa 3");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente16@email.pt", "123");
+
+            System.out.println("fazer compra 3");
+            FazerCompraUI.run(0);
+            System.out.println("compra completa 3");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("gestor5@email.pt", "123");
+
+            System.out.println("Criar entrega 3");
+            CriarEntregaUI.run("412_3");
+            System.out.println("criar entrega concluida 3");
+
+            app.doLogout();
+
+            app.doLogin("cliente14@email.pt", "123");
+
+            System.out.println("fazer compra 4");
+            FazerCompraUI.run(0);
+            System.out.println("compra completa 4");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente16@email.pt", "123");
+
+            System.out.println("fazer compra 4");
+            FazerCompraUI.run(0);
+            System.out.println("compra completa 4");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("gestor5@email.pt", "123");
+
+            System.out.println("Criar entrega 4");
+            CriarEntregaUI.run("412_4");
+            System.out.println("criar entrega concluida 4");
+
+            app.doLogout();
+
+
+            //Setup para cenários 4
+
+            //4.1.3
+            OutputFileWriter.write("\n============================================================================\n");
+            OutputFileWriter.write("\nCenário C1.2\n");
+
+            app.doLogin("gestor5@email.pt", "123");
+
+            System.out.println("adicionar scooter");
+            AdicionarScooterUI.run(0);
+            System.out.println("adicionar scooter concluido");
+
+            System.out.println("adicionar lugar drone");
+            AdicionarLugarDroneUI.run(0);
+            System.out.println("adicionar lugar drone concluido");
+
+            System.out.println("adicionar drone");
+            AdicionarDroneUI.run(0);
+            System.out.println("adicionar drone concluido");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente7@email.pt", "123");
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(1);
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente8@email.pt", "123");
+
+            System.out.println("fazer compra 2");
+            FazerCompraUI.run(1);
+            System.out.println("compra completa 2");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("gestor5@email.pt", "123");
+
+            System.out.println("Criar entrega");
+            CriarEntregaUI.run("413_1");
+            System.out.println("criar entrega concluida");
+
+            app.doLogout();
+
+            // Posto de Correios de Conde Ferreira
+
+            app.doLogin("cliente7@email.pt", "123");
+
+            System.out.println("fazer compra 2");
+            FazerCompraUI.run(1);
+            System.out.println("compra completa 2");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente8@email.pt", "123");
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(1);
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("gestor5@email.pt", "123");
+
+            System.out.println("Criar entrega");
+            CriarEntregaUI.run("413_2");
+            System.out.println("criar entrega concluida 2");
+
+            app.doLogout();
+
+            app.doLogin("cliente7@email.pt", "123");
+
+            System.out.println("fazer compra 3");
+            FazerCompraUI.run(0);
+            System.out.println("compra completa 3");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente8@email.pt", "123");
+
+            System.out.println("fazer compra 3");
+            FazerCompraUI.run(0);
+            System.out.println("compra completa 3");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("gestor5@email.pt", "123");
+
+            System.out.println("Criar entrega 3");
+            CriarEntregaUI.run("413_3");
+            System.out.println("criar entrega concluida 3");
+
+            app.doLogout();
+
+            app.doLogin("cliente7@email.pt", "123");
+
+            System.out.println("fazer compra 4");
+            FazerCompraUI.run(0);
+            System.out.println("compra completa 4");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente8@email.pt", "123");
+
+            System.out.println("fazer compra 4");
+            FazerCompraUI.run(0);
+            System.out.println("compra completa 4");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("gestor5@email.pt", "123");
+
+            System.out.println("Criar entrega 4");
+            CriarEntregaUI.run("413_4");
+            System.out.println("criar entrega concluida 4");
+
+            app.doLogout();
+
+
+            //4.1.4
+            OutputFileWriter.write("\n============================================================================\n");
+            OutputFileWriter.write("\nCenário C2.0\n");
+
+            app.doLogin("gestor2@email.pt", "123");
+
+            System.out.println("adicionar scooter");
+            AdicionarScooterUI.run(0);
+            System.out.println("adicionar scooter concluido");
+
+            System.out.println("adicionar lugar drone");
+            AdicionarLugarDroneUI.run(0);
+            System.out.println("adicionar lugar drone concluido");
+
+            System.out.println("adicionar drone");
+            AdicionarDroneUI.run(0);
+            System.out.println("adicionar drone concluido");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente9@email.pt", "123");
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(1);
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente10@email.pt", "123");
+
+            System.out.println("fazer compra 2");
+            FazerCompraUI.run(1);
+            System.out.println("compra completa 2");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("gestor2@email.pt", "123");
+
+            System.out.println("Criar entrega");
+            CriarEntregaUI.run("414_1");
+            System.out.println("criar entrega concluida");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente9@email.pt", "123");
+
+            System.out.println("fazer compra 2");
+            FazerCompraUI.run(1);
+            System.out.println("compra completa 2");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente10@email.pt", "123");
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(1);
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("gestor2@email.pt", "123");
+
+            System.out.println("Criar entrega");
+            CriarEntregaUI.run("414_2");
+            System.out.println("criar entrega concluida 2");
+
+            app.doLogout();
+
+            app.doLogin("cliente9@email.pt", "123");
+
+            System.out.println("fazer compra 3");
+            FazerCompraUI.run(0);
+            System.out.println("compra completa 3");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente10@email.pt", "123");
+
+            System.out.println("fazer compra 3");
+            FazerCompraUI.run(0);
+            System.out.println("compra completa 3");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("gestor2@email.pt", "123");
+
+            System.out.println("Criar entrega 3");
+            CriarEntregaUI.run("414_3");
+            System.out.println("criar entrega concluida 3");
+
+            app.doLogout();
+
+            app.doLogin("cliente9@email.pt", "123");
+
+            System.out.println("fazer compra 4");
+            FazerCompraUI.run(0);
+            System.out.println("compra completa 4");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente10@email.pt", "123");
+
+            System.out.println("fazer compra 4");
+            FazerCompraUI.run(0);
+            System.out.println("compra completa 4");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("gestor2@email.pt", "123");
+
+            System.out.println("Criar entrega 4");
+            CriarEntregaUI.run("414_4");
+            System.out.println("criar entrega concluida 4");
+
+            app.doLogout();
+
+
+            //4.1.5
+            OutputFileWriter.write("\n============================================================================\n");
+            OutputFileWriter.write("\nCenário C2.1\n");
+
+            app.doLogin("cliente4@email.pt", "123");
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(1);
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            OutputFileWriter.write(new FarmaciaBD().getNomeFarmacia(new EncomendaBD().getFarmIDByEncID(29)));// Esta encomenda foi atribuída à farmácia de Guifões
+
+
+            //4.1.6
+            OutputFileWriter.write("\n\n============================================================================\n");
+            OutputFileWriter.write("\nCenário C3.0\n");
+
+            app.doLogin("gestor4@email.pt", "123");
+
+            System.out.println("adicionar scooter");
+            AdicionarScooterUI.run(0);
+            System.out.println("adicionar scooter concluido");
+
+            System.out.println("adicionar lugar drone");
+            AdicionarLugarDroneUI.run(0);
+            System.out.println("adicionar lugar drone concluido");
+
+            System.out.println("adicionar drone");
+            AdicionarDroneUI.run(0);
+            System.out.println("adicionar drone concluido");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente12@email.pt", "123");
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(1);
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente6@email.pt", "123");
+
+            System.out.println("fazer compra 2");
+            FazerCompraUI.run(1);
+            System.out.println("compra completa 2");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("cliente7@email.pt", "123");
+
+            System.out.println("fazer compra 2");
+            FazerCompraUI.run(1);
+            System.out.println("compra completa 2");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("gestor4@email.pt", "123");
+
+            System.out.println("Criar entrega");
+            CriarEntregaUI.run("416_1");
+            System.out.println("criar entrega concluida");
+
+            app.doLogout();
+
+            // Posto de Correios de Conde Ferreira
+
+            app.doLogin("cliente12@email.pt", "123");
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(1);
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente6@email.pt", "123");
+
+            System.out.println("fazer compra 2");
+            FazerCompraUI.run(1);
+            System.out.println("compra completa 2");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("cliente7@email.pt", "123");
+
+            System.out.println("fazer compra 2");
+            FazerCompraUI.run(1);
+            System.out.println("compra completa 2");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("gestor4@email.pt", "123");
+
+            System.out.println("Criar entrega");
+            CriarEntregaUI.run("416_2");
+            System.out.println("criar entrega concluida 2");
+
+            app.doLogout();
+
+            app.doLogin("cliente12@email.pt", "123");
+
+            System.out.println("fazer compra 3");
+            FazerCompraUI.run(0);
+            System.out.println("compra completa 3");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente6@email.pt", "123");
+
+            System.out.println("fazer compra 3");
+            FazerCompraUI.run(0);
+            System.out.println("compra completa 3");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente7@email.pt", "123");
+
+            System.out.println("fazer compra 3");
+            FazerCompraUI.run(0);
+            System.out.println("compra completa 3");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("gestor4@email.pt", "123");
+
+            System.out.println("Criar entrega 3");
+            CriarEntregaUI.run("416_3");
+            System.out.println("criar entrega concluida 3");
+
+            app.doLogout();
+
+            app.doLogin("cliente12@email.pt", "123");
+
+            System.out.println("fazer compra 3");
+            FazerCompraUI.run(0);
+            System.out.println("compra completa 3");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente6@email.pt", "123");
+
+            System.out.println("fazer compra 3");
+            FazerCompraUI.run(0);
+            System.out.println("compra completa 3");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente7@email.pt", "123");
+
+            System.out.println("fazer compra 3");
+            FazerCompraUI.run(0);
+            System.out.println("compra completa 3");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("gestor4@email.pt", "123");
+
+            System.out.println("Criar entrega 4");
+            CriarEntregaUI.run("416_4");
+            System.out.println("criar entrega concluida 4");
+
+            app.doLogout();
+
+
+            //4.1.7
+            OutputFileWriter.write("\n============================================================================\n");
+            OutputFileWriter.write("\nCenário C4.0\n");
+
+            app.doLogin("gestor1@email.pt", "123");
+
+            System.out.println("adicionar scooter");
+            AdicionarScooterUI.run(0);
+            System.out.println("adicionar scooter concluido");
+
+            System.out.println("adicionar lugar drone");
+            AdicionarLugarDroneUI.run(0);
+            System.out.println("adicionar lugar drone concluido");
+
+            System.out.println("adicionar drone");
+            AdicionarDroneUI.run(0);
+            System.out.println("adicionar drone concluido");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente1@email.pt", "123");
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(1);
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente2@email.pt", "123");
+
+            System.out.println("fazer compra 2");
+            FazerCompraUI.run(1);
+            System.out.println("compra completa 2");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("cliente3@email.pt", "123");
+
+            System.out.println("fazer compra 2");
+            FazerCompraUI.run(1);
+            System.out.println("compra completa 2");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("gestor1@email.pt", "123");
+
+            System.out.println("Criar entrega");
+            CriarEntregaUI.run("417_1");
+            System.out.println("criar entrega concluida");
+
+            app.doLogout();
+
+            // Posto de Correios de Conde Ferreira
+
+            app.doLogin("cliente1@email.pt", "123");
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(1);
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente2@email.pt", "123");
+
+            System.out.println("fazer compra 2");
+            FazerCompraUI.run(1);
+            System.out.println("compra completa 2");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("cliente3@email.pt", "123");
+
+            System.out.println("fazer compra 2");
+            FazerCompraUI.run(1);
+            System.out.println("compra completa 2");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("gestor1@email.pt", "123");
+
+            System.out.println("Criar entrega");
+            CriarEntregaUI.run("417_2");
+            System.out.println("criar entrega concluida 2");
+
+            app.doLogout();
+
+            app.doLogin("cliente1@email.pt", "123");
+
+            System.out.println("fazer compra 3");
+            FazerCompraUI.run(0);
+            System.out.println("compra completa 3");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente2@email.pt", "123");
+
+            System.out.println("fazer compra 3");
+            FazerCompraUI.run(0);
+            System.out.println("compra completa 3");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente3@email.pt", "123");
+
+            System.out.println("fazer compra 3");
+            FazerCompraUI.run(0);
+            System.out.println("compra completa 3");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("gestor1@email.pt", "123");
+
+            System.out.println("Criar entrega 3");
+            CriarEntregaUI.run("417_3");
+            System.out.println("criar entrega concluida 3");
+
+            app.doLogout();
+
+            app.doLogin("cliente1@email.pt", "123");
+
+            System.out.println("fazer compra 3");
+            FazerCompraUI.run(0);
+            System.out.println("compra completa 3");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente2@email.pt", "123");
+
+            System.out.println("fazer compra 3");
+            FazerCompraUI.run(0);
+            System.out.println("compra completa 3");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente3@email.pt", "123");
+
+            System.out.println("fazer compra 3");
+            FazerCompraUI.run(0);
+            System.out.println("compra completa 3");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("gestor1@email.pt", "123");
+
+            System.out.println("Criar entrega 4");
+            CriarEntregaUI.run("417_4");
+            System.out.println("criar entrega concluida 4");
+
+            app.doLogout();
+
+
+            //4.1.8
+            OutputFileWriter.write("\n============================================================================\n");
+            OutputFileWriter.write("\nCenário C5.0\n");
+
+            app.doLogin("gestor7@email.pt", "123");
+
+            System.out.println("adicionar scooter");
+            AdicionarScooterUI.run(0);
+            System.out.println("adicionar scooter concluido");
+
+            System.out.println("adicionar lugar drone");
+            AdicionarLugarDroneUI.run(0);
+            System.out.println("adicionar lugar drone concluido");
+
+            System.out.println("adicionar drone");
+            AdicionarDroneUI.run(0);
+            System.out.println("adicionar drone concluido");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente20@email.pt", "123");
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(1);
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente21@email.pt", "123");
+
+            System.out.println("fazer compra 2");
+            FazerCompraUI.run(1);
+            System.out.println("compra completa 2");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("gestor7@email.pt", "123");
+
+            System.out.println("Criar entrega");
+            CriarEntregaUI.run("418_1");
+            System.out.println("criar entrega concluida");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente20@email.pt", "123");
+
+            System.out.println("fazer compra 2");
+            FazerCompraUI.run(1);
+            System.out.println("compra completa 2");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente21@email.pt", "123");
+
+            System.out.println("fazer compra");
+            FazerCompraUI.run(1);
+            System.out.println("compra completa");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("gestor7@email.pt", "123");
+
+            System.out.println("Criar entrega");
+            CriarEntregaUI.run("418_2");
+            System.out.println("criar entrega concluida 2");
+
+            app.doLogout();
+
+            app.doLogin("cliente20@email.pt", "123");
+
+            System.out.println("fazer compra 3");
+            FazerCompraUI.run(0);
+            System.out.println("compra completa 3");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente21@email.pt", "123");
+
+            System.out.println("fazer compra 3");
+            FazerCompraUI.run(0);
+            System.out.println("compra completa 3");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("gestor7@email.pt", "123");
+
+            System.out.println("Criar entrega 3");
+            CriarEntregaUI.run("418_3");
+            System.out.println("criar entrega concluida 3");
+
+            app.doLogout();
+
+            app.doLogin("cliente20@email.pt", "123");
+
+            System.out.println("fazer compra 4");
+            FazerCompraUI.run(0);
+            System.out.println("compra completa 4");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+
+            app.doLogin("cliente21@email.pt", "123");
+
+            System.out.println("fazer compra 4");
+            FazerCompraUI.run(0);
+            System.out.println("compra completa 4");
+
+            System.out.println("Finalizar Compra");
+            FinalizarCompraUI.run(0);
+            System.out.println("Compra Finalizada");
+
+            app.doLogout();
+
+            app.doLogin("gestor7@email.pt", "123");
+
+            System.out.println("Criar entrega 4");
+            CriarEntregaUI.run("418_4");
+            System.out.println("criar entrega concluida 4");
+
+
+            app.doLogout();
+
+            app.doLogin("estafeta17@email.pt", "123");
+
+            System.out.println("Iniciar entrega");
+            IniciarEntregaUI.run(0);
+            System.out.println("iniciar entrega concluida");
+
+            app.doLogout();
+
+            OutputFileWriter.write("\n============================================================================\n");
+            OutputFileWriter.write("\nDADOS:");
+            OutputFile.writeOutput();
+
+            OutputFileWriter.write("\n\n");
+
+            WatchServiceFiles watchServiceFiles = new WatchServiceFiles();
+            watchServiceFiles.start();
+
+        } finally {
+            new FarmaciaBD().deleteRun();
+            BaseDados.closeConnection2();
+        }
+
+=================================================================================
+
+public static String closeConnection2(){
+
+        StringBuilder message = new StringBuilder();
+
+        if (connection != null) {
+            try {
+                connection.close();
+            } catch (SQLException ex) {
+                message.append(ex.getMessage());
+                message.append("\n");
+            }
+            connection = null;
+        }
+        return message.toString();
+    }

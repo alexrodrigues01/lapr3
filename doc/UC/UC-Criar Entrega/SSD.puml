@@ -1,0 +1,23 @@
+@startuml
+autonumber
+actor "Gestor farmácia" as GER
+
+activate GER
+GER -> ":Sistema" : inicia a criação da entrega
+activate ":Sistema"
+
+":Sistema" --> GER : apresenta a lista de encomendas \n e solicita que adicione uma
+deactivate ":Sistema"
+
+GER -> ":Sistema" : seleciona as encomendas
+activate ":Sistema"
+
+":Sistema" --> GER : apresenta a lista de encomendas \n selecionadas e solicita confirmação
+deactivate ":Sistema"
+GER -> ":Sistema" : confirma
+activate ":Sistema"
+":Sistema" --> GER : valida os dados e informa do sucesso da operação
+deactivate ":Sistema"
+deactivate GER
+
+@enduml

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-mutations</actionName>
+            <displayName>mutations</displayName>
+            <goals>
+                <goal>org.pitest:pitest-maven:mutationCoverage</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-cover</actionName>
+            <displayName>cover</displayName>
+            <goals>
+                <goal>jacoco:report</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-mutations fast</actionName>
+            <displayName>mutations fast</displayName>
+            <goals>
+                <goal>jacoco:report</goal>
+                <goal>org.pitest:pitest-maven:mutationCoverage</goal>
+                <goal>-DhistoryInputFile=target/fasterPitMutationTesting-history.txt</goal>
+                <goal>-DhistoryOutputFile=target/fasterPitMutationTesting-history.txt</goal>
+                <goal>-Dsonar.pitest.mode=reuseReport</goal>
+                <goal>-Dthreads=4</goal>
+                <goal>-DtimestampedReports=false</goal>
+            </goals>
+        </action>
+    </actions>

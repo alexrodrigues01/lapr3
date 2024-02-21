@@ -1,0 +1,11 @@
+@startuml
+autonumber
+
+participant "Sistema" as SYS
+
+activate SYS
+SYS -> SYS : O sistema iniciou o processo de pedir o produto a outra farmácia
+activate SYS
+deactivate SYS
+
+@enduml

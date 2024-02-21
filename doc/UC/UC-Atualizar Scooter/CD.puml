@@ -1,0 +1,28 @@
+@startuml
+left to right direction
+
+class AtualizarScooterUI{
+}
+
+class AtualizarScooterController{
++List<String> getListaScooter()
++String getScooterbyID(scooterID)
++removerScooter(scooterID)
+}
+
+class ScooterBD{
++List<String> getListaScooter()
++String getScooterbyID(scooterID)
++removerScooter(scooterID)
+}
+
+class BaseDados{
++getConnection()
++closeConnection()
+}
+
+AtualizarScooterUI ..> AtualizarScooterController
+AtualizarScooterController ..> ScooterBD
+ScooterBD ..> BaseDados
+
+@enduml

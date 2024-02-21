@@ -1,0 +1,63 @@
+@startuml
+autonumber
+
+actor "Administrador\n" as ADMIN
+participant ":RegistoProdutoUI" as UI
+participant ":RegistoProdutoController" as CONTROLLER
+participant ":ValidarParametros" as VP
+participant ":ProdutoBD" as PBD
+participant ":BaseDados" as BD
+participant "connection\n:Connection" as CON
+
+activate ADMIN
+
+ADMIN->UI:Inicia o registo de um novo produto
+activate UI
+UI --> ADMIN : solicita a introducao dos dados do produto (nome, preco unitario, massa unitaria, iva)
+deactivate UI
+
+ADMIN -> UI : introduz os dados
+activate UI
+UI -> CONTROLLER : novoProduto(nome, precoUnitario, massaUnitaria, iva)
+    activate CONTROLLER
+
+        CONTROLLER -> VP: validarParametrosProduto(nome, precoUnitario, massaUnitaria, iva)
+        activate VP
+        deactivate VP
+        CONTROLLER -> PBD : validaProduto(nome)
+        activate PBD
+        PBD -> BD : getConnection()
+        activate BD
+        deactivate BD
+        PBD -> BD : closeConnection()
+        activate BD
+        deactivate BD
+        deactivate PBD
+
+    deactivate CONTROLLER
+
+UI --> ADMIN : mostra a informacao, solicitando confirmacao
+deactivate UI
+
+ADMIN -> UI : confirma
+activate UI
+
+    UI -> CONTROLLER : registarProduto(nome, precoUnitario, massaUnitaria, iva)
+    activate CONTROLLER
+        CONTROLLER -> PBD : registaProduto(nome, precoUnitario, massaUnitaria, iva)
+            activate PBD
+                PBD -> BD : getConnection()
+                activate BD
+                deactivate BD
+                PBD -> BD : closeConnection()
+                activate BD
+                deactivate BD
+            deactivate PBD
+
+    deactivate CONTROLLER
+
+UI --> ADMIN : regista dados do novo produto e informa acerca do sucesso da operacao
+deactivate UI
+deactivate ADMIN
+@enduml
+

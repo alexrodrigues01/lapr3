@@ -1,0 +1,27 @@
+@startuml
+autonumber
+participant "instance\n:EstimarConsumoDroneTask" as TASK
+participant "drone\n:Drone" as DRONE
+participant "massaEntrega\n:double" as MASSAE
+participant "percurso\n:List<Morada>" as PERCURSO
+
+participant "massaEntregaAux\n:double" as MASSAEAUX
+participant "energiaEstimada\n:double" as ENERGIA
+participant "m1\n:Morada" as M1
+participant "m2\n:Morada" as M2
+
+--> TASK : estimarConsumoPercurso\n(drone, massaEntrega, percurso)
+activate TASK
+TASK -> TASK : massaEntregaAux = massaEntrega
+TASK -> TASK : energiaEstimada = 0
+loop int i = 0; i < percurso.size() - 1; i++
+TASK -> TASK : massaEntregaAux = (double) massaEntregaAux * (double) (1 / (double) (percurso.size() - 1));
+TASK -> TASK : energiaEstimadaTotal += estimarConsumoViagem(drone, m1, m2, massaEntregaAux)
+ref over TASK
+    documentação referente ao calculo da estimativa energética
+end ref
+end loop
+<-- TASK : energiaEstimada
+deactivate TASK
+
+@enduml

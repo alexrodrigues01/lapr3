@@ -1,0 +1,16 @@
+PRODUTO
+Viagra,50.5,200,15
+APRESENTA INFORMACAO
+CONFIRMA
+PROXIMO PRODUTO
+====================================================================================================
+PRODUTO
+ben u ron,2.30,200,15
+APRESENTA INFORMACAO
+CONFIRMA
+PROXIMO PRODUTO
+====================================================================================================
+PRODUTO
+canabis,7,10,15
+APRESENTA INFORMACAO
+CONFIRMA

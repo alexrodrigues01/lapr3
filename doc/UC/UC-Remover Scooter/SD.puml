@@ -1,0 +1,71 @@
+@startuml
+autonumber
+
+actor "Gestor" as GEST
+participant ":RemoverScooterUI" as UI
+participant ":RemoverScooterController" as CONTROLLER
+participant ":ScooterBD" as SCBD
+participant ":BaseDados" as BD
+participant "listaScooter :List<String>"
+
+
+GEST -> UI : Seleciona remover uma scooter
+activate GEST
+activate UI
+UI->CONTROLLER: listaScooter=getListaScooter()
+activate CONTROLLER
+
+CONTROLLER -> SCBD : listaScooter= getListaScooter()
+
+activate SCBD
+deactivate CONTROLLER
+  SCBD -> BD : connection=getConnection()
+        activate BD
+        deactivate BD
+          SCBD -> BD : closeConnection()
+        activate BD
+        deactivate BD
+deactivate SCBD
+
+UI --> GEST: Apresenta a lista de scooters
+deactivate UI
+
+GEST-> UI : Seleciona o id da scooter que \n pretende remover
+activate UI
+UI->CONTROLLER: infoScooter=getScooterbyID(scooterID)
+activate CONTROLLER
+CONTROLLER -> SCBD : infoScooter=getScooterbyID(scooterID)
+
+activate SCBD
+deactivate CONTROLLER
+ SCBD -> BD : connection=getConnection()
+        activate BD
+        deactivate BD
+          SCBD -> BD : closeConnection()
+        activate BD
+        deactivate BD
+deactivate SCBD
+deactivate CONTROLLER
+UI-->GEST: Apresenta os dados da scooter \n e solicita confirmação da remoção
+deactivate UI
+
+GEST-> UI: Confirma
+activate UI
+UI->CONTROLLER: removerScooter(scooterID)
+activate CONTROLLER
+CONTROLLER-> SCBD: removerScooter(scooterID)
+activate SCBD
+ SCBD -> BD : connection=getConnection()
+        activate BD
+        deactivate BD
+          SCBD -> BD : closeConnection()
+        activate BD
+        deactivate BD
+deactivate SCBD
+deactivate CONTROLLER
+UI--> GEST : informa do sucesso da operação
+deactivate UI
+
+deactivate GEST
+
+@enduml

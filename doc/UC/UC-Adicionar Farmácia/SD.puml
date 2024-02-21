@@ -1,0 +1,238 @@
+@startuml
+autonumber
+
+actor "Administrador" as ADMIN
+participant ":AdicionarFarmaciaUI" as UI
+participant ":AdicionarFarmaciaController" as CONTROLLER
+participant ":ValidarParametros" AS VALIDAR
+participant "farmaciaBD :FarmaciaBD" AS FARM_BD
+participant "gestorBD :GestorFarmaciaBD" AS GESTOR_BD
+participant "moradaBD :MoradaBD" AS MORADA_BD
+participant "utilizadorBD :UtilizadorBD" AS USER_BD
+participant ":BaseDados" AS BD
+participant "connection :Connection"
+
+ADMIN -> UI : Seleciona adicionar uma nova farmácia
+activate ADMIN
+
+activate UI
+UI --> ADMIN : Solicita as informações sobre a famácia
+deactivate UI
+
+ADMIN -> UI : Introduz as informações da farmácia (nome, NIF, email, telemovel)
+activate UI
+
+    UI -> CONTROLLER** : controller = create()
+    activate CONTROLLER
+
+        CONTROLLER -> FARM_BD** : farmaciaBD = create()
+        CONTROLLER -> GESTOR_BD** : gestorBD = create()
+        CONTROLLER -> USER_BD** : utilizadorBD = create()
+        CONTROLLER -> MORADA_BD** : moradaBD = create()
+
+    deactivate CONTROLLER
+
+    UI -> CONTROLLER : validaFarmacia(nome, NIF, telemovel, email)
+    activate CONTROLLER
+
+        CONTROLLER -> VALIDAR : validaParametrosFarmacia(nome, NIF, telemovel, email)
+        activate VALIDAR
+        deactivate VALIDAR
+
+        CONTROLLER -> FARM_BD : validaFarmacia(email, nif)
+        activate FARM_BD
+
+            FARM_BD -> BD : connection = getConnection()
+            activate BD
+            deactivate BD
+
+            FARM_BD -> BD : closeConnection()
+            activate BD
+            deactivate BD
+
+        deactivate FARM_BD
+
+    deactivate CONTROLLER
+
+UI --> ADMIN : Solicita o numero de lugares de estacionamento com e sem suporte para carregamento e a capacidade de energia do parque
+deactivate UI
+
+ADMIN -> UI : Introduz as os dois valores (lugares com suporte para carregamento e lugares sem suporte para carregamento)
+activate UI
+
+    UI -> CONTROLLER : validaLugaresEstacionamento(lugaresComSuporte, lugaresSemSuporte,capacidadeEnergia)
+    activate CONTROLLER
+
+        CONTROLLER -> VALIDAR : validaParametrosLugaresEstacionamento(lugaresSemSuporte, lugaresComSuporte,capacidadeEnergia)
+        activate VALIDAR
+        deactivate VALIDAR
+
+    deactivate CONTROLLER
+
+UI --> ADMIN : Solicita as informações do gestor responsavel pela farmácia
+deactivate UI
+
+ADMIN -> UI : Introduz as informações do gestor de farmácia (nome, email, telemovel, nif, pwd)
+activate UI
+
+    UI -> CONTROLLER : validaGestorFarmacia(nome, email, nif, telemóvel, pwd)
+    activate CONTROLLER
+
+        CONTROLLER -> VALIDAR : validaParametrosUtilizador(email, pwd, nome, nif, telemovel)
+        activate VALIDAR
+        deactivate VALIDAR
+
+        CONTROLLER -> GESTOR_BD : validaGestorFarmacia(email, nif)
+        activate GESTOR_BD
+
+            GESTOR_BD -> BD : connection = getConnection()
+            activate BD
+            deactivate BD
+
+            GESTOR_BD -> BD : closeConnection()
+            activate BD
+            deactivate BD
+
+        deactivate GESTOR_BD
+
+    deactivate CONTROLLER
+
+UI --> ADMIN : Solicita as moradas da farmácia e do gestor de farmácia
+deactivate UI
+
+ADMIN --> UI : intoduz a morada da farmácia(morada, longitude, latitude, altitude) e do gestor(morada, longitude, latitude, altitude)
+activate UI
+
+    UI -> CONTROLLER : validaMoradas(moradaFarmacia, longitudeFarmacia, latitudeFarmacia, altitudeFarmacia,\nmoradaGestor, longitudeGestor, latitudeGestor, altitudeGestor)
+    activate CONTROLLER
+
+        CONTROLLER -> VALIDAR : validaParametrosMorada(moradaFarmacia, longitudeFarmacia, latitudeFarmacia)
+        activate VALIDAR
+        deactivate VALIDAR
+
+        CONTROLLER -> MORADA_BD : validaMorada(moradaFarmacia, longitudeFarmacia, latitudeFarmacia, altitudeFarmacia)
+        activate MORADA_BD
+
+            MORADA_BD -> BD : connection = getConnection()
+            activate BD
+            deactivate BD
+
+            MORADA_BD -> BD : closeConnection()
+            activate BD
+            deactivate BD
+
+        deactivate MORADA_BD
+
+        CONTROLLER -> MORADA_BD : validaMoradaFarmacia(moradaFarmacia, latitudeFarmacia, longitudeFarmacia, altitudeFarmacia)
+        activate MORADA_BD
+
+            MORADA_BD -> BD : connection = getConnection()
+            activate BD
+            deactivate BD
+
+            MORADA_BD -> BD : closeConnection()
+            activate BD
+            deactivate BD
+
+        deactivate MORADA_BD
+
+        CONTROLLER -> VALIDAR : validaParametrosMorada(moradaFarmacia, longitudeFarmacia, latitudeFarmacia)
+        activate VALIDAR
+        deactivate VALIDAR
+
+        CONTROLLER -> MORADA_BD : validaMorada(moradaFarmacia, longitudeFarmacia, latitudeFarmacia, altitudeGestor)
+        activate MORADA_BD
+
+            MORADA_BD -> BD : connection = getConnection()
+            activate BD
+            deactivate BD
+
+            MORADA_BD -> BD : closeConnection()
+            activate BD
+            deactivate BD
+
+        deactivate MORADA_BD
+
+    deactivate CONTROLLER
+
+UI --> ADMIN : Apresenta as informações e pede para confirmar
+deactivate UI
+
+ADMIN -> UI : Confirma
+activate UI
+
+    UI -> CONTROLLER : addDados()
+    activate CONTROLLER
+
+        CONTROLLER -> USER_BD : novoUtilizador(nomeGestor, emailGestor, telemovelGestor, nifGestor, pwd, PAPEL_GESTOR_FARMACIA, moradaGestorFarmacia, longitudeGestor, latitudeGestor, altitudeGestor)
+        activate USER_BD
+
+            USER_BD -> BD : connection = getConnection()
+            activate BD
+            deactivate BD
+
+            USER_BD -> BD : closeConnection()
+            activate BD
+            deactivate BD
+
+        deactivate USER_BD
+
+        CONTROLLER -> GESTOR_BD : novoGestorFarmacia(emailGestor)
+        activate GESTOR_BD
+
+            GESTOR_BD -> BD : connection = getConnection()
+            activate BD
+            deactivate BD
+
+            GESTOR_BD -> BD : closeConnection()
+            activate BD
+            deactivate BD
+
+        deactivate GESTOR_BD
+
+        CONTROLLER -> FARM_BD : farmaciaID = novaFarmacia(nomeFarmacia, emailFarmacia, telemovelFarmacia, nifFarmacia, moradaFarmacia, latitudeFarmacia, longitudeFarmacia, altitudeFarmacia, emailGestor)
+        activate FARM_BD
+
+            FARM_BD -> BD : connection = getConnection()
+            activate BD
+            deactivate BD
+
+            FARM_BD -> BD : closeConnection()
+            activate BD
+            deactivate BD
+
+        deactivate FARM_BD
+
+        CONTROLLER -> FARM_BD : setLugaresScooter(farmaciaID, lugaresSemSuporte, lugaresComSuporte, capacidadeEnergia)
+        activate FARM_BD
+
+            FARM_BD -> BD : connection = getConnection()
+            activate BD
+            deactivate BD
+
+            FARM_BD -> BD : closeConnection()
+            activate BD
+            deactivate BD
+
+        deactivate FARM_BD
+
+        CONTROLLER -> FARM_BD : associaProdutos(farmaciaID)
+        activate FARM_BD
+
+            FARM_BD -> BD : connection = getConnection()
+            activate BD
+            deactivate BD
+
+            FARM_BD -> BD : closeConnection()
+            activate BD
+            deactivate BD
+
+        deactivate FARM_BD
+
+    deactivate CONTROLLER
+
+UI --> ADMIN : Informa do seu sucesso
+deactivate UI
+deactivate ADMIN
+
+@enduml

@@ -1,0 +1,51 @@
+    @startuml
+autonumber
+
+actor "Utilizador Não \nRegistado/Cliente" as UNR
+participant ":CatalogoUI" as UI
+participant ":AdicionarProduto\nCarrinhoController" as CTRL
+
+activate UNR
+
+UNR->UI:Adicionar produto ao carrinho
+activate UI
+
+UI->CTRL:idValido=validarProdutoId(idProduto)
+activate CTRL
+CTRL->ProdutoBD:idValido=validarProdutoId(idProduto)
+activate ProdutoBD
+deactivate ProdutoBD
+
+
+
+CTRL->"ProdutoBD":produto=getProdutoById(idProduto)
+
+activate ProdutoBD
+deactivate ProdutoBD
+
+
+deactivate CTRL
+
+
+
+UI --> UNR : Solicita a quantidade de produtos
+deactivate UI
+
+UNR -> UI : Insere a quantidade de produtos
+activate UI
+
+UI->CTRL:adicionarAoCarrinho(quantidade)
+activate CTRL
+CTRL->CarrinhoCompras:adicionarProduto(produto,quantidade)
+activate CarrinhoCompras
+deactivate CarrinhoCompras
+deactivate CTRL
+
+UI --> UNR : Operação bem sucedida
+deactivate UI
+
+deactivate CTRL
+deactivate UNR
+
+@enduml
+

@@ -1,0 +1,7 @@
+morada1;morada2;coeficienteignorado
+Tecofix Porto;Farmacia sa;0.5
+Tecofix Porto;Alameda Shop Spot;0.5
+Alameda Shop Spot;Tecofix Porto;0.5
+Alameda Shop Spot;Farmacia sa;0.5
+Farmacia sa;Tecofix Porto;0.5
+Farmacia sa;Alameda Shop Spot;0.5

@@ -1,0 +1,4 @@
+morada;latitude;longitude;altitude
+Farmacia Marques da Cunha;41.19764197928214;-8.49959703088823;149
+Tecofix Porto;41.153952035714354;-8.547053530889555;84
+Centro Comercial Plaza;41.23340661610906;-8.621535302051184;101

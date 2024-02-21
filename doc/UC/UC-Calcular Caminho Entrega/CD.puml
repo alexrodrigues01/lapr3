@@ -1,0 +1,43 @@
+@startuml
+
+class CaminhoTask {
+    +Graph<Morada, Double> g
+    -Pair<List<Morada>, double[]> caminho(boolean estimativas, Morada moradaFarmacia, List<Morada> moradasEncomendas, double massaEncomendas, Veiculo veiculo, boolean isDrone, MoradaBD moradaBD)
+    -List<Morada> gerarCaminho(boolean estimativas, Morada moradaFarmacia, List<Morada> moradasEncomendas, boolean isDrone)
+    -double calcularDistanciaTotal(List<Morada> moradas)
+    -void adicionarParagensCarregamento(Veiculo veiculo, double massaEncomendas, List<Morada> caminho, List<Morada> listaSimulacao, int indexCaminho, double energiaEstimada, double energiaDisponivel, Map<Integer, Morada> farmacias, boolean isDrone, boolean flag)
+    -double energiaMinimiaCaminho(Veiculo veiculo, double massaEncomendas, List<Morada> caminho, Map<Integer, Morada> farmacias, boolean isDrone)
+    -Morada getFarmaciaMaisPertoConsumo(Morada morada, Map<Integer, Morada> farmacias, boolean isDrone)
+    -boolean temEnergiaParaIrFarmacia(Veiculo veiculo, double massaEntrega, List<Morada> caminho, int indexCaminho, Morada farmMorada, double energiaDisponivel, boolean isDrone)
+}
+
+class EstimarConsumoScooterTask {
+    -double calculoEstimativaConsumo(boolean estimativas, double massaScooter, double massaEntrega, List<Morada> caminho, boolean print)
+}
+
+class EstimarConsumoDroneTask {
+    -double estimarConsumoPercurso(Drone drone, double massaEntrega, List<Morada> percurso, boolean print)
+}
+
+class Constantes {
+    +double VELOCIDADE_SCOOTER
+    +double ventoxdrone
+    +double ventoydrone
+    +double ventoxscooter
+    +double ventoyscooter
+}
+
+class GraphAlgorithms {
+    -LinkedList<V> breadthFirstSearch(Graph<V, E> g, V vert)
+    -double shortestPath(Graph<V, E> g, V vOrig, V vDest, LinkedList<V> shortPath)
+    -List<V> shortestPathMultipleNodes(Graph<V, E> network, List<V> nodes, V vOrig, V vDest)
+}
+
+CaminhoTask --> EstimarConsumoScooterTask
+CaminhoTask --> EstimarConsumoDroneTask
+CaminhoTask --> Constantes
+CaminhoTask --> GraphAlgorithms
+
+EstimarConsumoScooterTask --> Constantes
+
+@enduml

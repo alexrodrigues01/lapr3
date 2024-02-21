@@ -1,0 +1,29 @@
+@startuml
+class VisualizarCatalogoUI
+class VisualizarCatalogoController{
+-  List<Produto> listaProdutos;
+- ProdutoBD produtoBD;
++ArrayList<String> getTodosProdutos()
++setProdutoBD(ProdutoBD produtoBD)
+}
+class Farmacia
+class Produto
+class BaseDados{
++Connection getConnection()
++String closeConnection()
+}
+class ProdutoBD{
++ArrayList<Produto> getTodosProdutos()
++List<Produto> getProdutoByFarmacia(int id)
+
+}
+
+Farmacia "1" --> "0..*" Produto : possui
+VisualizarCatalogoController ..> ProdutoBD
+ProdutoBD ..> BaseDados
+ProdutoBD ..> Produto
+VisualizarCatalogoUI ..>  VisualizarCatalogoController
+
+
+
+@enduml

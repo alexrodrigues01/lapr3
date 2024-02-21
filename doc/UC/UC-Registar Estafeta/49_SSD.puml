@@ -1,0 +1,27 @@
+@startuml
+autonumber
+actor "Gestor" as G
+participant ":Sistema" as SIST
+
+activate G
+G -> SIST : inicia o registo de um Estafeta
+
+activate SIST
+SIST --> G : solicita os dados necessários \n(i.e. nome, NIF, email, password, telefone, \nnumSegSocial morada, longitude, latitude, altitude)
+deactivate SIST
+
+G -> SIST : introduz os dados solicitados
+
+activate SIST
+SIST --> G : apresenta dados e solicita confirmação
+deactivate SIST
+
+G -> SIST : confirma
+
+activate SIST
+SIST --> G : informa operação bem sucedida
+deactivate SIST
+
+deactivate G
+
+@enduml

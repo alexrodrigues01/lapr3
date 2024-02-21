@@ -1,0 +1,4 @@
+Vento Scooter (Longitude/Latitude) (m/s)
+0.6738774594864494;1.2144552339526975
+Vento Drone (Longitude/Latitude) (m/s)
+0;0

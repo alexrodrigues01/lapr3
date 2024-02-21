@@ -1,0 +1,81 @@
+@startuml
+autonumber
+
+actor "Utilizador nao registado" as UNR
+participant ":RegistoClienteUI" as UI
+participant ":RegistoClienteController" as CONTROLLER
+participant ":ValidarParametros" as VP
+participant ":ClienteBD" as CBD
+participant ":UtilizadorBD" AS USER_BD
+participant "bd:BaseDados" as BD
+participant "connection :Connection"
+
+UNR -> UI : inicia registo de novo utilizador como cliente
+activate UNR
+activate UI
+
+UI --> UNR : solicita a introducao dos dados pessoais do cliente (nome, NIF, telefone, morada, coordenadas GPS, informacao cartao credito, email, password)
+deactivate UI
+
+UNR -> UI : introduz os dados
+activate UI
+
+    UI -> CONTROLLER : novoCliente(nome, nif, telefone, morada, latitude, longitude, nCartCred, valCartCred, cvv, email, password)
+    activate CONTROLLER
+
+        CONTROLLER -> VP: validarParametrosUtilizador(email, password, nome, nif, telefone)
+        activate VP
+        deactivate VP
+        CONTROLLER -> VP: validarParametrosMorada(morada, latitude, longitude)
+        activate VP
+        deactivate VP
+        CONTROLLER -> VP: validarParametrosCliente(nCartCred, valCartCred, cvv)
+        activate VP
+        deactivate VP
+        CONTROLLER -> CBD : validaCliente(email,nif)
+        activate CBD
+        CBD -> BD : getConnection()
+        activate BD
+        deactivate BD
+        CBD -> BD : closeConnection()
+        activate BD
+        deactivate BD
+        deactivate CBD
+
+    deactivate CONTROLLER
+
+UI --> UNR : mostra a informacao, solicitando confirmacao
+deactivate UI
+
+UNR -> UI : confirma
+activate UI
+
+    UI -> CONTROLLER : registarCliente(nome, nif, telefone, morada, latitude, longitude, nCartCred, valCartCred, cvv, email, password)
+    activate CONTROLLER
+
+        CONTROLLER -> USER_BD : novoUtilizador(email,password,nome,nif,telefone,papel,morada,latitude,longitude)
+            activate USER_BD
+                USER_BD -> BD : getConnection()
+                activate BD
+                deactivate BD
+                USER_BD -> BD : closeConnection()
+                activate BD
+                deactivate BD
+            deactivate USER_BD
+
+        CONTROLLER -> CBD : registaCliente(email,nCartCred,valCartCred,cvv)
+                activate CBD
+                    CBD -> BD : getConnection()
+                    activate BD
+                    deactivate BD
+                    CBD -> BD : closeConnection()
+                    activate BD
+                    deactivate BD
+                deactivate CBD
+
+    deactivate CONTROLLER
+
+UI --> UNR : regista dados do novo utilizador e informa acerca do sucesso da operacao
+deactivate UI
+deactivate UNR
+@enduml

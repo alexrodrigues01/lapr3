@@ -1,0 +1,7 @@
+morada1;morada2;coeficienteignorado
+Farmacia Marques da Cunha;Tecofix Porto;0.5
+Farmacia Marques da Cunha;Centro Comercial Plaza;0.5
+Tecofix Porto;Farmacia Marques da Cunha;0.5
+Tecofix Porto;Centro Comercial Plaza;0.5
+Centro Comercial Plaza;Tecofix Porto;0.5
+Centro Comercial Plaza;Farmacia Marques da Cunha;0.5

@@ -1,0 +1,117 @@
+@startuml
+autonumber
+
+actor "Gestor" as ADMIN
+participant ":AdicionarDroneUI" as UI
+participant ":AdicionarDroneController" as CONTROLLER
+participant "AplicacaoPOT" as APLICACAOPOT
+participant ":ValidarParametros" as VP
+participant ":DroneBD" as DBD
+participant "drone :Drone" AS D
+participant "app:AplicacaoPOT" as APP
+participant "sessao:SessaoUtilizador" as SESSAO
+participant ":FarmaciaBD" as REGFARM
+participant "gestor :GestorFarmacia" AS GESTOR
+participant ":BaseDados" AS BD
+participant "farmacia: Farmacia" as FARM
+participant "lugar: LugarDrone" as LUGAR
+participant "lista: ListaLugarDrone" as LISTA
+participant "aut:AutorizacaoFacade" as AF
+participant "utilizador :Utilizador" as USER
+participant "connection: Connection" as CN
+
+ADMIN -> UI : Seleciona adicionar um novo drone
+activate ADMIN
+
+activate UI
+UI --> ADMIN : Solicita as informações sobre o drone
+deactivate UI
+
+ADMIN -> UI : Introduz as informações do drone (carga,capacidade bateria,consumo por hora da bateria, \ntensao da bateria, massa do drone, potencia, massa, potencia, velocidade, valor de avionics, \nvalor de drag, valor de rotors, carga maxima)
+activate UI
+    UI -> CONTROLLER : drone = novoDrone(carga,capacidadeBateria,consumoHoraBateria,tensaoBateria,massa,potencia,massa,potencia,velocidade,avionics,drag,rotors,cargaMaxima)
+    activate CONTROLLER
+    CONTROLLER -> APLICACAOPOT: app = getInstance()
+    activate APLICACAOPOT
+    deactivate APLICACAOPOT
+
+
+
+        CONTROLLER -> D** : create(carga,capacidadeBateria,consumoHoraBateria,tensaoBateria,massa,potencia,massa,potencia,velocidade,avionics,drag,rotors,cargaMaxima)
+
+        CONTROLLER-> APP :  getSessaoAtual()
+                              activate APP
+                              deactivate APP
+
+        CONTROLLER -> SESSAO: email=getEmailUtilizador()
+        activate SESSAO
+        deactivate SESSAO
+
+        CONTROLLER -> REGFARM: farmacia=getFarmaciabyGestor(email)
+        activate REGFARM
+        REGFARM -> BD : connection=getConnection()
+        activate BD
+        deactivate BD
+        REGFARM -> BD : closeConnection()
+        activate BD
+        deactivate BD
+
+        deactivate REGFARM
+
+        CONTROLLER -> FARM: farmID=getID()
+        activate FARM
+        deactivate FARM
+
+        CONTROLLER-> REGFARM: lugar=getLugarDronebyFarm(farmID)
+        activate REGFARM
+                REGFARM -> LISTA : getLugarDisponivel()
+                activate LISTA
+                deactivate LISTA
+        deactivate REGFARM
+
+        CONTROLLER -> LUGAR : setDrone(idDrone)
+        activate LUGAR
+        LUGAR-> LUGAR: verificaEstado()
+        activate LUGAR
+        deactivate LUGAR
+        deactivate LUGAR
+
+    deactivate CONTROLLER
+
+UI --> ADMIN : Apresenta as informações e pede para confirmar
+deactivate UI
+
+ADMIN -> UI : Confirma
+activate UI
+    UI -> CONTROLLER : updateDrone(lugar,drone)
+    activate CONTROLLER
+
+        CONTROLLER -> REGFARM: updateLugarDrone(lugar)
+        activate REGFARM
+             REGFARM -> BD : connection=getConnection()
+                activate BD
+                deactivate BD
+                  REGFARM -> BD : closeConnection()
+                activate BD
+                deactivate BD
+        deactivate REGFARM
+
+        CONTROLLER-> DBD: updateDrone(drone)
+   activate DBD
+
+           DBD -> BD : connection=getConnection()
+            activate BD
+            deactivate BD
+             DBD -> BD : closeConnection()
+            activate BD
+            deactivate BD
+
+   deactivate DBD
+
+   deactivate CONTROLLER
+
+UI --> ADMIN : Adiciona as informações à base de dados e informa do seu sucesso
+deactivate UI
+deactivate ADMIN
+
+@enduml

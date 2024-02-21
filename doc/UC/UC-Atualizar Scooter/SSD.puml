@@ -1,0 +1,27 @@
+@startuml
+autonumber
+actor "Gestor farmácia" as GER
+
+activate GER
+GER -> ":Sistema" : inicia a atualização de uma scooter
+activate ":Sistema"
+":Sistema" --> GER : apresenta a lista de scooters \n e solicita que escolha uma
+deactivate ":Sistema"
+
+GER -> ":Sistema" : seleciona uma scooter
+activate ":Sistema"
+":Sistema" --> GER : apresenta os dados da scooter\n e solicita os novos dados
+deactivate ":Sistema"
+
+GER -> ":Sistema" : insere os novos dados
+activate ":Sistema"
+":Sistema" --> GER : apresenta os novos dados \n e solicita confirmação
+deactivate ":Sistema"
+GER->":Sistema" : confirma a atualização
+activate ":Sistema"
+":Sistema" --> GER : informa do sucesso da operação
+deactivate ":Sistema"
+
+deactivate GER
+
+@enduml

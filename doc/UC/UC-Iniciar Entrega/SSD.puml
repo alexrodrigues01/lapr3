@@ -1,0 +1,13 @@
+@startuml
+Estafeta-> ":Sistema": Iniciar entrega
+activate ":Sistema"
+activate Estafeta
+":Sistema"-->Estafeta: Apresenta as entregas e solicita o id
+deactivate ":Sistema"
+Estafeta-> ":Sistema": Escolhe e confirma
+activate ":Sistema"
+":Sistema"-->Estafeta: Operação bem sucedida
+deactivate ":Sistema"
+deactivate Estafeta
+
+@enduml

@@ -1,0 +1,87 @@
+@startuml
+left to right direction
+
+class CriarEntregaUI
+
+class CriarEntregaController{
++List<Encomenda> getEncomendas()
++Pair<Veiculo,Double> validaDados(List<Integer> encomendas, boolean estimativa)
++double calcularCargaTotal()
++List<Drone> getDronesCapazes()
++Veiculo getVeiculoMaisEficiente()
+}
+
+class AplicacaoPOT{
++getInstance()
++SessaoUtilizador getSessaoAtual()
+}
+
+class SessaoUtilizador{
++String getEmailUtilizador()
+}
+
+class FarmaciaBD{
++Farmacia getFarmByEmail(String email)
+}
+
+class BaseDados{
++getConnection()
++closeConnection()
+}
+
+class MoradaBD{
++Morada getMoradaByID(farmID)
+}
+
+class EncomendaBD{
++List<Encomenda> getEncomendasByFarmID(String idFarm)
++List<Encomenda> getEncomendasByID(List<Integer> encomenda)
++List<Morada> getMoradasClientesByEncomendas(List <Encomenda> listaEncomendas)
++boolean setIDEntrega(List<Encomenda> listaEncomendas, Entrega entrega)
+}
+
+class ScooterBD{
++List<Scooter> getScootersByFarmID(String idFarm)
+}
+
+class CaminhoTask{
++getCaminhoAndConsumo(boolean estimativa, Morada moradaFarmacia,List<Morada> listaMoradas,double cargaTotal,Veiculo veiculo,boolean isDrone,MoradaBD moradaBD)
+}
+
+class EstafetaBD{
++getEstafetaAvailable(idFarm)
+}
+
+class EntregaBD{
++Entrega createEntrega(double cargaTotal, double distanciaTotal, double consumoEstimado, Veiculo veiculo, Estafeta estafeta)
++boolean setCaminho(Entrega entrega, List<Morada> caminho)
+}
+
+
+CriarEntregaUI ..> CriarEntregaController
+CriarEntregaController ..> AplicacaoPOT
+CriarEntregaController ..> SessaoUtilizador
+CriarEntregaController ..> FarmaciaBD
+CriarEntregaController ..> MoradaBD
+CriarEntregaController ..> EncomendaBD
+CriarEntregaController ..> ScooterBD
+CriarEntregaController ..> CaminhoTask
+CriarEntregaController ..> EstafetaBD
+CriarEntregaController ..> EntregaBD
+
+FarmaciaBD  ..> BaseDados
+MoradaBD    ..> BaseDados
+EncomendaBD ..> BaseDados
+ScooterBD   ..> BaseDados
+CaminhoTask ..> BaseDados
+EstafetaBD  ..> BaseDados
+EntregaBD   ..> BaseDados
+
+
+
+
+
+
+
+
+@enduml

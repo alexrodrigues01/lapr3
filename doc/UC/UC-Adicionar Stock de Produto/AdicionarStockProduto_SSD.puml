@@ -1,0 +1,24 @@
+@startuml
+autonumber
+actor "GestorFarmacia\n" as GES
+
+activate GES
+GES -> ":Sistema" : Adicionar stock de produto
+
+activate ":Sistema"
+":Sistema" --> GES : Apresenta lista de produtos, solicitando a selecao do produto e o valor de stock a adicionar
+deactivate ":Sistema"
+GES -> ":Sistema" : seleciona o produto e introduz o valor de stock a adicionar
+
+activate ":Sistema"
+":Sistema" --> GES : valida e apresenta os dados, solicitando confirmacao
+deactivate ":Sistema"
+GES -> ":Sistema" : confirma
+
+activate ":Sistema"
+":Sistema" --> GES: regista dados do novo utilizador e informa acerca do sucesso da operacao
+deactivate ":Sistema"
+
+deactivate GES
+@enduml
+

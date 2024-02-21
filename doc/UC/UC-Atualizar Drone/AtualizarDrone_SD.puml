@@ -1,0 +1,83 @@
+@startuml
+autonumber
+
+actor "Gestor" as GEST
+participant ":AtualizarDroneUI" as UI
+participant ":AtualizarDroneController" as CONTROLLER
+participant ":DroneBD" as DBD
+participant ":BaseDados" as BD
+participant "listaDrone :List<String>"
+participant ":Drone" as D
+
+
+GEST -> UI : Seleciona atualizar um drone
+activate GEST
+activate UI
+UI->CONTROLLER: listaDrone=getListaDrone()
+activate CONTROLLER
+
+CONTROLLER -> DBD : listaDrone= getListaDrone()
+
+activate DBD
+deactivate CONTROLLER
+  DBD -> BD : connection=getConnection()
+        activate BD
+        deactivate BD
+          DBD -> BD : closeConnection()
+        activate BD
+        deactivate BD
+deactivate DBD
+
+UI --> GEST: Apresenta a lista de drones
+deactivate UI
+
+GEST-> UI : Seleciona o id do drone que \n pretende atualizar
+activate UI
+UI->CONTROLLER: infoDrone=getDronebyID(droneID)
+activate CONTROLLER
+CONTROLLER -> DBD : infoDrone=getDronebyID(droneID)
+
+activate DBD
+deactivate CONTROLLER
+ DBD -> BD : connection=getConnection()
+        activate BD
+        deactivate BD
+          DBD -> BD : closeConnection()
+        activate BD
+        deactivate BD
+deactivate DBD
+deactivate CONTROLLER
+UI-->GEST: apresenta os dados do drone\n e solicita os novos dados
+deactivate UI
+
+GEST-> UI: insere os novos dados
+activate UI
+UI->CONTROLLER: validaDados(carga,capacidadeBateria,estadoDroneID,consumoHoraBateria,tensaoBateria,massa,potencia,velocidade,avionics,drag,rotors,cargaMaxima)
+activate CONTROLLER
+
+CONTROLLER -> D**: create(carga,capacidadeBateria,estadoDroneID,consumoHoraBateria,tensaoBateria,massa,potencia,velocidade,avionics,drag,rotors,cargaMaxima)
+activate D
+deactivate D
+
+deactivate CONTROLLER
+UI--> GEST : apresenta os novos dados e\nsolicita confirmação
+deactivate UI
+
+GEST-> UI : confirma os dados
+activate UI
+UI-> CONTROLLER: updateDados()
+activate CONTROLLER
+CONTROLLER -> DBD : updateDados(id,carga,capacidadeBateria,estadoDroneID,consumoHoraBateria,tensaoBateria,massa,potencia,velocidade,avionics,drag,rotors,cargaMaxima)
+activate DBD
+ DBD -> BD : connection=getConnection()
+        activate BD
+        deactivate BD
+          DBD -> BD : closeConnection()
+        activate BD
+        deactivate BD
+deactivate DBD
+deactivate CONTROLLER
+deactivate UI
+deactivate GEST
+
+@enduml

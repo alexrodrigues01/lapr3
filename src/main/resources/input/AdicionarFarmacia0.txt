@@ -1,0 +1,86 @@
+FARMACIA
+Farmacia Guifoes,111111111,123456789,farmacia1@email.pt
+LUGAR ESTACIONAMENTO
+10,10,30
+GESTOR
+Joao Maca,gestor1@email.pt,211111111,987654321,123
+MORADAS
+Farmacia Guifoes,41.2000760144597,-8.666100202052215,71,Farmacia Guifoes,41.2000760144597,-8.666100202052215,71
+GUARDAR DADOS
+PROXIMA FARMACIA
+==============================================================================
+FARMACIA
+Farmacia Sousa Torres,122222222,123456789,farmacia2@email.pt
+LUGAR ESTACIONAMENTO
+10,10,30
+GESTOR
+Joao Maca,gestor2@email.pt,222222222,987654321,123
+MORADAS
+Farmacia Sousa Torres,41.219731359695324,-8.560865702051606,82,Farmacia Sousa Torres,41.219731359695324,-8.560865702051606,82
+GUARDAR DADOS
+PROXIMA FARMACIA
+==============================================================================
+FARMACIA
+Farmacia Marques da Cunha,133333333,123456789,farmacia3@email.pt
+LUGAR ESTACIONAMENTO
+10,10,30
+GESTOR
+Joao Maca,gestor3@email.pt,233333333,987654321,123
+MORADAS
+Farmacia Marques da Cunha,41.19764197928214,-8.49959703088823,149,Farmacia Marques da Cunha,41.19764197928214,-8.49959703088823,149
+GUARDAR DADOS
+PROXIMA FARMACIA
+==============================================================================
+FARMACIA
+Farmacia Avenida,144444444,123456789,farmacia4@email.pt
+LUGAR ESTACIONAMENTO
+10,10,30
+GESTOR
+Joao Maca,gestor4@email.pt,244444444,987654321,123
+MORADAS
+Farmacia Avenida,41.16051393409644,-8.6437290020534,64,Farmacia Avenida,41.16051393409644,-8.6437290020534,64
+GUARDAR DADOS
+PROXIMA FARMACIA
+==============================================================================
+FARMACIA
+Farmacia sa,155555555,123456789,farmacia5@email.pt
+LUGAR ESTACIONAMENTO
+10,10,30
+GESTOR
+Joao Maca,gestor5@email.pt,255555555,987654321,123
+MORADAS
+Farmacia sa,41.16704810908665,-8.61184413088914,125,Farmacia sa,41.16704810908665,-8.61184413088914,125
+GUARDAR DADOS
+PROXIMA FARMACIA
+==============================================================================
+FARMACIA
+Farmacia de Fanzeres,166666666,123456789,farmacia6@email.pt
+LUGAR ESTACIONAMENTO
+10,10,30
+GESTOR
+Joao Maca,gestor6@email.pt,266666666,987654321,123
+MORADAS
+Farmacia de Fanzeres,41.161132901957934,-8.531416030889346,89,Farmacia de Fanzeres,41.161132901957934,-8.531416030889346,89
+GUARDAR DADOS
+PROXIMA FARMACIA
+==============================================================================
+FARMACIA
+Farmacia Sa da Bandeira,177777777,123456789,farmacia7@email.pt
+LUGAR ESTACIONAMENTO
+10,10,30
+GESTOR
+Joao Maca,gestor7@email.pt,277777777,987654321,123
+MORADAS
+Farmacia Sa da Bandeira,41.14835087928681,-8.60798820205382,75,Farmacia Sa da Bandeira,41.14835087928681,-8.60798820205382,75
+GUARDAR DADOS
+PROXIMA FARMACIA
+==============================================================================
+FARMACIA
+Farmacia Couto,188888888,123456789,farmacia8@email.pt
+LUGAR ESTACIONAMENTO
+10,10,30
+GESTOR
+Joao Maca,gestor8@email.pt,288888888,987654321,123
+MORADAS
+Farmacia Couto,41.126030442596715,-8.605945502054498,98,Farmacia Couto,41.126030442596715,-8.605945502054498,98
+GUARDAR DADOS

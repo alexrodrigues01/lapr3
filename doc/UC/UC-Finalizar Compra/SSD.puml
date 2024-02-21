@@ -1,0 +1,32 @@
+@startuml
+autonumber
+
+actor "Cliente" as CLIENTE
+participant "Sistema" as SYS
+
+activate CLIENTE
+CLIENTE -> SYS : Inicia a finalização da sua compra
+activate SYS
+
+SYS --> CLIENTE : Solicita que introduza a quantidade de créditos que deseja descontar
+deactivate SYS
+
+CLIENTE -> SYS : Introduz a quantidade de créditos desejada
+activate SYS
+
+SYS --> CLIENTE : Solicita que introduza o cvv do cartão de crédito
+deactivate SYS
+
+CLIENTE -> SYS : Introduz o cvv
+activate SYS
+
+SYS --> CLIENTE : Solicita que introduza o NIF que deseja associar à sua encomenda
+deactivate SYS
+
+CLIENTE -> SYS : Introduz o nif
+activate SYS
+
+SYS --> CLIENTE : Informa do sucesso da operação
+deactivate SYS
+
+@enduml

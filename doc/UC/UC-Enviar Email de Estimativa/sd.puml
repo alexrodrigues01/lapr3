@@ -1,0 +1,27 @@
+@startuml
+activate WatchServiceFiles
+WatchServiceFiles -> EnviarEmailEstimativaTask:sendEmail(fileName)
+activate EnviarEmailEstimativaTask
+EnviarEmailEstimativaTask->FileReader:pairReturn=lockFileReader(name)
+activate FileReader
+FileReader -> ScooterBD:scooter= getScooterByID(idScooter)
+activate ScooterBD
+deactivate ScooterBD
+
+FileReader->"pair:Pair":pair=create(scooter,emailEstafeta)
+activate "pair:Pair"
+deactivate "pair:Pair"
+FileReader->"pairReturn:Pair":pairReturn=create(localDate,pair)
+activate "pairReturn:Pair"
+deactivate "pairReturn:Pair"
+deactivate FileReader
+
+EnviarEmailEstimativaTask->"pairReturn:Pair":pair=getValue()
+activate "pairReturn:Pair"
+deactivate "pairReturn:Pair"
+EnviarEmailEstimativaTask->Emails:sendEmail()
+activate Emails
+deactivate Emails
+
+deactivate WatchServiceFiles
+@enduml

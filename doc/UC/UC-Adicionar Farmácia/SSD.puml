@@ -1,0 +1,45 @@
+@startuml
+autonumber
+
+actor "Administrador" as ADMIN
+participant "Sistema" as SYS
+
+
+ADMIN -> SYS : Seleciona adicionar uma nova farmácia
+activate ADMIN
+
+activate SYS
+SYS --> ADMIN : Solicita as informações sobre a famácia
+deactivate SYS
+
+ADMIN -> SYS : Introduz as informações da farmáia (nome, morada, NIF)
+activate SYS
+SYS -> ADMIN : Solicita o número de lugares de estacionamento com e sem suporte para carregamento
+deactivate SYS
+
+ADMIN -> SYS : Introduz o número de lugares de estacionamento com e sem suporte para carregamento
+activate SYS
+SYS --> ADMIN : Solicita as informações do gestor responsável pela farmácia
+deactivate SYS
+
+ADMIN -> SYS : Introduz as informações do gestor de farmácia (nome, email, telemóvel, nif, morada, pwd)
+activate SYS
+
+SYS --> ADMIN : Solicita as moradas da farmácia e do gestor de farmácia
+deactivate SYS
+
+ADMIN -> SYS : Introduz as moradas de ambos (morda, longitude, latitude, altitude)
+activate SYS
+
+SYS --> ADMIN : Apresenta as informações e pede para confirmar
+deactivate SYS
+
+ADMIN -> SYS : Confirma
+activate SYS
+
+SYS --> ADMIN : Informa do sucesso da operação
+deactivate SYS
+deactivate ADMIN
+
+
+@enduml
